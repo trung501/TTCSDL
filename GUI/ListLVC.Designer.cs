@@ -30,6 +30,7 @@ namespace GUI
         private void InitializeComponent()
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.lbNewLVC = new System.Windows.Forms.Label();
             this.tbTenLVC = new DevExpress.XtraEditors.TextEdit();
             this.tbMaLVC = new DevExpress.XtraEditors.TextEdit();
             this.lbTenLVC = new DevExpress.XtraEditors.LabelControl();
@@ -39,7 +40,6 @@ namespace GUI
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.gridListVC = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.lbNewLVC = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbTenLVC.Properties)).BeginInit();
@@ -65,6 +65,19 @@ namespace GUI
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(586, 111);
             this.panelControl1.TabIndex = 0;
+            // 
+            // lbNewLVC
+            // 
+            this.lbNewLVC.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbNewLVC.AutoSize = true;
+            this.lbNewLVC.Font = new System.Drawing.Font("Tahoma", 7F);
+            this.lbNewLVC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lbNewLVC.Location = new System.Drawing.Point(130, 47);
+            this.lbNewLVC.Name = "lbNewLVC";
+            this.lbNewLVC.Size = new System.Drawing.Size(192, 14);
+            this.lbNewLVC.TabIndex = 34;
+            this.lbNewLVC.Text = "* Để trống nếu là loại vaccine mới";
+            this.lbNewLVC.Visible = false;
             // 
             // tbTenLVC
             // 
@@ -130,6 +143,8 @@ namespace GUI
             // 
             // panelControl2
             // 
+            this.panelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl2.Controls.Add(this.gridListVC);
             this.panelControl2.Location = new System.Drawing.Point(7, 130);
             this.panelControl2.Name = "panelControl2";
@@ -157,19 +172,6 @@ namespace GUI
             this.gridView1.OptionsFind.AlwaysVisible = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
-            // 
-            // lbNewLVC
-            // 
-            this.lbNewLVC.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbNewLVC.AutoSize = true;
-            this.lbNewLVC.Font = new System.Drawing.Font("Tahoma", 7F);
-            this.lbNewLVC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lbNewLVC.Location = new System.Drawing.Point(130, 47);
-            this.lbNewLVC.Name = "lbNewLVC";
-            this.lbNewLVC.Size = new System.Drawing.Size(192, 14);
-            this.lbNewLVC.TabIndex = 34;
-            this.lbNewLVC.Text = "* Để trống nếu là loại vaccine mới";
-            this.lbNewLVC.Visible = false;
             // 
             // ListLVC
             // 
