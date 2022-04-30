@@ -80,6 +80,7 @@ namespace GUI
         private void tbMaLVC_Leave(object sender, EventArgs e)
         {
             lbNewLVC.Hide();
+            tbMaLVC.Text = tbMaLVC.Text.ToUpper();  
         }
     }
 }
