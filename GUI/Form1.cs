@@ -91,7 +91,7 @@ namespace GUI
             acePhieuTiem.Visible = true;
             aceThanhToan.Visible = true;
             aceThongKe.Visible = true;
-            aceTaoTaiKhoan.Visible = false;
+            aceTaoTaiKhoan.Visible = true;
         }
         private void ThuNganDisplay()
         {
