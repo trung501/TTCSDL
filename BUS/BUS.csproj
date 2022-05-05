@@ -51,6 +51,7 @@
     <Compile Include="BUS_PhieuTiem.cs" />
     <Compile Include="BUS_RPHoaDon.cs" />
     <Compile Include="BUS_PhieuTiemRP.cs" />
+    <Compile Include="BUS_ThemTK.cs" />
     <Compile Include="BUS_ThongKe.cs" />
     <Compile Include="BUS_ThuNgan.cs" />
     <Compile Include="BUS_Vaccine.cs" />

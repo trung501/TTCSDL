@@ -54,6 +54,7 @@
     <Compile Include="DAO_PhieuTiem.cs" />
     <Compile Include="DAO_RPHoaDon.cs" />
     <Compile Include="DAO_PhieuTiemRP.cs" />
+    <Compile Include="DAO_ThemTK.cs" />
     <Compile Include="DAO_ThongKe.cs" />
     <Compile Include="DAO_ThuNgan.cs" />
     <Compile Include="DAO_Vaccine.cs" />

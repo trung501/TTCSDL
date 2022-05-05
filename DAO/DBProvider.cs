@@ -15,13 +15,13 @@ namespace DAO
     public class DBProvider
     {
         //protected SqlConnection _conn = new SqlConnection(ConfigurationManager.ConnectionStrings["GUI.Properties.Settings.Setting"].ConnectionString);
-        protected SqlConnection _conn = new SqlConnection(@"Data Source=DESKTOP-BK21BLG;Initial Catalog=QuanLiTiemChung;Integrated Security=True");
-
+        //protected SqlConnection _conn = new SqlConnection(@"Data Source=DESKTOP-BK21BLG;Initial Catalog=QuanLiTiemChung;Integrated Security=True");
+        protected SqlConnection _conn = new SqlConnection(@"Data Source=DESKTOP-I1CQ9UA;Initial Catalog=QuanLiTiemChung;Integrated Security=True");
         public bool Login(string user, string pass)
         {
             string hashedPass = HashPass(pass);
 
-            string query = "SELECT * FROM THUNGAN WHERE MATHUNGAN = '" + user + "' AND PASSWORD = '" + hashedPass + "'";
+            string query = "SELECT * FROM TAIKHOAN WHERE MATHANHVIEN = '" + user + "' AND PASSWORD = '" + hashedPass + "'";
             SqlDataAdapter da = new SqlDataAdapter(query, _conn);
             
             DataTable dt = new DataTable();

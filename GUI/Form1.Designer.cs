@@ -39,6 +39,7 @@
             this.aceHome = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.aceVaccine1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.aceLichSu = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.aceVaccine2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acePhieuTiem = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.aceThanhToan = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.aceThongKe = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -46,7 +47,6 @@
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.toggleSwitch1 = new DevExpress.XtraEditors.ToggleSwitch();
-            this.aceVaccine2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
@@ -146,6 +146,7 @@
             // 
             // aceHome
             // 
+            this.aceHome.Height = 10;
             this.aceHome.ImageOptions.Image = global::GUI.Properties.Resources.home;
             this.aceHome.Name = "aceHome";
             this.aceHome.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -154,7 +155,6 @@
             // 
             // aceVaccine1
             // 
-            this.aceVaccine1.Height = 10;
             this.aceVaccine1.ImageOptions.Image = global::GUI.Properties.Resources.vaccine;
             this.aceVaccine1.Name = "aceVaccine1";
             this.aceVaccine1.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -169,6 +169,14 @@
             this.aceLichSu.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.aceLichSu.Text = " Lịch sử tiêm";
             this.aceLichSu.Click += new System.EventHandler(this.aceLichSu_Click);
+            // 
+            // aceVaccine2
+            // 
+            this.aceVaccine2.ImageOptions.Image = global::GUI.Properties.Resources.vaccine;
+            this.aceVaccine2.Name = "aceVaccine2";
+            this.aceVaccine2.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.aceVaccine2.Text = " Quản lý vaccine";
+            this.aceVaccine2.Click += new System.EventHandler(this.aceVaccine2_Click);
             // 
             // acePhieuTiem
             // 
@@ -199,11 +207,11 @@
             // 
             // aceTaoTaiKhoan
             // 
-            this.aceTaoTaiKhoan.Height = 10;
             this.aceTaoTaiKhoan.ImageOptions.Image = global::GUI.Properties.Resources.add;
             this.aceTaoTaiKhoan.Name = "aceTaoTaiKhoan";
             this.aceTaoTaiKhoan.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.aceTaoTaiKhoan.Text = " Tạo tài khoản";
+            this.aceTaoTaiKhoan.Click += new System.EventHandler(this.aceTaoTaiKhoan_Click);
             // 
             // accordionControlElement1
             // 
@@ -228,15 +236,6 @@
             this.toggleSwitch1.Properties.OnText = "On";
             this.toggleSwitch1.Size = new System.Drawing.Size(186, 25);
             this.toggleSwitch1.TabIndex = 3;
-            // 
-            // aceVaccine2
-            // 
-            this.aceVaccine2.Height = 10;
-            this.aceVaccine2.ImageOptions.Image = global::GUI.Properties.Resources.vaccine;
-            this.aceVaccine2.Name = "aceVaccine2";
-            this.aceVaccine2.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.aceVaccine2.Text = " Quản lý vaccine";
-            this.aceVaccine2.Click += new System.EventHandler(this.aceVaccine2_Click);
             // 
             // Form1
             // 
@@ -283,8 +282,8 @@
           private DevExpress.XtraBars.Navigation.AccordionControlElement aceThongKe;
         private DevExpress.XtraBars.Navigation.AccordionControlElement aceHome;
         private DevExpress.XtraWaitForm.ProgressPanel progressPanel;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement aceTaoTaiKhoan;
         private DevExpress.XtraBars.Navigation.AccordionControlElement aceVaccine2;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement aceTaoTaiKhoan;
     }
 }
 

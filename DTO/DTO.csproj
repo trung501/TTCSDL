@@ -50,6 +50,7 @@
     <Compile Include="DTO_LoaiVaccine.cs" />
     <Compile Include="DTO_PhieuTiem.cs" />
     <Compile Include="DTO_PhieuTiemInfo.cs" />
+    <Compile Include="DTO_ThemTK.cs" />
     <Compile Include="DTO_Vaccine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DTO_ThuNgan.cs" />

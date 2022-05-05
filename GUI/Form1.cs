@@ -19,17 +19,33 @@ namespace GUI
         Login login = new Login();
         BUS_ThuNgan busTN = new BUS_ThuNgan();
         public DTO_ThuNgan thungan;
+        public DTO_ThemTK taikhoan;
+        BUS_ThemTK busTK = new BUS_ThemTK();
 
         ThanhToanGUI ttGUI;
         VaccineGUI vcGUI;
         NhapKhoGUI nkGUI;
         PhieuTiemGUI ptGUI;
+        ThemTKGUI tkGUI;
 
-        public Form1(string maTN)
+        public Form1(string maTK)
         {
             InitializeComponent();
-            thungan = new DTO_ThuNgan(maTN, busTN.getTenThuNgan(maTN));
-            barStaticItem.Caption = "Xin chào " + thungan.HOTEN;
+            if (maTK == "G00")
+            {
+                taikhoan = new DTO_ThemTK("G00",null, "Khách hàng",null,null,null);
+            }
+            else 
+            {
+                DataTable taiKhoanInfo = busTK.GetAllTaiKhoanInfo(maTK);
+                foreach (DataRow row in taiKhoanInfo.Rows)
+                {
+                    taikhoan = new DTO_ThemTK(row["MATHANHVIEN"].ToString(), row["CHUCVU"].ToString(), row["HOTEN"].ToString(), row["NGAYSINH"].ToString().Split(' ')[0], row["SDT"].ToString(), row["DIACHI"].ToString());
+                    break;
+                }
+            }
+            
+            barStaticItem.Caption = "Xin chào " + taikhoan.HOTEN;
 
             ttGUI = new ThanhToanGUI(thungan);
             container.Controls.Add(ttGUI);
@@ -47,6 +63,10 @@ namespace GUI
             container.Controls.Add(ptGUI);
             ptGUI.Dock = DockStyle.Fill;
 
+            tkGUI = new ThemTKGUI();
+            container.Controls.Add(tkGUI);
+            tkGUI.Dock = DockStyle.Fill;
+
             container.Controls.Add(LichSuGUI.Instance);
             LichSuGUI.Instance.Dock = DockStyle.Fill;
 
@@ -55,8 +75,55 @@ namespace GUI
 
             container.Controls.Add(HomeGUI.Instance);
             HomeGUI.Instance.Dock = DockStyle.Fill;
+
+            KhachHangDisplay();
+            //AdminDisplay();
+        }
+        private void KhachHangDisplay()
+        {
+            aceHome.Visible = true;
+            aceVaccine1.Visible = false;
+            aceVaccine2.Visible = false;
+            aceLichSu.Visible = true;
+            acePhieuTiem.Visible = false;
+            aceThanhToan.Visible = false;
+            aceThongKe.Visible = false;
+            aceTaoTaiKhoan.Visible = false;
         }
 
+        private void AdminDisplay()
+        {
+            aceHome.Visible = true;
+            aceVaccine1.Visible = false;
+            aceVaccine2.Visible = true;
+            aceLichSu.Visible = true;
+            acePhieuTiem.Visible = true;
+            aceThanhToan.Visible = true;
+            aceThongKe.Visible = true;
+            aceTaoTaiKhoan.Visible = true;
+        }
+        private void ThuNganDisplay()
+        {
+            aceHome.Visible = true;
+            aceVaccine1.Visible = true;
+            aceVaccine2.Visible = false;
+            aceLichSu.Visible = true;
+            acePhieuTiem.Visible = true;
+            aceThanhToan.Visible = true;
+            aceThongKe.Visible = false;
+            aceTaoTaiKhoan.Visible = false;
+        }
+        private void NhapKhoDisplay()
+        {
+            aceHome.Visible = true;
+            aceVaccine1.Visible = false;
+            aceVaccine2.Visible = true;
+            aceLichSu.Visible = true;
+            acePhieuTiem.Visible = false;
+            aceThanhToan.Visible = false;
+            aceThongKe.Visible = false;
+            aceTaoTaiKhoan.Visible = false;
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
             //acePhieuTiem_Click(sender, e);
@@ -109,6 +176,11 @@ namespace GUI
             nkGUI.RefreshGrid();
             nkGUI.BringToFront();
         }
+        private void aceTaoTaiKhoan_Click(object sender, EventArgs e)
+        {
+            tkGUI.RefreshGrid();
+            tkGUI.BringToFront();
+        }
         private void accordionControl1_ElementClick(object sender, DevExpress.XtraBars.Navigation.ElementClickEventArgs e)
         {
             accordionControl1.Elements[0].Image = Resources.home;
@@ -139,7 +211,10 @@ namespace GUI
             accordionControl1.Elements[6].Appearance.Normal.ForeColor = Color.White;
             accordionControl1.Elements[6].Appearance.Hovered.ForeColor = Color.White;
 
-            
+            accordionControl1.Elements[7].Image = Resources.add;
+            accordionControl1.Elements[7].Appearance.Normal.ForeColor = Color.White;
+            accordionControl1.Elements[7].Appearance.Hovered.ForeColor = Color.White;
+
             switch (e.Element.Text)
             {
                 case " Trang chủ":
@@ -160,6 +235,9 @@ namespace GUI
                 case " Thống kê":
                     e.Element.Image = Resources.statistics_clicked;
                     break;
+                case " Tạo tài khoản":
+                    e.Element.Image = Resources.add_clicked;
+                    break;
             }
             e.Element.Appearance.Normal.ForeColor = Color.FromArgb(31, 187, 166);
             e.Element.Appearance.Hovered.ForeColor = Color.FromArgb(31, 187, 166);
@@ -169,7 +247,5 @@ namespace GUI
         {
             Application.Exit();
         }
-
-        
     }
 }

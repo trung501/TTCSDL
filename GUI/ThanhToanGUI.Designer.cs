@@ -514,13 +514,13 @@
             this.groupControl3.Controls.Add(this.labelControl4);
             this.groupControl3.Controls.Add(this.tbMaGH);
             this.groupControl3.Controls.Add(this.tbTenNGH);
-            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(3, 3);
             this.groupControl3.Margin = new System.Windows.Forms.Padding(3, 3, 2, 3);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(495, 759);
             this.groupControl3.TabIndex = 3;
             this.groupControl3.Text = "Thông tin người thanh toán";
+            this.groupControl3.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl3_Paint);
             // 
             // lbNewNGH
             // 
@@ -547,6 +547,7 @@
             this.gridNGH.TabIndex = 10;
             this.gridNGH.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
+            this.gridNGH.Click += new System.EventHandler(this.gridNGH_Click);
             // 
             // gridView2
             // 

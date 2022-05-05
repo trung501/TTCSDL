@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.cbGioiTinh = new DevExpress.XtraEditors.ComboBoxEdit();
             this.dtpNgaySinh = new DevExpress.XtraEditors.DateEdit();
             this.lbNgaySinh = new DevExpress.XtraEditors.LabelControl();
@@ -70,6 +71,7 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.gridKH = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.cbGioiTinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNgaySinh.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNgaySinh.Properties)).BeginInit();
@@ -99,6 +101,7 @@
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridKH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // cbGioiTinh
@@ -115,6 +118,7 @@
             this.cbGioiTinh.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbGioiTinh.Size = new System.Drawing.Size(69, 24);
             this.cbGioiTinh.TabIndex = 2;
+            this.cbGioiTinh.SelectedIndexChanged += new System.EventHandler(this.cbGioiTinh_SelectedIndexChanged);
             // 
             // dtpNgaySinh
             // 
@@ -173,6 +177,7 @@
             this.tbTenKH.Name = "tbTenKH";
             this.tbTenKH.Size = new System.Drawing.Size(265, 24);
             this.tbTenKH.TabIndex = 0;
+            this.tbTenKH.EditValueChanged += new System.EventHandler(this.tbTenKH_EditValueChanged);
             this.tbTenKH.Click += new System.EventHandler(this.tbTenKH_Click);
             this.tbTenKH.Leave += new System.EventHandler(this.tbTenKH_Leave);
             // 
@@ -336,6 +341,7 @@
             this.groupControl2.Size = new System.Drawing.Size(224, 184);
             this.groupControl2.TabIndex = 5;
             this.groupControl2.Text = "Thao tác";
+            this.groupControl2.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl2_Paint);
             // 
             // btnReset
             // 
@@ -394,6 +400,7 @@
             this.tbMaVC.Name = "tbMaVC";
             this.tbMaVC.Size = new System.Drawing.Size(93, 24);
             this.tbMaVC.TabIndex = 0;
+            this.tbMaVC.EditValueChanged += new System.EventHandler(this.tbMaVC_EditValueChanged);
             this.tbMaVC.Leave += new System.EventHandler(this.tbMaVC_Leave);
             // 
             // tbMuiThu
@@ -623,6 +630,7 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridKH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -670,5 +678,6 @@
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.TextEdit tbNhacLai;
         private System.Windows.Forms.Label label2;
+        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
     }
 }

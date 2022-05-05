@@ -371,5 +371,25 @@ namespace GUI
         {
 
         }
+
+        private void cbGioiTinh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbMaVC_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupControl2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tbTenKH_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

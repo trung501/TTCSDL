@@ -200,5 +200,15 @@ namespace GUI
         {
             lbNewNGH.Visible = false;
         }
+
+        private void groupControl3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gridNGH_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
