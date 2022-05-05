@@ -55,6 +55,10 @@ namespace GUI
 
             container.Controls.Add(HomeGUI.Instance);
             HomeGUI.Instance.Dock = DockStyle.Fill;
+
+            KhachHangDisplay();
+            AdminDisplay();
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -66,6 +70,51 @@ namespace GUI
             HomeGUI.Instance.BringToFront();
         }
 
+        private void KhachHangDisplay()
+        {
+            aceHome.Visible = true;
+            aceVaccine1.Visible = false;
+            aceVaccine2.Visible = false;
+            aceLichSu.Visible = true;
+            acePhieuTiem.Visible = false;
+            aceThanhToan.Visible = false;
+            aceThongKe.Visible = false;
+            aceTaoTaiKhoan.Visible = false;
+        }
+
+        private void AdminDisplay()
+        {
+            aceHome.Visible = true;
+            aceVaccine1.Visible = false;
+            aceVaccine2.Visible = true;
+            aceLichSu.Visible = true;
+            acePhieuTiem.Visible = true;
+            aceThanhToan.Visible = true;
+            aceThongKe.Visible = true;
+            aceTaoTaiKhoan.Visible = false;
+        }
+        private void ThuNganDisplay()
+        {
+            aceHome.Visible = true;
+            aceVaccine1.Visible = true;
+            aceVaccine2.Visible = false;
+            aceLichSu.Visible = true;
+            acePhieuTiem.Visible = true;
+            aceThanhToan.Visible = true;
+            aceThongKe.Visible = false;
+            aceTaoTaiKhoan.Visible = false;
+        }
+        private void NhapKhoDisplay()
+        {
+            aceHome.Visible = true;
+            aceVaccine1.Visible = false;
+            aceVaccine2.Visible = true;
+            aceLichSu.Visible = true;
+            acePhieuTiem.Visible = false;
+            aceThanhToan.Visible = false;
+            aceThongKe.Visible = false;
+            aceTaoTaiKhoan.Visible = false;
+        }
         private void aceThanhToan_Click(object sender, EventArgs e)
         {
             ttGUI.BringToFront();
