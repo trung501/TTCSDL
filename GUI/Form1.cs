@@ -77,8 +77,67 @@ namespace GUI
             HomeGUI.Instance.Dock = DockStyle.Fill;
 
             KhachHangDisplay();
+<<<<<<< HEAD
             //AdminDisplay();
         }
+        private void KhachHangDisplay()
+        {
+            aceHome.Visible = true;
+            aceVaccine1.Visible = false;
+            aceVaccine2.Visible = false;
+            aceLichSu.Visible = true;
+            acePhieuTiem.Visible = false;
+            aceThanhToan.Visible = false;
+            aceThongKe.Visible = false;
+            aceTaoTaiKhoan.Visible = false;
+=======
+            AdminDisplay();
+
+>>>>>>> 7da35abc446eec2ef37c234e2e8f79b1b71f754f
+        }
+
+        private void AdminDisplay()
+        {
+            aceHome.Visible = true;
+            aceVaccine1.Visible = false;
+            aceVaccine2.Visible = true;
+            aceLichSu.Visible = true;
+            acePhieuTiem.Visible = true;
+            aceThanhToan.Visible = true;
+            aceThongKe.Visible = true;
+            aceTaoTaiKhoan.Visible = true;
+        }
+        private void ThuNganDisplay()
+        {
+            aceHome.Visible = true;
+            aceVaccine1.Visible = true;
+            aceVaccine2.Visible = false;
+            aceLichSu.Visible = true;
+            acePhieuTiem.Visible = true;
+            aceThanhToan.Visible = true;
+            aceThongKe.Visible = false;
+            aceTaoTaiKhoan.Visible = false;
+        }
+        private void NhapKhoDisplay()
+        {
+            aceHome.Visible = true;
+            aceVaccine1.Visible = false;
+            aceVaccine2.Visible = true;
+            aceLichSu.Visible = true;
+            acePhieuTiem.Visible = false;
+            aceThanhToan.Visible = false;
+            aceThongKe.Visible = false;
+            aceTaoTaiKhoan.Visible = false;
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //acePhieuTiem_Click(sender, e);
+            accordionControl1.Elements[0].Image = Resources.home_clicked;
+            accordionControl1.Elements[0].Appearance.Normal.ForeColor = Color.FromArgb(31, 187, 166);
+            accordionControl1.Elements[0].Appearance.Hovered.ForeColor = Color.FromArgb(31, 187, 166);
+            HomeGUI.Instance.BringToFront();
+        }
+
         private void KhachHangDisplay()
         {
             aceHome.Visible = true;
@@ -124,15 +183,6 @@ namespace GUI
             aceThongKe.Visible = false;
             aceTaoTaiKhoan.Visible = false;
         }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            //acePhieuTiem_Click(sender, e);
-            accordionControl1.Elements[0].Image = Resources.home_clicked;
-            accordionControl1.Elements[0].Appearance.Normal.ForeColor = Color.FromArgb(31, 187, 166);
-            accordionControl1.Elements[0].Appearance.Hovered.ForeColor = Color.FromArgb(31, 187, 166);
-            HomeGUI.Instance.BringToFront();
-        }
-
         private void aceThanhToan_Click(object sender, EventArgs e)
         {
             ttGUI.BringToFront();

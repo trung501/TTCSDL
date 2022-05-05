@@ -38,6 +38,7 @@
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.aceHome = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.aceVaccine1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.aceVaccine2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.aceLichSu = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.aceVaccine2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acePhieuTiem = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -57,10 +58,10 @@
             // 
             this.container.Controls.Add(this.progressPanel);
             this.container.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.container.Location = new System.Drawing.Point(207, 37);
+            this.container.Location = new System.Drawing.Point(324, 37);
             this.container.Margin = new System.Windows.Forms.Padding(2, 6, 2, 6);
             this.container.Name = "container";
-            this.container.Size = new System.Drawing.Size(1093, 863);
+            this.container.Size = new System.Drawing.Size(976, 863);
             this.container.TabIndex = 0;
             // 
             // progressPanel
@@ -75,7 +76,7 @@
             this.progressPanel.Location = new System.Drawing.Point(0, 0);
             this.progressPanel.Margin = new System.Windows.Forms.Padding(4);
             this.progressPanel.Name = "progressPanel";
-            this.progressPanel.Size = new System.Drawing.Size(1093, 863);
+            this.progressPanel.Size = new System.Drawing.Size(976, 863);
             this.progressPanel.TabIndex = 0;
             this.progressPanel.Text = "progressPanel1";
             this.progressPanel.Visible = false;
@@ -139,7 +140,7 @@
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Fluent;
             this.accordionControl1.ShowFilterControl = DevExpress.XtraBars.Navigation.ShowFilterControl.Auto;
-            this.accordionControl1.Size = new System.Drawing.Size(207, 863);
+            this.accordionControl1.Size = new System.Drawing.Size(324, 863);
             this.accordionControl1.TabIndex = 1;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             this.accordionControl1.ElementClick += new DevExpress.XtraBars.Navigation.ElementClickEventHandler(this.accordionControl1_ElementClick);
@@ -160,6 +161,15 @@
             this.aceVaccine1.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.aceVaccine1.Text = " Quản lý vaccine";
             this.aceVaccine1.Click += new System.EventHandler(this.aceVaccine_Click);
+            // 
+            // aceVaccine2
+            // 
+            this.aceVaccine2.Height = 10;
+            this.aceVaccine2.ImageOptions.Image = global::GUI.Properties.Resources.vaccine;
+            this.aceVaccine2.Name = "aceVaccine2";
+            this.aceVaccine2.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.aceVaccine2.Text = " Quản lý vaccine";
+            this.aceVaccine2.Click += new System.EventHandler(this.aceVaccine2_Click);
             // 
             // aceLichSu
             // 
