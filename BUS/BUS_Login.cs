@@ -19,5 +19,9 @@ namespace BUS
             }
             return false;
         }
+        public string getHashPass(string user, string pass)
+        {
+            return dp.getHashPass(user, pass);
+        }
     }
 }

@@ -166,11 +166,11 @@
     <Compile Include="ThanhToanLIST.Designer.cs">
       <DependentUpon>ThanhToanLIST.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThemTKGUI.cs">
+    <Compile Include="TaiKhoanGUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ThemTKGUI.Designer.cs">
-      <DependentUpon>ThemTKGUI.cs</DependentUpon>
+    <Compile Include="TaiKhoanGUI.Designer.cs">
+      <DependentUpon>TaiKhoanGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="ThongKeCreator.cs" />
     <Compile Include="ThongKeGUI.cs">
@@ -246,8 +246,8 @@
     <EmbeddedResource Include="ThanhToanLIST.resx">
       <DependentUpon>ThanhToanLIST.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThemTKGUI.resx">
-      <DependentUpon>ThemTKGUI.cs</DependentUpon>
+    <EmbeddedResource Include="TaiKhoanGUI.resx">
+      <DependentUpon>TaiKhoanGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThongKeGUI.resx">
       <DependentUpon>ThongKeGUI.cs</DependentUpon>

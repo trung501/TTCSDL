@@ -17,39 +17,55 @@ using DevExpress.XtraGrid.Localization;
 
 namespace GUI
 {
-    public partial class ThemTKGUI : DevExpress.XtraEditors.XtraUserControl
+    public partial class TaiKhoanGUI : DevExpress.XtraEditors.XtraUserControl
     {
-        public static ThemTKGUI _instance;
-        public static ThemTKGUI Instance
+        private string maQT;
+        private string pass;
+        public static TaiKhoanGUI _instance;
+        public static TaiKhoanGUI Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new ThemTKGUI();
+                    _instance = new TaiKhoanGUI("","");
                 }
                 return _instance;
             }
         }
         BUS_ThemTK busTaiKhoan = new BUS_ThemTK();
-        public ThemTKGUI()
+        public TaiKhoanGUI(string maQT, string pass)
         {
             InitializeComponent();
 
             deNgaySinh.Text = DateTime.Now.ToString("dd/MM/yyyy");
             gridView2.RowClick += gridcDanhSachTK_Click;
             GridLocalizer.Active = new MyGridLocalizer();
+            this.setVerified(maQT, pass);
             InitAutoCompeteTextBox();
+        }
+        public void setVerified(string maQT,string pass)
+        {
+            if (maQT.StartsWith("QT"))
+            {
+                this.maQT = maQT;
+                this.pass = pass;
+            }
+            else
+            {
+                this.maQT = "";
+                this.pass = "";
+            }
         }
         public void RefreshGrid()
         {
-            gridcDanhSachTK.DataSource = busTaiKhoan.getAllTaikhoan();
+            gridcDanhSachTK.DataSource = busTaiKhoan.getAllTaiKhoan(maQT, pass);
             //gridView2.Columns["MATHANHVIEN"].SortOrder = DevExpress.Data.ColumnSortOrder.Descending;
         }
         private void InitAutoCompeteTextBox()
         {
             AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
-            DataTable dt = busTaiKhoan.getAllTaikhoan();
+            DataTable dt = busTaiKhoan.getAllTaiKhoan(maQT, pass);
 
             for (int i = 0; i < dt.Rows.Count; i++)
             {

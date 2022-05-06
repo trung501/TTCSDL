@@ -47,5 +47,59 @@ namespace DAO
             }
             return "";
         }
+        public DataRow GetThuNganInfo(string MATHUNGAN)
+        {
+            DataTable dt = new DataTable();
+            SqlDataReader rd;
+            try
+            {
+                _conn.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_GetThuNganInfo", _conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@MATHUNGAN", MATHUNGAN);
+                rd = cmd.ExecuteReader();
+                dt.Load(rd);
+
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                _conn.Close();
+            }
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0];
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public string GetLastestMATHUNGAN()
+        {
+            string query = "SELECT TOP(1) MATHUNGAN FROM THUNGAN ORDER BY MATHUNGAN DESC";
+            SqlDataAdapter da = new SqlDataAdapter(query, _conn);
+
+            DataTable dt = new DataTable();
+
+            try
+            {
+                da.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    return dt.Rows[0][0].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return null;
+        }
     }
 }

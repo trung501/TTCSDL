@@ -12,37 +12,30 @@ namespace BUS
 {
     public class BUS_ThemTK
     {
-        DAO_ThemTK dao = new DAO_ThemTK();
-        public DataTable getAllTaikhoan()
+        DAO_TaiKhoan dao = new DAO_TaiKhoan();
+        public DataTable getAllTaiKhoan(string maQT, string pass)
         {
-            return dao.getAllTaiKhoan();
+            return dao.getAllTaiKhoan(maQT, pass);
         }
         public string NextMATHANHVIEN()
         {
-            string MATHANHVIEN = dao.GetLastestMATHANHVIEN().Trim();
-            int count = MATHANHVIEN.Length - 2;
-            int ptIndex = Convert.ToInt32(MATHANHVIEN.Substring(2)) + 1;
-            MATHANHVIEN = "PT";
-            for (int i = 0; i < count - ptIndex.ToString().Length; i++)
-                MATHANHVIEN += "0";
-            MATHANHVIEN += (ptIndex).ToString();
-            return MATHANHVIEN;
+            return "test";
         }
         public bool InsertTaiKhoan(DTO_ThemTK tk)
         {
             return dao.InsertTaiKhoan(tk);
         }
-        public string GetHoTenFromTAIKHOAN(string maTK)
+        public string GetHoTenFromTaiKhoan(string maTK)
         {
-            return dao.GetHoTenFromTAIKHOAN(maTK);
+            return dao.GetHoTenFromTaiKhoan(maTK);
         }
         public bool DeleteTaikhoan(string MaTK)
         {
             return dao.DeleteTaikhoan(MaTK);
         }
-        public DataTable GetAllTaiKhoanInfo(string maTK)
+        public DataTable GetAllGeneralInfoTaiKhoan(string maTK)
         {
-            return dao.GetAllTaiKhoanInfo(maTK);
+            return dao.GetAllGeneralInfoTaiKhoan(maTK);
         }
         public bool UpdateTaiKhoanInfo(DTO_ThemTK tktp)
         {

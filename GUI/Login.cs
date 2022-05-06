@@ -27,10 +27,9 @@ namespace GUI
         {
             string user = tbUser.Text.Trim();
             string pass = tbPassword.Text.Trim();
-
             if (bus.Login(user, pass))
             {
-                new Form1(user).Show();
+                new Form1(user,bus.getHashPass(user,pass)).Show();
                 this.Hide();
             }
             else

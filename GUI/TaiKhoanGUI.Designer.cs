@@ -1,7 +1,7 @@
 ﻿
 namespace GUI
 {
-    partial class ThemTKGUI
+    partial class TaiKhoanGUI
     {
         /// <summary>
         /// Required designer variable.
@@ -34,10 +34,10 @@ namespace GUI
             this.groupcDanhSachTK = new DevExpress.XtraEditors.GroupControl();
             this.gridcDanhSachTK = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.ChucVu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MaThanhVien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HoTen = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NgaySinh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ChucVu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SDT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcThaoTac = new DevExpress.XtraEditors.GroupControl();
@@ -171,15 +171,6 @@ namespace GUI
             this.gridView2.OptionsView.ShowGroupPanel = false;
             this.gridView2.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView2_RowClick);
             // 
-            // ChucVu
-            // 
-            this.ChucVu.Caption = "Chức vụ";
-            this.ChucVu.MinWidth = 25;
-            this.ChucVu.Name = "ChucVu";
-            this.ChucVu.Visible = true;
-            this.ChucVu.VisibleIndex = 0;
-            this.ChucVu.Width = 94;
-            // 
             // MaThanhVien
             // 
             this.MaThanhVien.Caption = "Mã thành viên";
@@ -206,6 +197,15 @@ namespace GUI
             this.NgaySinh.Visible = true;
             this.NgaySinh.VisibleIndex = 3;
             this.NgaySinh.Width = 94;
+            // 
+            // ChucVu
+            // 
+            this.ChucVu.Caption = "Chức vụ";
+            this.ChucVu.MinWidth = 25;
+            this.ChucVu.Name = "ChucVu";
+            this.ChucVu.Visible = true;
+            this.ChucVu.VisibleIndex = 0;
+            this.ChucVu.Width = 94;
             // 
             // SDT
             // 
@@ -492,6 +492,7 @@ namespace GUI
             "Bác sĩ",
             "Thu ngân",
             "Quản lí kho"});
+            this.cbChucVu.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbChucVu.Size = new System.Drawing.Size(154, 24);
             this.cbChucVu.TabIndex = 4;
             this.cbChucVu.SelectedIndexChanged += new System.EventHandler(this.cbChucVu_SelectedIndexChanged);
@@ -619,14 +620,14 @@ namespace GUI
             // 
             this.sqlDataSource1.Name = "sqlDataSource1";
             // 
-            // ThemTKGUI
+            // TaiKhoanGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.Controls.Add(this.dataLayoutControl1);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "ThemTKGUI";
+            this.Name = "TaiKhoanGUI";
             this.Size = new System.Drawing.Size(1067, 831);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);

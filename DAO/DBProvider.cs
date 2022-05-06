@@ -14,9 +14,7 @@ namespace DAO
 {
     public class DBProvider
     {
-        //protected SqlConnection _conn = new SqlConnection(ConfigurationManager.ConnectionStrings["GUI.Properties.Settings.Setting"].ConnectionString);
-        //protected SqlConnection _conn = new SqlConnection(@"Data Source=DESKTOP-BK21BLG;Initial Catalog=QuanLiTiemChung;Integrated Security=True");
-        protected SqlConnection _conn = new SqlConnection(@"Data Source=DESKTOP-I1CQ9UA;Initial Catalog=QuanLiTiemChung;Integrated Security=True");
+       protected SqlConnection _conn = new SqlConnection(@"Data Source=DESKTOP-02HFG7B;Initial Catalog=QuanLiTiemChung;Integrated Security=True");
         public bool Login(string user, string pass)
         {
             string hashedPass = HashPass(pass);
@@ -40,6 +38,14 @@ namespace DAO
             return false;
 
           }
+        public string getHashPass(string user, string pass)
+        {
+            if (Login(user, pass)) { 
+                return HashPass(pass); 
+            }
+            return "";
+            
+        }
           #region Hashing Pass
           public string HashPass(string pass)
           {

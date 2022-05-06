@@ -26,21 +26,22 @@ namespace GUI
         VaccineGUI vcGUI;
         NhapKhoGUI nkGUI;
         PhieuTiemGUI ptGUI;
-        ThemTKGUI tkGUI;
+        TaiKhoanGUI tkGUI;
+        
 
-        public Form1(string maTK)
+        public Form1(string maTK, string pass) //uyen
         {
             InitializeComponent();
             if (maTK == "G00")
             {
-                taikhoan = new DTO_ThemTK("G00",null, "Khách hàng",null,null,null);
+                taikhoan = new DTO_ThemTK("G00",null, "Khách hàng",null,null,null,null,null);
             }
             else 
             {
-                DataTable taiKhoanInfo = busTK.GetAllTaiKhoanInfo(maTK);
+                DataTable taiKhoanInfo = busTK.GetAllGeneralInfoTaiKhoan(maTK);
                 foreach (DataRow row in taiKhoanInfo.Rows)
                 {
-                    taikhoan = new DTO_ThemTK(row["MATHANHVIEN"].ToString(), row["CHUCVU"].ToString(), row["HOTEN"].ToString(), row["NGAYSINH"].ToString().Split(' ')[0], row["SDT"].ToString(), row["DIACHI"].ToString());
+                    taikhoan = new DTO_ThemTK(row["MATHANHVIEN"].ToString(), row["CHUCVU"].ToString(), row["HOTEN"].ToString(), row["NGAYSINH"].ToString().Split(' ')[0], row["SDT"].ToString(), row["DIACHI"].ToString(), row["CHUYENKHOA"].ToString(), row["BANGCAP"].ToString());
                     break;
                 }
             }
@@ -63,7 +64,7 @@ namespace GUI
             container.Controls.Add(ptGUI);
             ptGUI.Dock = DockStyle.Fill;
 
-            tkGUI = new ThemTKGUI();
+            tkGUI = new TaiKhoanGUI( maTK, pass);
             container.Controls.Add(tkGUI);
             tkGUI.Dock = DockStyle.Fill;
 
@@ -76,59 +77,11 @@ namespace GUI
             container.Controls.Add(HomeGUI.Instance);
             HomeGUI.Instance.Dock = DockStyle.Fill;
 
-            KhachHangDisplay();
-<<<<<<< HEAD
+            //KhachHangDisplay();
+
             //AdminDisplay();
         }
-        private void KhachHangDisplay()
-        {
-            aceHome.Visible = true;
-            aceVaccine1.Visible = false;
-            aceVaccine2.Visible = false;
-            aceLichSu.Visible = true;
-            acePhieuTiem.Visible = false;
-            aceThanhToan.Visible = false;
-            aceThongKe.Visible = false;
-            aceTaoTaiKhoan.Visible = false;
-=======
-            AdminDisplay();
-
->>>>>>> 7da35abc446eec2ef37c234e2e8f79b1b71f754f
-        }
-
-        private void AdminDisplay()
-        {
-            aceHome.Visible = true;
-            aceVaccine1.Visible = false;
-            aceVaccine2.Visible = true;
-            aceLichSu.Visible = true;
-            acePhieuTiem.Visible = true;
-            aceThanhToan.Visible = true;
-            aceThongKe.Visible = true;
-            aceTaoTaiKhoan.Visible = true;
-        }
-        private void ThuNganDisplay()
-        {
-            aceHome.Visible = true;
-            aceVaccine1.Visible = true;
-            aceVaccine2.Visible = false;
-            aceLichSu.Visible = true;
-            acePhieuTiem.Visible = true;
-            aceThanhToan.Visible = true;
-            aceThongKe.Visible = false;
-            aceTaoTaiKhoan.Visible = false;
-        }
-        private void NhapKhoDisplay()
-        {
-            aceHome.Visible = true;
-            aceVaccine1.Visible = false;
-            aceVaccine2.Visible = true;
-            aceLichSu.Visible = true;
-            acePhieuTiem.Visible = false;
-            aceThanhToan.Visible = false;
-            aceThongKe.Visible = false;
-            aceTaoTaiKhoan.Visible = false;
-        }
+       
         private void Form1_Load(object sender, EventArgs e)
         {
             //acePhieuTiem_Click(sender, e);

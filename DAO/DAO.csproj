@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO_BacSi.cs" />
     <Compile Include="DAO_ChiTietTiem.cs" />
     <Compile Include="DAO_GiamHo.cs" />
     <Compile Include="DAO_HoaDon.cs" />
@@ -52,9 +53,11 @@
     <Compile Include="DAO_LichSu.cs" />
     <Compile Include="DAO_LoaiVaccine.cs" />
     <Compile Include="DAO_PhieuTiem.cs" />
+    <Compile Include="DAO_QuanKho.cs" />
+    <Compile Include="DAO_QuanTri.cs" />
     <Compile Include="DAO_RPHoaDon.cs" />
     <Compile Include="DAO_PhieuTiemRP.cs" />
-    <Compile Include="DAO_ThemTK.cs" />
+    <Compile Include="DAO_TaiKhoan.cs" />
     <Compile Include="DAO_ThongKe.cs" />
     <Compile Include="DAO_ThuNgan.cs" />
     <Compile Include="DAO_Vaccine.cs" />

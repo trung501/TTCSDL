@@ -31,6 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS_BacSi.cs" />
     <Compile Include="BUS_ChiTietTiem.cs" />
     <Compile Include="BUS_GiamHo.cs" />
     <Compile Include="BUS_HoaDon.cs" />
@@ -49,6 +52,8 @@
     <Compile Include="BUS_LoaiVaccine.cs" />
     <Compile Include="BUS_Login.cs" />
     <Compile Include="BUS_PhieuTiem.cs" />
+    <Compile Include="BUS_QuanKho.cs" />
+    <Compile Include="BUS_QuanTri.cs" />
     <Compile Include="BUS_RPHoaDon.cs" />
     <Compile Include="BUS_PhieuTiemRP.cs" />
     <Compile Include="BUS_ThemTK.cs" />
