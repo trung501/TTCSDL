@@ -134,7 +134,7 @@ namespace DAO
             return false;
         }
 
-        public DataTable GetAllGeneralInfoTaiKhoan(string maTK)
+        public DataRow GetGeneralInfoTaiKhoan(string maTK)
         {
             SqlDataReader rd;
             DataTable dt = new DataTable();
@@ -142,9 +142,9 @@ namespace DAO
             try
             {
                 _conn.Open();
-                SqlCommand cmd = new SqlCommand("sp_GetAllGeneralInfoTaiKhoan", _conn);
+                SqlCommand cmd = new SqlCommand("sp_GetGeneralInfoTaiKhoan", _conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@MATHANHVIEN", maTK);
+                cmd.Parameters.AddWithValue("@MATK", maTK);
                 rd = cmd.ExecuteReader();
                 dt.Load(rd);
             }
@@ -156,8 +156,77 @@ namespace DAO
             {
                 _conn.Close();
             }
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0];
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public DataTable GetAllGeneralInfoTaiKhoan(string maTK,string pass)
+        {
+            SqlDataReader rd;
+            DataTable dt = new DataTable();
 
-            return dt;
+            try
+            {
+                _conn.Open();
+                SqlCommand cmd = new SqlCommand("SP_GetAllGeneralInfoTaiKhoan", _conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@maTK", maTK);
+                cmd.Parameters.AddWithValue("@pass", pass);
+                rd = cmd.ExecuteReader();
+                dt.Load(rd);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                _conn.Close();
+            }
+            if (dt.Rows.Count > 0)
+            {
+                return dt;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public DataRow GetFullInfoTaiKhoan(string maTK)
+        {
+            SqlDataReader rd;
+            DataTable dt = new DataTable();
+
+            try
+            {
+                _conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_GetFullInfoTaiKhoan", _conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@MATK", maTK);
+                rd = cmd.ExecuteReader();
+                dt.Load(rd);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                _conn.Close();
+            }
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0];
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public bool UpdateTaiKhoanInfo(DTO_ThemTK tktp)
@@ -168,7 +237,7 @@ namespace DAO
 
                 SqlCommand cmd = new SqlCommand("sp_UpdateTaiKhoanInfo", _conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@MATHANHVIEN", tktp.MATAIKHOAN);
+                cmd.Parameters.AddWithValue("@MATK", tktp.MATAIKHOAN);
                 cmd.Parameters.AddWithValue("@CHUCVU", tktp.CHUCVU);
                 cmd.Parameters.AddWithValue("@HOTEN", tktp.HOTEN);
                 cmd.Parameters.AddWithValue("@NGAYSINH", tktp.NGAYSINH);
@@ -198,9 +267,9 @@ namespace DAO
 
         public bool CheckExistance(string maTK)
         {
-            string query = "SELECT * FROM TAIKHOAN WHERE MATHANHVIEN = @MATHANHVIEN";
+            string query = "SELECT * FROM TAIKHOAN WHERE MATAIKHOAN = @MATAIKHOAN";
             SqlDataAdapter da = new SqlDataAdapter(query, _conn);
-            da.SelectCommand.Parameters.AddWithValue("@MATHANHVIEN", maTK);
+            da.SelectCommand.Parameters.AddWithValue("@MATAIKHOAN", maTK);
 
             DataTable dt = new DataTable();
 

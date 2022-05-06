@@ -42,7 +42,7 @@ namespace GUI
             gridView2.RowClick += gridcDanhSachTK_Click;
             GridLocalizer.Active = new MyGridLocalizer();
             this.setVerified(maQT, pass);
-            InitAutoCompeteTextBox();
+
         }
         public void setVerified(string maQT,string pass)
         {
@@ -59,23 +59,9 @@ namespace GUI
         }
         public void RefreshGrid()
         {
-            gridcDanhSachTK.DataSource = busTaiKhoan.getAllTaiKhoan(maQT, pass);
-            //gridView2.Columns["MATHANHVIEN"].SortOrder = DevExpress.Data.ColumnSortOrder.Descending;
+            gridcDanhSachTK.DataSource = busTaiKhoan.GetAllGeneralInfoTaiKhoan(maQT, pass);
         }
-        private void InitAutoCompeteTextBox()
-        {
-            AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
-            DataTable dt = busTaiKhoan.getAllTaiKhoan(maQT, pass);
-
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                collection.Add(dt.Rows[i][0].ToString().Trim());
-            }
-            /*
-            tbMaVC.MaskBox.AutoCompleteCustomSource = collection;
-            tbMaVC.MaskBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            tbMaVC.MaskBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;*/
-        }
+     
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
@@ -119,30 +105,31 @@ namespace GUI
             }
         }
 
+        private void displayFollowChucVu(string chucVu)
+        {
+            if (chucVu=="Bác sĩ")
+            {
+                lbBangCap.Visible = true;
+                teBangCap.Visible = true;
+                lbChuyenKhoa.Visible = true;
+                teChuyenKhoa.Visible = true;
+            }
+            else
+            {
+                lbBangCap.Visible = false;
+                teBangCap.Visible = false;
+                lbChuyenKhoa.Visible = false;
+                teChuyenKhoa.Visible = false;
+            }
+            
+        }
+
         private void cbChucVu_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (cbChucVu.SelectedIndex)
-            {
-                case 0:
-                    lbBangCap.Visible = true;
-                    teBangCap.Visible = true;
-                    lbChuyenKhoa.Visible = true;
-                    teChuyenKhoa.Visible = true;
-                    break;
-                case 1:
-                    lbBangCap.Visible = false;
-                    teBangCap.Visible = false;
-                    lbChuyenKhoa.Visible = false;
-                    teChuyenKhoa.Visible = false;
-                    break;
-                case 2:
-                    lbBangCap.Visible = false;
-                    teBangCap.Visible = false;
-                    lbChuyenKhoa.Visible = false;
-                    teChuyenKhoa.Visible = false;
-                    break;
-            }
+            displayFollowChucVu(cbChucVu.Text.Trim());
         }
+
+
 
         private void dateEdit1_EditValueChanged(object sender, EventArgs e)
         {
@@ -200,7 +187,9 @@ namespace GUI
             teChuyenKhoa.Text = null;
             deNgaySinh.Text = DateTime.Now.ToString("dd/MM/yyyy"); ;
             cbChucVu.Text = null;
-            gridcDanhSachTK.DataSource = null;
+            cbChucVu.Enabled = true;
+            teMaThanhVien.Enabled = true;
+            RefreshGrid();
         }
 
         private void teMaThanhVien_EditValueChanged(object sender, EventArgs e)
@@ -219,15 +208,22 @@ namespace GUI
         }
 
         private void gridView2_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
-        {/*
-            if (gridView2.GetRowCellValue(e.RowHandle, "MAKH"))
-            {
-                tbMaKH.Text = gridView2.GetRowCellValue(e.RowHandle, "MAKH").ToString().Trim();
-                tbTenKH.Text = gridView2.GetRowCellValue(e.RowHandle, "TENKH").ToString().Trim();
-                dtpNgaySinh.Text = gridView2.GetRowCellValue(e.RowHandle, "NGAYSINH").ToString().Split(' ')[0];
-                cbGioiTinh.Text = gridView2.GetRowCellValue(e.RowHandle, "GIOITINH").ToString();
-                tbTienSu.Text = gridView2.GetRowCellValue(e.RowHandle, "TIEUSU").ToString().Trim();
-            }*/
+        {
+            cbChucVu.Enabled = false;
+            teMaThanhVien.Enabled = false;
+            tePassWord.Enabled = true;
+            DataRow rowSelected =busTaiKhoan.GetFullInfoTaiKhoan(gridView2.GetRowCellValue(e.RowHandle, "MA").ToString().Trim());
+            cbChucVu.Text = rowSelected[5].ToString().Trim();
+            teHoTen.Text= rowSelected[1].ToString().Trim();
+            deNgaySinh.Text= rowSelected[2].ToString().Split(' ')[0];
+            teDiaChi.Text= rowSelected[4].ToString().Trim();
+            teSDT.Text= rowSelected[3].ToString().Trim();
+            teMaThanhVien.Text = rowSelected[0].ToString().Trim();
+            teBangCap.Text = rowSelected[7].ToString().Trim();
+            teChuyenKhoa.Text = rowSelected[6].ToString().Trim();
+            tePassWord.Text = "";
+            displayFollowChucVu(cbChucVu.Text.Trim());
+
         }
     }
 }

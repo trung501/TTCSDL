@@ -12,15 +12,14 @@ namespace BUS
 {
     public class BUS_ThemTK
     {
+        DBProvider dp = new DBProvider();
+
         DAO_TaiKhoan dao = new DAO_TaiKhoan();
         public DataTable getAllTaiKhoan(string maQT, string pass)
         {
             return dao.getAllTaiKhoan(maQT, pass);
         }
-        public string NextMATHANHVIEN()
-        {
-            return "test";
-        }
+      
         public bool InsertTaiKhoan(DTO_ThemTK tk)
         {
             return dao.InsertTaiKhoan(tk);
@@ -33,9 +32,17 @@ namespace BUS
         {
             return dao.DeleteTaikhoan(MaTK);
         }
-        public DataTable GetAllGeneralInfoTaiKhoan(string maTK)
+        public DataRow GetGeneralInfoTaiKhoan(string maTK)
         {
-            return dao.GetAllGeneralInfoTaiKhoan(maTK);
+            return dao.GetGeneralInfoTaiKhoan(maTK);
+        }
+        public DataRow GetFullInfoTaiKhoan(string maTK)
+        {
+            return dao.GetFullInfoTaiKhoan(maTK);
+        }
+        public DataTable GetAllGeneralInfoTaiKhoan(string matk,string pass)
+        {
+            return dao.GetAllGeneralInfoTaiKhoan(matk,pass);
         }
         public bool UpdateTaiKhoanInfo(DTO_ThemTK tktp)
         {
@@ -45,5 +52,10 @@ namespace BUS
         {
             return dao.CheckExistance(maTK);
         }
+        public string createHashPass(string userQT, string passQT, string newPass)
+        {
+            return dp.createHashPass(userQT, passQT, newPass);
+        }
+
     }
 }

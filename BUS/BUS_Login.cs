@@ -23,5 +23,6 @@ namespace BUS
         {
             return dp.getHashPass(user, pass);
         }
+        
     }
 }

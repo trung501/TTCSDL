@@ -14,12 +14,12 @@ namespace DAO
 {
     public class DBProvider
     {
-       protected SqlConnection _conn = new SqlConnection(@"Data Source=DESKTOP-02HFG7B;Initial Catalog=QuanLiTiemChung;Integrated Security=True");
+       protected SqlConnection _conn = new SqlConnection(@"Data Source=DESKTOP-BK21BLG;Initial Catalog=QuanLiTiemChung;Integrated Security=True");
         public bool Login(string user, string pass)
         {
             string hashedPass = HashPass(pass);
 
-            string query = "SELECT * FROM TAIKHOAN WHERE MATHANHVIEN = '" + user + "' AND PASSWORD = '" + hashedPass + "'";
+            string query = "SELECT * FROM TAIKHOAN WHERE MATAIKHOAN = '" + user + "' AND HASHPASS = '" + hashedPass + "'";
             SqlDataAdapter da = new SqlDataAdapter(query, _conn);
             
             DataTable dt = new DataTable();
@@ -43,11 +43,18 @@ namespace DAO
             if (Login(user, pass)) { 
                 return HashPass(pass); 
             }
-            return "";
-            
+            return "";            
         }
-          #region Hashing Pass
-          public string HashPass(string pass)
+        public string createHashPass(string userQT, string passQT,string newPass)
+        {
+            if (Login(userQT, passQT))
+            {
+                return HashPass(newPass);
+            }
+            return "";
+        }
+        #region Hashing Pass
+        public string HashPass(string pass)
           {
                SHA1 shaH = new SHA1CryptoServiceProvider();
                MD5 md5H = new MD5CryptoServiceProvider();

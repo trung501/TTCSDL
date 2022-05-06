@@ -34,12 +34,6 @@ namespace GUI
             this.groupcDanhSachTK = new DevExpress.XtraEditors.GroupControl();
             this.gridcDanhSachTK = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.MaThanhVien = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.HoTen = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NgaySinh = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ChucVu = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.SDT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.DiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcThaoTac = new DevExpress.XtraEditors.GroupControl();
             this.btnReset = new DevExpress.XtraEditors.SimpleButton();
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
@@ -85,6 +79,7 @@ namespace GUI
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
+            this.btnSua = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupcDanhSachTK)).BeginInit();
@@ -148,20 +143,13 @@ namespace GUI
             this.gridcDanhSachTK.Location = new System.Drawing.Point(0, 36);
             this.gridcDanhSachTK.MainView = this.gridView2;
             this.gridcDanhSachTK.Name = "gridcDanhSachTK";
-            this.gridcDanhSachTK.Size = new System.Drawing.Size(1062, 366);
+            this.gridcDanhSachTK.Size = new System.Drawing.Size(1062, 507);
             this.gridcDanhSachTK.TabIndex = 11;
             this.gridcDanhSachTK.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
             // gridView2
             // 
-            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.MaThanhVien,
-            this.HoTen,
-            this.NgaySinh,
-            this.ChucVu,
-            this.SDT,
-            this.DiaChi});
             this.gridView2.GridControl = this.gridcDanhSachTK;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsBehavior.Editable = false;
@@ -171,63 +159,10 @@ namespace GUI
             this.gridView2.OptionsView.ShowGroupPanel = false;
             this.gridView2.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView2_RowClick);
             // 
-            // MaThanhVien
-            // 
-            this.MaThanhVien.Caption = "Mã thành viên";
-            this.MaThanhVien.MinWidth = 25;
-            this.MaThanhVien.Name = "MaThanhVien";
-            this.MaThanhVien.Visible = true;
-            this.MaThanhVien.VisibleIndex = 1;
-            this.MaThanhVien.Width = 94;
-            // 
-            // HoTen
-            // 
-            this.HoTen.Caption = "Họ và tên";
-            this.HoTen.MinWidth = 25;
-            this.HoTen.Name = "HoTen";
-            this.HoTen.Visible = true;
-            this.HoTen.VisibleIndex = 2;
-            this.HoTen.Width = 94;
-            // 
-            // NgaySinh
-            // 
-            this.NgaySinh.Caption = "Ngày sinh";
-            this.NgaySinh.MinWidth = 25;
-            this.NgaySinh.Name = "NgaySinh";
-            this.NgaySinh.Visible = true;
-            this.NgaySinh.VisibleIndex = 3;
-            this.NgaySinh.Width = 94;
-            // 
-            // ChucVu
-            // 
-            this.ChucVu.Caption = "Chức vụ";
-            this.ChucVu.MinWidth = 25;
-            this.ChucVu.Name = "ChucVu";
-            this.ChucVu.Visible = true;
-            this.ChucVu.VisibleIndex = 0;
-            this.ChucVu.Width = 94;
-            // 
-            // SDT
-            // 
-            this.SDT.Caption = "Số điện thoại";
-            this.SDT.MinWidth = 25;
-            this.SDT.Name = "SDT";
-            this.SDT.Visible = true;
-            this.SDT.VisibleIndex = 4;
-            this.SDT.Width = 94;
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.Caption = "Địa chỉ";
-            this.DiaChi.MinWidth = 25;
-            this.DiaChi.Name = "DiaChi";
-            this.DiaChi.Visible = true;
-            this.DiaChi.VisibleIndex = 5;
-            this.DiaChi.Width = 94;
-            // 
             // gcThaoTac
             // 
             this.gcThaoTac.Controls.Add(this.btnReset);
+            this.gcThaoTac.Controls.Add(this.btnSua);
             this.gcThaoTac.Controls.Add(this.btnXoa);
             this.gcThaoTac.Controls.Add(this.btnThem);
             this.gcThaoTac.Location = new System.Drawing.Point(810, 2);
@@ -242,7 +177,7 @@ namespace GUI
             // 
             this.btnReset.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
             this.btnReset.Appearance.Options.UseBackColor = true;
-            this.btnReset.Location = new System.Drawing.Point(52, 187);
+            this.btnReset.Location = new System.Drawing.Point(52, 200);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(154, 35);
             this.btnReset.TabIndex = 2;
@@ -253,7 +188,7 @@ namespace GUI
             // 
             this.btnXoa.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Question;
             this.btnXoa.Appearance.Options.UseBackColor = true;
-            this.btnXoa.Location = new System.Drawing.Point(52, 137);
+            this.btnXoa.Location = new System.Drawing.Point(52, 155);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(154, 35);
             this.btnXoa.TabIndex = 1;
@@ -263,7 +198,7 @@ namespace GUI
             // 
             this.btnThem.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
             this.btnThem.Appearance.Options.UseBackColor = true;
-            this.btnThem.Location = new System.Drawing.Point(52, 87);
+            this.btnThem.Location = new System.Drawing.Point(52, 60);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(154, 35);
             this.btnThem.TabIndex = 0;
@@ -491,7 +426,8 @@ namespace GUI
             this.cbChucVu.Properties.Items.AddRange(new object[] {
             "Bác sĩ",
             "Thu ngân",
-            "Quản lí kho"});
+            "Quản lí kho",
+            "Quản trị"});
             this.cbChucVu.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbChucVu.Size = new System.Drawing.Size(154, 24);
             this.cbChucVu.TabIndex = 4;
@@ -620,6 +556,16 @@ namespace GUI
             // 
             this.sqlDataSource1.Name = "sqlDataSource1";
             // 
+            // btnSua
+            // 
+            this.btnSua.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Success;
+            this.btnSua.Appearance.Options.UseBackColor = true;
+            this.btnSua.Location = new System.Drawing.Point(52, 105);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(154, 35);
+            this.btnSua.TabIndex = 1;
+            this.btnSua.Text = "Sửa tài khoản";
+            // 
             // TaiKhoanGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -714,12 +660,7 @@ namespace GUI
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraGrid.GridControl gridcDanhSachTK;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraGrid.Columns.GridColumn ChucVu;
-        private DevExpress.XtraGrid.Columns.GridColumn MaThanhVien;
-        private DevExpress.XtraGrid.Columns.GridColumn HoTen;
-        private DevExpress.XtraGrid.Columns.GridColumn NgaySinh;
-        private DevExpress.XtraGrid.Columns.GridColumn SDT;
-        private DevExpress.XtraGrid.Columns.GridColumn DiaChi;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
+        private DevExpress.XtraEditors.SimpleButton btnSua;
     }
 }

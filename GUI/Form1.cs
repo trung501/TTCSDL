@@ -32,18 +32,14 @@ namespace GUI
         public Form1(string maTK, string pass) //uyen
         {
             InitializeComponent();
-            if (maTK == "G00")
-            {
+            DataRow infoTaiKhoan = busTK.GetFullInfoTaiKhoan(maTK);
+            if (maTK == "G00" || infoTaiKhoan ==null)
+            {                
                 taikhoan = new DTO_ThemTK("G00",null, "Khách hàng",null,null,null,null,null);
-            }
+            }            
             else 
             {
-                DataTable taiKhoanInfo = busTK.GetAllGeneralInfoTaiKhoan(maTK);
-                foreach (DataRow row in taiKhoanInfo.Rows)
-                {
-                    taikhoan = new DTO_ThemTK(row["MATHANHVIEN"].ToString(), row["CHUCVU"].ToString(), row["HOTEN"].ToString(), row["NGAYSINH"].ToString().Split(' ')[0], row["SDT"].ToString(), row["DIACHI"].ToString(), row["CHUYENKHOA"].ToString(), row["BANGCAP"].ToString());
-                    break;
-                }
+                taikhoan = new DTO_ThemTK(infoTaiKhoan["MA"].ToString(), infoTaiKhoan["CHUCVU"].ToString(), infoTaiKhoan["HOTEN"].ToString(), infoTaiKhoan["NGAYSINH"].ToString().Split(' ')[0], infoTaiKhoan["SDT"].ToString(), infoTaiKhoan["DIACHI"].ToString(), null,null );               
             }
             
             barStaticItem.Caption = "Xin chào " + taikhoan.HOTEN;
@@ -77,8 +73,23 @@ namespace GUI
             container.Controls.Add(HomeGUI.Instance);
             HomeGUI.Instance.Dock = DockStyle.Fill;
 
-            //KhachHangDisplay();
 
+            /*if (maTK.StartsWith("QT"))
+            {
+                AdminDisplay();
+            }
+            else if (maTK.StartsWith("TN"))
+            {
+                ThuNganDisplay();
+            }
+            else if (maTK.StartsWith("NK"))
+            {
+                NhapKhoDisplay();
+            }
+            else
+            {
+                KhachHangDisplay();
+            }*/
             //AdminDisplay();
         }
        

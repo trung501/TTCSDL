@@ -36,10 +36,12 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.checkKhachHang = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.tbUser.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chbShowPass.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkKhachHang.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tbUser
@@ -120,6 +122,15 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // checkKhachHang
+            // 
+            this.checkKhachHang.Location = new System.Drawing.Point(370, 152);
+            this.checkKhachHang.Name = "checkKhachHang";
+            this.checkKhachHang.Properties.Caption = "Khách hàng";
+            this.checkKhachHang.Size = new System.Drawing.Size(133, 24);
+            this.checkKhachHang.TabIndex = 2;
+            this.checkKhachHang.Click += new System.EventHandler(this.checkKhachHang_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -128,6 +139,7 @@
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.checkKhachHang);
             this.Controls.Add(this.chbShowPass);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.tbPassword);
@@ -143,6 +155,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chbShowPass.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkKhachHang.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,5 +169,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.CheckEdit checkKhachHang;
     }
 }

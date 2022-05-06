@@ -133,5 +133,11 @@ namespace GUI
         {
             tbUser.Text = tbUser.Text.ToUpper();
         }
+
+        private void checkKhachHang_Click(object sender, EventArgs e)
+        {
+            new Form1("G00", "").Show();
+            this.Hide();
+        }
     }
 }
