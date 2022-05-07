@@ -504,6 +504,8 @@
             // 
             // groupControl3
             // 
+            this.groupControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl3.Controls.Add(this.lbNewNGH);
             this.groupControl3.Controls.Add(this.gridNGH);
             this.groupControl3.Controls.Add(this.labelControl5);

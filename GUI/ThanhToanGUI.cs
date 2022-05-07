@@ -86,7 +86,7 @@ namespace GUI
         {
             if (tbTongTien.Text != "")
             {
-                tbPhaiTra.Text = (Convert.ToInt32(tbTongTien.Text) - Convert.ToInt32(tbTongTien.Text) * Convert.ToDouble(tbChieuKhau.Text)).ToString();
+                tbPhaiTra.Text = (Convert.ToDouble(tbTongTien.Text) - Convert.ToDouble(tbTongTien.Text) * Convert.ToDouble(tbChieuKhau.Text)).ToString();
             }
             else return;
         }
@@ -95,7 +95,7 @@ namespace GUI
         {
             if (tbKhachDua.Text != "" && tbPhaiTra.Text != "")
             {
-                tbTraLai.Text = (Convert.ToInt32(tbKhachDua.Text) - Convert.ToInt32(tbPhaiTra.Text)).ToString();
+                tbTraLai.Text = (Convert.ToDouble(tbKhachDua.Text) - Convert.ToDouble(tbPhaiTra.Text)).ToString();
             }
             else return;
         }

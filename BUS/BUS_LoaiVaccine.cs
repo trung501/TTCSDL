@@ -25,13 +25,9 @@ namespace BUS
         }
         public string NextMAVACCINE()
         {
-            string MaLVC = daoLoaiVC.GetLastestMaLoaiVC().Trim();
-            if (MaLVC == null)
-            {
-                return "VC001";
-            }
-            int count = MaLVC.Length - 2;
-            int ptIndex = Convert.ToInt32(MaLVC.Substring(2)) + 1;
+            string MaLVC = daoLoaiVC.GetLastestMaLoaiVC().Trim();            
+            int count = MaLVC.Length - 3;
+            int ptIndex = Convert.ToInt32(MaLVC.Substring(3)) + 1;
             MaLVC = "LVC";
             for (int i = 0; i < count - ptIndex.ToString().Length; i++)
                 MaLVC += "0";
