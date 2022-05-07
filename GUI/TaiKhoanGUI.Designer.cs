@@ -36,6 +36,7 @@ namespace GUI
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gcThaoTac = new DevExpress.XtraEditors.GroupControl();
             this.btnReset = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSua = new DevExpress.XtraEditors.SimpleButton();
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.gcThongtinTK = new DevExpress.XtraEditors.GroupControl();
@@ -79,7 +80,6 @@ namespace GUI
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
-            this.btnSua = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupcDanhSachTK)).BeginInit();
@@ -184,6 +184,17 @@ namespace GUI
             this.btnReset.Text = "Đặt lại";
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click_1);
             // 
+            // btnSua
+            // 
+            this.btnSua.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Success;
+            this.btnSua.Appearance.Options.UseBackColor = true;
+            this.btnSua.Location = new System.Drawing.Point(52, 105);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(154, 35);
+            this.btnSua.TabIndex = 1;
+            this.btnSua.Text = "Sửa tài khoản";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
             // btnXoa
             // 
             this.btnXoa.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Question;
@@ -193,6 +204,7 @@ namespace GUI
             this.btnXoa.Size = new System.Drawing.Size(154, 35);
             this.btnXoa.TabIndex = 1;
             this.btnXoa.Text = "Xóa tài khoản";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -203,6 +215,7 @@ namespace GUI
             this.btnThem.Size = new System.Drawing.Size(154, 35);
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm tài khoản";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // gcThongtinTK
             // 
@@ -555,16 +568,6 @@ namespace GUI
             // sqlDataSource1
             // 
             this.sqlDataSource1.Name = "sqlDataSource1";
-            // 
-            // btnSua
-            // 
-            this.btnSua.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Success;
-            this.btnSua.Appearance.Options.UseBackColor = true;
-            this.btnSua.Location = new System.Drawing.Point(52, 105);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(154, 35);
-            this.btnSua.TabIndex = 1;
-            this.btnSua.Text = "Sửa tài khoản";
             // 
             // TaiKhoanGUI
             // 

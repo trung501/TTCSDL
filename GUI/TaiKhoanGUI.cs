@@ -34,15 +34,18 @@ namespace GUI
             }
         }
         BUS_ThemTK busTaiKhoan = new BUS_ThemTK();
+        BUS_BacSi busBacSi = new BUS_BacSi();
+        BUS_ThuNgan busThuNgan = new BUS_ThuNgan();
+        BUS_QuanKho busQuanKho = new BUS_QuanKho();
+        BUS_QuanTri BusQuanTri = new BUS_QuanTri();
         public TaiKhoanGUI(string maQT, string pass)
         {
             InitializeComponent();
-
+            cbChucVu.SelectedIndex = 0;
             deNgaySinh.Text = DateTime.Now.ToString("dd/MM/yyyy");
             gridView2.RowClick += gridcDanhSachTK_Click;
             GridLocalizer.Active = new MyGridLocalizer();
             this.setVerified(maQT, pass);
-
         }
         public void setVerified(string maQT,string pass)
         {
@@ -188,6 +191,7 @@ namespace GUI
             deNgaySinh.Text = DateTime.Now.ToString("dd/MM/yyyy"); ;
             cbChucVu.Text = null;
             cbChucVu.Enabled = true;
+            cbChucVu.SelectedIndex = 0;
             teMaThanhVien.Enabled = true;
             RefreshGrid();
         }
@@ -223,6 +227,70 @@ namespace GUI
             teChuyenKhoa.Text = rowSelected[6].ToString().Trim();
             tePassWord.Text = "";
             displayFollowChucVu(cbChucVu.Text.Trim());
+
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            if (teMaThanhVien.Text.Trim() != "")
+            {
+                MessageBoxEx.Show("Để thêm tài khoản, vui lòng để trống mã tài khoản.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            
+            string maTK = "";
+            if (cbChucVu.Text.Trim()=="Bác sĩ")
+            {
+                maTK = busBacSi.NextMABS();
+            }
+            else if (cbChucVu.Text.Trim() == "Thu ngân")
+            {
+                maTK = busThuNgan.NextMATHUNGAN();
+            }
+            else if (cbChucVu.Text.Trim() == "Quản lí kho")
+            {
+                maTK = busQuanKho.NextMAQUANKHO();
+            }
+            else if (cbChucVu.Text.Trim() == "Quản trị")
+            {
+                maTK = BusQuanTri.NextMAQUANTRI();
+            }
+            else
+            {
+                MessageBoxEx.Show("Chưa có chức vụ đó", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (teHoTen.Text != "" && cbChucVu.Text != "" && deNgaySinh.Text != "" && teDiaChi.Text != "" && tePassWord.Text != "" && teSDT.Text != "" )
+            {
+                string newPassUser = busTaiKhoan.createHashPass(maQT,pass, tePassWord.Text.Trim());
+                if (busTaiKhoan.InsertTaiKhoan(new DTO_ThemTK(maTK, newPassUser, cbChucVu.Text, teHoTen.Text, deNgaySinh.DateTime.ToString("yyyy-MM-dd"), teSDT.Text, teDiaChi.Text,teChuyenKhoa.Text,teBangCap.Text),maQT,pass))
+                {
+                    MessageBoxEx.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    string showInfo = "Mã tài khoản: " + maTK + "\nMật khẩu: " + tePassWord.Text.Trim();
+                    MessageBoxEx.Show(showInfo, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RefreshGrid();
+                    btnReset.PerformClick();
+                }
+                else
+                {
+                    MessageBoxEx.Show("Thêm không thành công. Vui lòng thử lại. Đảm bảo bạn đang đăng nhập với tài khoản quản trị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBoxEx.Show("Vui lòng nhập toàn bộ thông tin tài khoản trước khi thêm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
 
         }
     }

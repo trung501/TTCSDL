@@ -47,11 +47,7 @@ namespace DAO
         }
         public string createHashPass(string userQT, string passQT,string newPass)
         {
-            if (Login(userQT, passQT))
-            {
-                return HashPass(newPass);
-            }
-            return "";
+            return HashPass(newPass);
         }
         #region Hashing Pass
         public string HashPass(string pass)

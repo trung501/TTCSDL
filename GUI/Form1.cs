@@ -35,11 +35,11 @@ namespace GUI
             DataRow infoTaiKhoan = busTK.GetFullInfoTaiKhoan(maTK);
             if (maTK == "G00" || infoTaiKhoan ==null)
             {                
-                taikhoan = new DTO_ThemTK("G00",null, "Khách hàng",null,null,null,null,null);
+                taikhoan = new DTO_ThemTK("G00",null,null, "Khách hàng",null,null,null,null,null);
             }            
             else 
             {
-                taikhoan = new DTO_ThemTK(infoTaiKhoan["MA"].ToString(), infoTaiKhoan["CHUCVU"].ToString(), infoTaiKhoan["HOTEN"].ToString(), infoTaiKhoan["NGAYSINH"].ToString().Split(' ')[0], infoTaiKhoan["SDT"].ToString(), infoTaiKhoan["DIACHI"].ToString(), null,null );               
+                taikhoan = new DTO_ThemTK(maTK, pass, infoTaiKhoan["CHUCVU"].ToString(), infoTaiKhoan["HOTEN"].ToString(), infoTaiKhoan["NGAYSINH"].ToString().Split(' ')[0], infoTaiKhoan["SDT"].ToString(), infoTaiKhoan["DIACHI"].ToString(), null,null );               
             }
             
             barStaticItem.Caption = "Xin chào " + taikhoan.HOTEN;

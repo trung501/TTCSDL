@@ -19,10 +19,10 @@ namespace BUS
         {
             return dao.getAllTaiKhoan(maQT, pass);
         }
-      
-        public bool InsertTaiKhoan(DTO_ThemTK tk)
+
+        public bool InsertTaiKhoan(DTO_ThemTK tk,string maQT, string passQT)
         {
-            return dao.InsertTaiKhoan(tk);
+            return dao.InsertTaiKhoan(tk,maQT,passQT);
         }
         public string GetHoTenFromTaiKhoan(string maTK)
         {
@@ -40,9 +40,9 @@ namespace BUS
         {
             return dao.GetFullInfoTaiKhoan(maTK);
         }
-        public DataTable GetAllGeneralInfoTaiKhoan(string matk,string pass)
+        public DataTable GetAllGeneralInfoTaiKhoan(string matk, string pass)
         {
-            return dao.GetAllGeneralInfoTaiKhoan(matk,pass);
+            return dao.GetAllGeneralInfoTaiKhoan(matk, pass);
         }
         public bool UpdateTaiKhoanInfo(DTO_ThemTK tktp)
         {
@@ -56,6 +56,9 @@ namespace BUS
         {
             return dp.createHashPass(userQT, passQT, newPass);
         }
-
+        public string GetHashpassFromTaiKhoan(string maQT, string passQT, string maTK)
+        {
+            return dao.GetHashpassFromTaiKhoan(maQT, passQT, maTK);
+        }
     }
 }

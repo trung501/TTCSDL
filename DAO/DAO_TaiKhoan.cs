@@ -39,7 +39,7 @@ namespace DAO
             return dt;
         }
        
-        public bool InsertTaiKhoan(DTO_ThemTK tk)
+        public bool InsertTaiKhoan(DTO_ThemTK tk,string maQT,string passQT)
         {
             try
             {
@@ -47,6 +47,8 @@ namespace DAO
 
                 SqlCommand cmd = new SqlCommand("sp_InsertTaiKhoan", _conn);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@maQT", maQT);
+                cmd.Parameters.AddWithValue("@passQT", passQT);
                 cmd.Parameters.AddWithValue("@MATK", tk.MATAIKHOAN);
                 cmd.Parameters.AddWithValue("@CHUCVU", tk.CHUCVU);
                 cmd.Parameters.AddWithValue("@HOTEN", tk.HOTEN);
@@ -55,7 +57,7 @@ namespace DAO
                 cmd.Parameters.AddWithValue("@DIACHI", tk.DIACHI);
                 cmd.Parameters.AddWithValue("@CHUYENKHOA", tk.CHUYENKHOA);
                 cmd.Parameters.AddWithValue("@BANGCAP", tk.BANGCAP);
-
+                cmd.Parameters.AddWithValue("@PASSWORD", tk.HASHPASS);
                 if (cmd.ExecuteNonQuery() > 0)
                 {
                     return true;
@@ -222,6 +224,39 @@ namespace DAO
             if (dt.Rows.Count > 0)
             {
                 return dt.Rows[0];
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public string GetHashpassFromTaiKhoan(string maQT,string passQT,string maTK)
+        {
+            DataTable dt = new DataTable();
+            SqlDataReader rd;
+            try
+            {
+                _conn.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_hashpassFromMa", _conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@maQT", maQT);
+                cmd.Parameters.AddWithValue("@passQT", passQT);
+                cmd.Parameters.AddWithValue("@MATK", maTK);
+                rd = cmd.ExecuteReader();
+                dt.Load(rd);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                _conn.Close();
+            }
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0][0].ToString();
             }
             else
             {
