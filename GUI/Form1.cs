@@ -23,10 +23,10 @@ namespace GUI
         PhieuTiemGUI ptGUI;
         TaiKhoanGUI tkGUI;
 
-
         public Form1(string maTK, string pass) //uyen
         {
             InitializeComponent();
+            
             DataRow infoTaiKhoan = busTK.GetFullInfoTaiKhoan(maTK);
             if (maTK == "G00" || infoTaiKhoan == null)
             {
@@ -36,10 +36,10 @@ namespace GUI
             {
                 taikhoan = new DTO_ThemTK(maTK, pass, infoTaiKhoan["CHUCVU"].ToString(), infoTaiKhoan["HOTEN"].ToString(), infoTaiKhoan["NGAYSINH"].ToString().Split(' ')[0], infoTaiKhoan["SDT"].ToString(), infoTaiKhoan["DIACHI"].ToString(), null, null);
             }
-
+         
             barStaticItem.Caption = "Xin chào " + taikhoan.HOTEN;
 
-            ttGUI = new ThanhToanGUI(thungan);
+            ttGUI = new ThanhToanGUI(taikhoan);
             container.Controls.Add(ttGUI);
             ttGUI.Dock = DockStyle.Fill;
 

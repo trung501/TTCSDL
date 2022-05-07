@@ -297,7 +297,7 @@ namespace GUI
                 }
                 else
                 {
-                    passUser = busTaiKhoan.createHashPass(maQT, pass, teMaThanhVien.Text.Trim());
+                    passUser = busTaiKhoan.createHashPass(maQT, pass, tePassWord.Text.Trim());
                 }
                 if ( busTaiKhoan.UpdateTaiKhoanInfo(new DTO_ThemTK(teMaThanhVien.Text, passUser, cbChucVu.Text, teHoTen.Text, deNgaySinh.DateTime.ToString("yyyy-MM-dd"), teSDT.Text, teDiaChi.Text, teChuyenKhoa.Text, teBangCap.Text), maQT, pass))
                 {

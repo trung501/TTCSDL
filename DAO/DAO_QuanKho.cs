@@ -60,7 +60,7 @@ namespace DAO
                 }
                 else if (dt.Rows.Count == 0)
                 {
-                    return "QK00";
+                    return "QK000";
                 }
             }
             catch (Exception)

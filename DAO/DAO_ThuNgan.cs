@@ -94,6 +94,10 @@ namespace DAO
                 {
                     return dt.Rows[0][0].ToString();
                 }
+                else
+                {
+                    return  "TN000";
+                }
             }
             catch (Exception)
             {

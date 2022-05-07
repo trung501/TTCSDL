@@ -34,6 +34,10 @@ namespace DAO
                 {
                     return dt.Rows[0][0].ToString();
                 }
+                else
+                {
+                    return "GH000";
+                }
             }
             catch (Exception)
             {

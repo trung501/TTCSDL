@@ -26,13 +26,20 @@ namespace GUI
         DataTable listVC = new DataTable();
 
         DTO_ThuNgan thuNgan;
+        bool isThuNgan = true;
 
-        public ThanhToanGUI(DTO_ThuNgan thuNgan)
+        public ThanhToanGUI(DTO_ThemTK taikhoan)
         {
             InitializeComponent();
-
-            this.thuNgan = thuNgan;
-
+            if (taikhoan.MATAIKHOAN.StartsWith("TN")) { 
+            this.thuNgan = new DTO_ThuNgan(taikhoan.MATAIKHOAN, taikhoan.HOTEN, taikhoan.NGAYSINH, taikhoan.DIACHI, taikhoan.CHUCVU);
+            }
+            else
+            {
+                this.thuNgan = new DTO_ThuNgan("TN000","","","","");
+                isThuNgan = false;
+            }
+            
             dtpNgayTao.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
             gridView2.RowClick += GridView2_RowClick;
@@ -53,25 +60,6 @@ namespace GUI
             if (tbMaPT.Text == "") return;
 
             int tongTien = 0;
-
-            //listVC = busPT.GetVCFromPHIEUTIEM(tbMaPT.Text);
-            //DataTable dtb = new DataTable();
-            //dtb.Columns.Add("MAVACCINE");
-            //dtb.Columns.Add("TENVACCINE");
-            //dtb.Columns.Add("NHASX");
-            //dtb.Columns.Add("LOAIVC");
-            //dtb.Columns.Add("DONGIA");
-            //for (int i = 0; i < listVC.Count; i++)
-            //{
-            //    DataRow dr = dtb.NewRow();
-            //    dr["MAVACCINE"] = listVC[i].MAVACCINE;
-            //    dr["TENVACCINE"] = listVC[i].TENVACCINE;
-            //    dr["NHASX"] = listVC[i].NHASX;
-            //    dr["LOAIVC"] = listVC[i].LOAIVACCINE;
-            //    dr["DONGIA"] = listVC[i].DONGIA;
-            //    dtb.Rows.Add(dr);
-            //    tongTien += listVC[i].DONGIA;
-            //}
 
             listVC = busPT.GetVCFromPHIEUTIEM(tbMaPT.Text);
             for (int i = 0; i < listVC.Rows.Count; i++)
@@ -136,6 +124,11 @@ namespace GUI
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
+            if (!isThuNgan)
+            {
+                MessageBoxEx.Show("Chỉ có thu ngân mới được thanh toán.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             if (tbTenNGH.Text != "" && tbDiaChiNGH.Text != "" && tbSdtNGH.Text != "" && tbMaPT.Text != "" && tbChieuKhau.Text != "" && dtpNgayTao.Text != "" && tbTongTien.Text != "" && tbPhaiTra.Text != "" && tbKhachDua.Text != "" && tbTraLai.Text != "")
             {
                 if (tbMaGH.Text == "")

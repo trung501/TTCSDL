@@ -57,10 +57,10 @@
             // 
             this.container.Controls.Add(this.progressPanel);
             this.container.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.container.Location = new System.Drawing.Point(252, 37);
+            this.container.Location = new System.Drawing.Point(270, 37);
             this.container.Margin = new System.Windows.Forms.Padding(2, 6, 2, 6);
             this.container.Name = "container";
-            this.container.Size = new System.Drawing.Size(1053, 831);
+            this.container.Size = new System.Drawing.Size(1035, 831);
             this.container.TabIndex = 0;
             // 
             // progressPanel
@@ -75,7 +75,7 @@
             this.progressPanel.Location = new System.Drawing.Point(0, 0);
             this.progressPanel.Margin = new System.Windows.Forms.Padding(4);
             this.progressPanel.Name = "progressPanel";
-            this.progressPanel.Size = new System.Drawing.Size(1053, 831);
+            this.progressPanel.Size = new System.Drawing.Size(1035, 831);
             this.progressPanel.TabIndex = 0;
             this.progressPanel.Text = "progressPanel1";
             this.progressPanel.Visible = false;
@@ -136,11 +136,11 @@
             this.aceTaoTaiKhoan});
             this.accordionControl1.Location = new System.Drawing.Point(0, 37);
             this.accordionControl1.Margin = new System.Windows.Forms.Padding(2, 6, 2, 6);
+            this.accordionControl1.MaximumSize = new System.Drawing.Size(270, 0);
             this.accordionControl1.Name = "accordionControl1";
-            this.accordionControl1.OptionsMinimizing.MaximumTextHeight = 270;
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Fluent;
             this.accordionControl1.ShowFilterControl = DevExpress.XtraBars.Navigation.ShowFilterControl.Auto;
-            this.accordionControl1.Size = new System.Drawing.Size(252, 831);
+            this.accordionControl1.Size = new System.Drawing.Size(270, 831);
             this.accordionControl1.TabIndex = 1;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             this.accordionControl1.ElementClick += new DevExpress.XtraBars.Navigation.ElementClickEventHandler(this.accordionControl1_ElementClick);
@@ -253,7 +253,7 @@
             this.FluentDesignFormControl = this.fluentDesignFormControl1;
             this.IconOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("Form1.IconOptions.SvgImage")));
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.MinimumSize = new System.Drawing.Size(1230, 820);
+            this.MinimumSize = new System.Drawing.Size(1236, 820);
             this.Name = "Form1";
             this.NavigationControl = this.accordionControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

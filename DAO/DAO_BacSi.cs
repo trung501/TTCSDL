@@ -59,6 +59,10 @@ namespace DAO
                 {
                     return dt.Rows[0][0].ToString();
                 }
+                else
+                {
+                    return "BS000";
+                }
             }
             catch (Exception)
             {

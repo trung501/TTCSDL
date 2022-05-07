@@ -62,6 +62,10 @@ namespace DAO
                 {
                     return dt.Rows[0][0].ToString();
                 }
+                else
+                {
+                    return "LVC000";
+                }
             }
             catch (Exception)
             {

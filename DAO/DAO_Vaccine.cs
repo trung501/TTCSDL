@@ -13,10 +13,7 @@ namespace DAO
     {
         public DataTable getAllVaccine()
         {
-            //string query = "SELECT * FROM VACCINE";
-            //SqlDataAdapter da = new SqlDataAdapter(query, _conn);
-            //DataTable dt = new DataTable();
-            //da.Fill(dt);
+
 
             SqlDataReader rd;
             DataTable dt = new DataTable();
@@ -417,6 +414,10 @@ namespace DAO
                 if (dt.Rows.Count > 0)
                 {
                     return dt.Rows[0][0].ToString();
+                }
+                else
+                {
+                    return "VC000";
                 }
             }
             catch (Exception)
