@@ -119,7 +119,7 @@ namespace DAO
 
                 SqlCommand cmd = new SqlCommand("sp_DeleteTaiKhoan", _conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@MATHANHVIEN", MaTK);
+                cmd.Parameters.AddWithValue("@MATK", MaTK);
                 if (cmd.ExecuteNonQuery() > 0)
                 {
                     return true;
@@ -238,11 +238,11 @@ namespace DAO
             {
                 _conn.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_hashpassFromMa", _conn);
+                SqlCommand cmd = new SqlCommand("sp_GetHashpassFromMa", _conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@maQT", maQT);
                 cmd.Parameters.AddWithValue("@passQT", passQT);
-                cmd.Parameters.AddWithValue("@MATK", maTK);
+                cmd.Parameters.AddWithValue("@maUser", maTK);
                 rd = cmd.ExecuteReader();
                 dt.Load(rd);
             }
@@ -264,7 +264,7 @@ namespace DAO
             }
         }
 
-        public bool UpdateTaiKhoanInfo(DTO_ThemTK tktp)
+        public bool UpdateTaiKhoanInfo(DTO_ThemTK tktp, string maQT, string passQT)
         {
             try
             {
@@ -272,6 +272,8 @@ namespace DAO
 
                 SqlCommand cmd = new SqlCommand("sp_UpdateTaiKhoanInfo", _conn);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@maQT", maQT);
+                cmd.Parameters.AddWithValue("@passQT", passQT);
                 cmd.Parameters.AddWithValue("@MATK", tktp.MATAIKHOAN);
                 cmd.Parameters.AddWithValue("@CHUCVU", tktp.CHUCVU);
                 cmd.Parameters.AddWithValue("@HOTEN", tktp.HOTEN);
@@ -280,6 +282,7 @@ namespace DAO
                 cmd.Parameters.AddWithValue("@DIACHI", tktp.DIACHI);
                 cmd.Parameters.AddWithValue("@CHUYENKHOA", tktp.CHUYENKHOA);
                 cmd.Parameters.AddWithValue("@BANGCAP", tktp.BANGCAP);
+                cmd.Parameters.AddWithValue("@PASSWORD", tktp.HASHPASS);
                 if (cmd.ExecuteNonQuery() > 0)
                 {
                     return true;

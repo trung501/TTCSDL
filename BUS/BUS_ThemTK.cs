@@ -44,9 +44,9 @@ namespace BUS
         {
             return dao.GetAllGeneralInfoTaiKhoan(matk, pass);
         }
-        public bool UpdateTaiKhoanInfo(DTO_ThemTK tktp)
+        public bool UpdateTaiKhoanInfo(DTO_ThemTK tktp, string passQT, string newPass)
         {
-            return dao.UpdateTaiKhoanInfo(tktp);
+            return dao.UpdateTaiKhoanInfo(tktp,  passQT,  newPass);
         }
         public bool CheckExistance(string maTK)
         {

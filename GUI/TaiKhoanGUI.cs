@@ -286,12 +286,48 @@ namespace GUI
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            
+            if (busTaiKhoan.CheckExistance(teMaThanhVien.Text.Trim()))
+            {
+                string passUser = "";
 
+                if (tePassWord.Text.Trim() == "")
+                {
+                    passUser = busTaiKhoan.GetHashpassFromTaiKhoan(maQT,pass, teMaThanhVien.Text.Trim());
+                }
+                else
+                {
+                    passUser = busTaiKhoan.createHashPass(maQT, pass, teMaThanhVien.Text.Trim());
+                }
+                if ( busTaiKhoan.UpdateTaiKhoanInfo(new DTO_ThemTK(teMaThanhVien.Text, passUser, cbChucVu.Text, teHoTen.Text, deNgaySinh.DateTime.ToString("yyyy-MM-dd"), teSDT.Text, teDiaChi.Text, teChuyenKhoa.Text, teBangCap.Text), maQT, pass))
+                {
+                    MessageBoxEx.Show("Chỉnh sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RefreshGrid();
+                }
+               
+                else
+                {
+                    MessageBoxEx.Show("Thay đổi không thành công. Vui lòng thử lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+            else
+            {
+                MessageBoxEx.Show("Mã tài khoản không tồn tại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-
+            if (busTaiKhoan.DeleteTaikhoan(teMaThanhVien.Text))
+            {
+                MessageBoxEx.Show("Xóa tài khoản thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                RefreshGrid();
+            }
+            else
+            {
+                MessageBoxEx.Show("Xóa tài khoản không thành công. Vui lòng thử lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
