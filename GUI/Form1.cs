@@ -69,7 +69,7 @@ namespace GUI
             HomeGUI.Instance.Dock = DockStyle.Fill;
 
 
-            /*if (maTK.StartsWith("QT"))
+            if (maTK.StartsWith("QT"))
             {
                 AdminDisplay();
             }
@@ -77,14 +77,18 @@ namespace GUI
             {
                 ThuNganDisplay();
             }
-            else if (maTK.StartsWith("NK"))
+            else if (maTK.StartsWith("QK"))
             {
                 NhapKhoDisplay();
+            }
+            else if (maTK.StartsWith("BS"))
+            {
+                BacSiDisplay();
             }
             else
             {
                 KhachHangDisplay();
-            }*/
+            }
             //AdminDisplay();
         }
 
@@ -96,7 +100,18 @@ namespace GUI
             accordionControl1.Elements[0].Appearance.Hovered.ForeColor = Color.FromArgb(31, 187, 166);
             HomeGUI.Instance.BringToFront();
         }
-
+        
+        private void BacSiDisplay()
+        {
+            aceHome.Visible = true;
+            aceVaccine1.Visible = true;
+            aceVaccine2.Visible = false;
+            aceLichSu.Visible = true;
+            acePhieuTiem.Visible = true;
+            aceThanhToan.Visible = false;
+            aceThongKe.Visible = false;
+            aceTaoTaiKhoan.Visible = false;
+        }
         private void KhachHangDisplay()
         {
             aceHome.Visible = true;
