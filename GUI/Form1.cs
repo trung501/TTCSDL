@@ -3,13 +3,8 @@ using DevExpress.XtraBars;
 using DTO;
 using GUI.Properties;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace GUI
@@ -27,28 +22,28 @@ namespace GUI
         NhapKhoGUI nkGUI;
         PhieuTiemGUI ptGUI;
         TaiKhoanGUI tkGUI;
-        
+
 
         public Form1(string maTK, string pass) //uyen
         {
             InitializeComponent();
             DataRow infoTaiKhoan = busTK.GetFullInfoTaiKhoan(maTK);
-            if (maTK == "G00" || infoTaiKhoan ==null)
-            {                
-                taikhoan = new DTO_ThemTK("G00",null,null, "Khách hàng",null,null,null,null,null);
-            }            
-            else 
+            if (maTK == "G00" || infoTaiKhoan == null)
             {
-                taikhoan = new DTO_ThemTK(maTK, pass, infoTaiKhoan["CHUCVU"].ToString(), infoTaiKhoan["HOTEN"].ToString(), infoTaiKhoan["NGAYSINH"].ToString().Split(' ')[0], infoTaiKhoan["SDT"].ToString(), infoTaiKhoan["DIACHI"].ToString(), null,null );               
+                taikhoan = new DTO_ThemTK("G00", null, null, "Khách hàng", null, null, null, null, null);
             }
-            
+            else
+            {
+                taikhoan = new DTO_ThemTK(maTK, pass, infoTaiKhoan["CHUCVU"].ToString(), infoTaiKhoan["HOTEN"].ToString(), infoTaiKhoan["NGAYSINH"].ToString().Split(' ')[0], infoTaiKhoan["SDT"].ToString(), infoTaiKhoan["DIACHI"].ToString(), null, null);
+            }
+
             barStaticItem.Caption = "Xin chào " + taikhoan.HOTEN;
 
             ttGUI = new ThanhToanGUI(thungan);
             container.Controls.Add(ttGUI);
             ttGUI.Dock = DockStyle.Fill;
 
-            vcGUI = new VaccineGUI();            
+            vcGUI = new VaccineGUI();
             container.Controls.Add(vcGUI);
             vcGUI.Dock = DockStyle.Fill;
 
@@ -60,7 +55,7 @@ namespace GUI
             container.Controls.Add(ptGUI);
             ptGUI.Dock = DockStyle.Fill;
 
-            tkGUI = new TaiKhoanGUI( maTK, pass);
+            tkGUI = new TaiKhoanGUI(maTK, pass);
             container.Controls.Add(tkGUI);
             tkGUI.Dock = DockStyle.Fill;
 
@@ -92,7 +87,7 @@ namespace GUI
             }*/
             //AdminDisplay();
         }
-       
+
         private void Form1_Load(object sender, EventArgs e)
         {
             //acePhieuTiem_Click(sender, e);
@@ -161,7 +156,7 @@ namespace GUI
         {
             vcGUI.RefreshGrid();
             vcGUI.BringToFront();
-           
+
         }
 
         private void acePhieuTiem_Click(object sender, EventArgs e)
