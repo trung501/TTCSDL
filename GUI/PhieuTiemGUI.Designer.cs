@@ -130,6 +130,8 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtpNgaySinh.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtpNgaySinh.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dtpNgaySinh.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.dtpNgaySinh.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.dtpNgaySinh.Size = new System.Drawing.Size(122, 24);
             this.dtpNgaySinh.TabIndex = 1;
@@ -191,6 +193,8 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtpNgayTiem.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtpNgayTiem.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dtpNgayTiem.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.dtpNgayTiem.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.dtpNgayTiem.Size = new System.Drawing.Size(189, 24);
             this.dtpNgayTiem.TabIndex = 5;

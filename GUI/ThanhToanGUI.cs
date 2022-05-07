@@ -40,7 +40,7 @@ namespace GUI
                 isThuNgan = false;
             }
             
-            dtpNgayTao.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            dtpNgayTao.Text = DateTime.Now.ToString("MM/dd/yyyy");
 
             gridView2.RowClick += GridView2_RowClick;
 
@@ -76,7 +76,7 @@ namespace GUI
 
         private void ThanhToanGUI_Load(object sender, EventArgs e)
         {
-            dtpNgayTao.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            dtpNgayTao.Text = DateTime.Now.ToString("MM/dd/yyyy");
 
             gridNGH.DataSource = busGH.GetAllNGH();
             gridView2.Columns["MAGH"].SortOrder = DevExpress.Data.ColumnSortOrder.Descending;

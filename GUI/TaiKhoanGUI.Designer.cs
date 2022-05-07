@@ -389,6 +389,8 @@ namespace GUI
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.deNgaySinh.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.deNgaySinh.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.deNgaySinh.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.deNgaySinh.Size = new System.Drawing.Size(181, 24);
             this.deNgaySinh.TabIndex = 30;
             // 

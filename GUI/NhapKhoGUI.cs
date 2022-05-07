@@ -33,8 +33,8 @@ namespace GUI
         public NhapKhoGUI()
         {
             InitializeComponent();
-            dtpNgaySanXuat.Text= DateTime.Now.ToString("dd/MM/yyyy");
-            dtpHanSuDung.Text= DateTime.Now.ToString("dd/MM/yyyy");
+            dtpNgaySanXuat.Text= DateTime.Now.ToString("MM/dd/yyyy");
+            dtpHanSuDung.Text= DateTime.Now.ToString("MM/dd/yyyy");
             gridView1.OptionsBehavior.Editable = false;
             gridView1.RowClick += gridView1_RowClick;
             gridView1.FocusedRowChanged += gridView1_FocusedRowChanged;
@@ -135,8 +135,8 @@ namespace GUI
             tbMaVC.Text = "";
             tbTenVC.Text = "";
             tbNhaSanXuat.Text ="";
-            dtpNgaySanXuat.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            dtpHanSuDung.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            dtpNgaySanXuat.Text = DateTime.Now.ToString("MM/dd/yyyy");
+            dtpHanSuDung.Text = DateTime.Now.ToString("MM/dd/yyyy");
             tbSoLo.Text = "";
             tbDonGia.Text = "";
             cbLoaiVC.Text = "";

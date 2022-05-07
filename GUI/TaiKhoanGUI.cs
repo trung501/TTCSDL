@@ -42,7 +42,7 @@ namespace GUI
         {
             InitializeComponent();
             cbChucVu.SelectedIndex = 0;
-            deNgaySinh.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            deNgaySinh.Text = DateTime.Now.ToString("MM/dd/yyyy");
             gridView2.RowClick += gridcDanhSachTK_Click;
             GridLocalizer.Active = new MyGridLocalizer();
             this.setVerified(maQT, pass);
@@ -188,7 +188,7 @@ namespace GUI
             teDiaChi.Text = null;
             teBangCap.Text = null;
             teChuyenKhoa.Text = null;
-            deNgaySinh.Text = DateTime.Now.ToString("dd/MM/yyyy"); ;
+            deNgaySinh.Text = DateTime.Now.ToString("MM/dd/yyyy");
             cbChucVu.Text = null;
             cbChucVu.Enabled = true;
             cbChucVu.SelectedIndex = 0;

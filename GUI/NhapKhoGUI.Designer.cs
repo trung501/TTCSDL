@@ -372,6 +372,7 @@ namespace GUI
             this.dtpHanSuDung.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
             this.dtpHanSuDung.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dtpHanSuDung.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dtpHanSuDung.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.dtpHanSuDung.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.dtpHanSuDung.Size = new System.Drawing.Size(208, 24);
             this.dtpHanSuDung.TabIndex = 30;
@@ -410,6 +411,7 @@ namespace GUI
             this.dtpNgaySanXuat.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
             this.dtpNgaySanXuat.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dtpNgaySanXuat.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dtpNgaySanXuat.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.dtpNgaySanXuat.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.dtpNgaySanXuat.Size = new System.Drawing.Size(208, 24);
             this.dtpNgaySanXuat.TabIndex = 5;
@@ -465,6 +467,8 @@ namespace GUI
             this.tbNhaSanXuat.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbNhaSanXuat.Location = new System.Drawing.Point(132, 60);
             this.tbNhaSanXuat.Name = "tbNhaSanXuat";
+            this.tbNhaSanXuat.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.tbNhaSanXuat.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.tbNhaSanXuat.Size = new System.Drawing.Size(208, 24);
             this.tbNhaSanXuat.TabIndex = 3;
             // 

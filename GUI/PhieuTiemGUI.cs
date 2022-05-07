@@ -42,7 +42,7 @@ namespace GUI
         {
             InitializeComponent();
 
-            dtpNgayTiem.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            dtpNgayTiem.Text = DateTime.Now.ToString("MM/dd/yyyy");
 
             gridView2.RowClick += GridView2_RowClick;
             gridView1.RowClick += GridView1_RowClick;
@@ -264,23 +264,6 @@ namespace GUI
                 return;
             }
 
-            //if (listCTT.Count > 0)
-            //{
-            //    if (busPhieuTiem.InsertPhieuTiem(new DTO_PhieuTiem(busPhieuTiem.NextMAPHIEUTIEM(), dtpNgayTiem.DateTime.ToString("yyyy-MM-dd"), tbMaKH.Text, tbMaBS.Text)))
-            //    {
-            //        for (int i = 0; i < listCTT.Count; i++)
-            //        {
-            //            if (busCTT.InsertCTT(listCTT[i]))
-            //            {
-            //            }
-            //        }
-            //        MessageBox.Show("Thêm thành công");
-            //    }
-            //}
-            //else MessageBoxEx.Show("Ban chưa nhập danh sách vaccine");
-
-
-            //gridKH.DataSource = busKH.getAllKH();
 
             PhieuTiemRP_Provider ptRP = new PhieuTiemRP_Provider(MaPT);
             ptRP.ShowReport();
@@ -305,7 +288,7 @@ namespace GUI
             tbTenKH.Text = "";
             tbTienSu.Text = "";
             dtpNgaySinh.Text = "";
-            dtpNgayTiem.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            dtpNgayTiem.Text = DateTime.Now.ToString("MM/dd/yyyy");
             cbGioiTinh.Text = "";
             tbMaBS.Text = "";
             tbMaKH.Text = "";
