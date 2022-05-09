@@ -13,11 +13,9 @@ using GUI.Properties;
 using DTO;
 using DevExpress.XtraGrid.Localization;
 
-
-
 namespace GUI
 {
-    public partial class TaiKhoanGUI : DevExpress.XtraEditors.XtraUserControl
+    public partial class TaiKhoanGUI : UserControl
     {
         private string maQT;
         private string pass;
@@ -28,7 +26,7 @@ namespace GUI
             {
                 if (_instance == null)
                 {
-                    _instance = new TaiKhoanGUI("","");
+                    _instance = new TaiKhoanGUI("", "");
                 }
                 return _instance;
             }
@@ -47,7 +45,7 @@ namespace GUI
             GridLocalizer.Active = new MyGridLocalizer();
             this.setVerified(maQT, pass);
         }
-        public void setVerified(string maQT,string pass)
+        public void setVerified(string maQT, string pass)
         {
             if (maQT.StartsWith("QT"))
             {
@@ -64,18 +62,13 @@ namespace GUI
         {
             gridcDanhSachTK.DataSource = busTaiKhoan.GetAllGeneralInfoTaiKhoan(maQT, pass);
         }
-     
+
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
         }
 
         private void groupControl2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void gcThongtinTK_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -87,30 +80,11 @@ namespace GUI
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            switch (cbChucVu.SelectedIndex)
-            {
-                case 0:
-                    if (teMaThanhVien.Text != ""&&teHoTen.Text!=""&&teDiaChi.Text!=""&&tePassWord.Text!=""&&teSDT.Text!=""&&teChuyenKhoa.Text!=""&&teBangCap.Text!=""&&deNgaySinh.Text!="")
-                    {
-
-                    }
-                    break;
-                case 1:
-                case 2:
-                    if (teMaThanhVien.Text != "" && teHoTen.Text != "" && teDiaChi.Text != "" && tePassWord.Text != "" && teSDT.Text != "" && deNgaySinh.Text != "")
-                    {
-
-                    }
-                    break;
-                default:
-
-                    break;
-            }
         }
 
         private void displayFollowChucVu(string chucVu)
         {
-            if (chucVu=="Bác sĩ")
+            if (chucVu == "Bác sĩ")
             {
                 lbBangCap.Visible = true;
                 teBangCap.Visible = true;
@@ -124,12 +98,7 @@ namespace GUI
                 lbChuyenKhoa.Visible = false;
                 teChuyenKhoa.Visible = false;
             }
-            
-        }
 
-        private void cbChucVu_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            displayFollowChucVu(cbChucVu.Text.Trim());
         }
 
 
@@ -169,11 +138,6 @@ namespace GUI
 
         }
 
-        private void gcThaoTac_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void gridcDanhSachTK_Click_1(object sender, EventArgs e)
         {
 
@@ -196,11 +160,6 @@ namespace GUI
             RefreshGrid();
         }
 
-        private void teMaThanhVien_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void teHoTen_Properties_Leave(object sender, EventArgs e)
         {
 
@@ -216,12 +175,12 @@ namespace GUI
             cbChucVu.Enabled = false;
             teMaThanhVien.Enabled = false;
             tePassWord.Enabled = true;
-            DataRow rowSelected =busTaiKhoan.GetFullInfoTaiKhoan(gridView2.GetRowCellValue(e.RowHandle, "MA").ToString().Trim());
+            DataRow rowSelected = busTaiKhoan.GetFullInfoTaiKhoan(gridView2.GetRowCellValue(e.RowHandle, "MA").ToString().Trim());
             cbChucVu.Text = rowSelected[5].ToString().Trim();
-            teHoTen.Text= rowSelected[1].ToString().Trim();
-            deNgaySinh.Text= rowSelected[2].ToString().Split(' ')[0];
-            teDiaChi.Text= rowSelected[4].ToString().Trim();
-            teSDT.Text= rowSelected[3].ToString().Trim();
+            teHoTen.Text = rowSelected[1].ToString().Trim();
+            deNgaySinh.Text = rowSelected[2].ToString().Split(' ')[0];
+            teDiaChi.Text = rowSelected[4].ToString().Trim();
+            teSDT.Text = rowSelected[3].ToString().Trim();
             teMaThanhVien.Text = rowSelected[0].ToString().Trim();
             teBangCap.Text = rowSelected[7].ToString().Trim();
             teChuyenKhoa.Text = rowSelected[6].ToString().Trim();
@@ -232,102 +191,37 @@ namespace GUI
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (teMaThanhVien.Text.Trim() != "")
-            {
-                MessageBoxEx.Show("Để thêm tài khoản, vui lòng để trống mã tài khoản.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            
-            string maTK = "";
-            if (cbChucVu.Text.Trim()=="Bác sĩ")
-            {
-                maTK = busBacSi.NextMABS();
-            }
-            else if (cbChucVu.Text.Trim() == "Thu ngân")
-            {
-                maTK = busThuNgan.NextMATHUNGAN();
-            }
-            else if (cbChucVu.Text.Trim() == "Quản lí kho")
-            {
-                maTK = busQuanKho.NextMAQUANKHO();
-            }
-            else if (cbChucVu.Text.Trim() == "Quản trị")
-            {
-                maTK = BusQuanTri.NextMAQUANTRI();
-            }
-            else
-            {
-                MessageBoxEx.Show("Chưa có chức vụ đó", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            if (teHoTen.Text != "" && cbChucVu.Text != "" && deNgaySinh.Text != "" && teDiaChi.Text != "" && tePassWord.Text != "" && teSDT.Text != "" )
-            {
-                string newPassUser = busTaiKhoan.createHashPass(maQT,pass, tePassWord.Text.Trim());
-                if (busTaiKhoan.InsertTaiKhoan(new DTO_ThemTK(maTK, newPassUser, cbChucVu.Text, teHoTen.Text, deNgaySinh.DateTime.ToString("yyyy-MM-dd"), teSDT.Text, teDiaChi.Text,teChuyenKhoa.Text,teBangCap.Text),maQT,pass))
-                {
-                    MessageBoxEx.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    string showInfo = "Mã tài khoản: " + maTK + "\nMật khẩu: " + tePassWord.Text.Trim();
-                    MessageBoxEx.Show(showInfo, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    RefreshGrid();
-                    btnReset.PerformClick();
-                }
-                else
-                {
-                    MessageBoxEx.Show("Thêm không thành công. Vui lòng thử lại. Đảm bảo bạn đang đăng nhập với tài khoản quản trị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            else
-            {
-                MessageBoxEx.Show("Vui lòng nhập toàn bộ thông tin tài khoản trước khi thêm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            
-            if (busTaiKhoan.CheckExistance(teMaThanhVien.Text.Trim()))
-            {
-                string passUser = "";
 
-                if (tePassWord.Text.Trim() == "")
-                {
-                    passUser = busTaiKhoan.GetHashpassFromTaiKhoan(maQT,pass, teMaThanhVien.Text.Trim());
-                }
-                else
-                {
-                    passUser = busTaiKhoan.createHashPass(maQT, pass, tePassWord.Text.Trim());
-                }
-                if ( busTaiKhoan.UpdateTaiKhoanInfo(new DTO_ThemTK(teMaThanhVien.Text, passUser, cbChucVu.Text, teHoTen.Text, deNgaySinh.DateTime.ToString("yyyy-MM-dd"), teSDT.Text, teDiaChi.Text, teChuyenKhoa.Text, teBangCap.Text), maQT, pass))
-                {
-                    MessageBoxEx.Show("Chỉnh sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    RefreshGrid();
-                }
-               
-                else
-                {
-                    MessageBoxEx.Show("Thay đổi không thành công. Vui lòng thử lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-
-            }
-            else
-            {
-                MessageBoxEx.Show("Mã tài khoản không tồn tại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (busTaiKhoan.DeleteTaikhoan(teMaThanhVien.Text))
-            {
-                MessageBoxEx.Show("Xóa tài khoản thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                RefreshGrid();
-            }
-            else
-            {
-                MessageBoxEx.Show("Xóa tài khoản không thành công. Vui lòng thử lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+
+        }
+
+        private void gcThongtinTK_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gcThaoTac_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cbChucVu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            displayFollowChucVu(cbChucVu.Text.Trim());
+        }
+
+        private void panelControl2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

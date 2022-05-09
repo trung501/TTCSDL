@@ -35,9 +35,11 @@ namespace GUI
 
             if (dt.Rows.Count > 0)
             {
-                ngayTiem = dt.Rows[0]["NGAYTIEM"].ToString().Substring(0, 2);
-                thangTiem = dt.Rows[0]["NGAYTIEM"].ToString().Substring(3, 2);
-                namTiem = dt.Rows[0]["NGAYTIEM"].ToString().Substring(6, 4);
+                string stringNgayTiem = dt.Rows[0]["NGAYTIEM"].ToString().Trim();
+                string[] arrayNgayTiem = stringNgayTiem.Split(new[] { '/' });
+                ngayTiem = arrayNgayTiem[1].ToString();
+                thangTiem = arrayNgayTiem[0].ToString();
+                namTiem = arrayNgayTiem[2].ToString().Substring(0, 4);
                 maKH = dt.Rows[0]["MAKH"].ToString();
                 tenKH = dt.Rows[0]["TENKH"].ToString();
                 ngaySinh = dt.Rows[0]["NGAYSINH"].ToString().Substring(0, 10);

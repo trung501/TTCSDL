@@ -154,6 +154,12 @@
     <Compile Include="PhieuTiemRP_Provider.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaiKhoanGUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TaiKhoanGUI.Designer.cs">
+      <DependentUpon>TaiKhoanGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThanhToanGUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -165,12 +171,6 @@
     </Compile>
     <Compile Include="ThanhToanLIST.Designer.cs">
       <DependentUpon>ThanhToanLIST.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TaiKhoanGUI.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TaiKhoanGUI.Designer.cs">
-      <DependentUpon>TaiKhoanGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="ThongKeCreator.cs" />
     <Compile Include="ThongKeGUI.cs">
@@ -240,14 +240,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TaiKhoanGUI.resx">
+      <DependentUpon>TaiKhoanGUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ThanhToanGUI.resx">
       <DependentUpon>ThanhToanGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThanhToanLIST.resx">
       <DependentUpon>ThanhToanLIST.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TaiKhoanGUI.resx">
-      <DependentUpon>TaiKhoanGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThongKeGUI.resx">
       <DependentUpon>ThongKeGUI.cs</DependentUpon>
