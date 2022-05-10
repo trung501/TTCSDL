@@ -125,6 +125,7 @@ namespace GUI
             this.gridView2.OptionsFind.FindDelay = 100;
             this.gridView2.OptionsFind.FindNullPrompt = "Nhập để tìm kiếm...";
             this.gridView2.OptionsView.ShowGroupPanel = false;
+            this.gridView2.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView2_RowClick_1);
             // 
             // tableLayoutPanel1
             // 

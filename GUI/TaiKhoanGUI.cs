@@ -170,24 +170,7 @@ namespace GUI
             teMaThanhVien.Text = teMaThanhVien.Text.ToUpper();
         }
 
-        private void gridView2_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
-        {
-            cbChucVu.Enabled = false;
-            teMaThanhVien.Enabled = false;
-            tePassWord.Enabled = true;
-            DataRow rowSelected = busTaiKhoan.GetFullInfoTaiKhoan(gridView2.GetRowCellValue(e.RowHandle, "MA").ToString().Trim());
-            cbChucVu.Text = rowSelected[5].ToString().Trim();
-            teHoTen.Text = rowSelected[1].ToString().Trim();
-            deNgaySinh.Text = rowSelected[2].ToString().Split(' ')[0];
-            teDiaChi.Text = rowSelected[4].ToString().Trim();
-            teSDT.Text = rowSelected[3].ToString().Trim();
-            teMaThanhVien.Text = rowSelected[0].ToString().Trim();
-            teBangCap.Text = rowSelected[7].ToString().Trim();
-            teChuyenKhoa.Text = rowSelected[6].ToString().Trim();
-            tePassWord.Text = "";
-            displayFollowChucVu(cbChucVu.Text.Trim());
-
-        }
+        
 
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -222,6 +205,24 @@ namespace GUI
         private void panelControl2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void gridView2_RowClick_1(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            cbChucVu.Enabled = false;
+            teMaThanhVien.Enabled = false;
+            tePassWord.Enabled = true;
+            DataRow rowSelected = busTaiKhoan.GetFullInfoTaiKhoan(gridView2.GetRowCellValue(e.RowHandle, "MA").ToString().Trim());
+            cbChucVu.Text = rowSelected[5].ToString().Trim();
+            teHoTen.Text = rowSelected[1].ToString().Trim();
+            deNgaySinh.Text = rowSelected[2].ToString().Split(' ')[0];
+            teDiaChi.Text = rowSelected[4].ToString().Trim();
+            teSDT.Text = rowSelected[3].ToString().Trim();
+            teMaThanhVien.Text = rowSelected[0].ToString().Trim();
+            teBangCap.Text = rowSelected[7].ToString().Trim();
+            teChuyenKhoa.Text = rowSelected[6].ToString().Trim();
+            tePassWord.Text = "";
+            displayFollowChucVu(cbChucVu.Text.Trim());
         }
     }
 }
