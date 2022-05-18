@@ -156,7 +156,6 @@ namespace GUI
             this.gcThaoTac.Size = new System.Drawing.Size(273, 271);
             this.gcThaoTac.TabIndex = 4;
             this.gcThaoTac.Text = "Thao tác";
-            this.gcThaoTac.Paint += new System.Windows.Forms.PaintEventHandler(this.gcThaoTac_Paint);
             // 
             // btnReset
             // 
@@ -170,6 +169,7 @@ namespace GUI
             this.btnReset.Size = new System.Drawing.Size(154, 35);
             this.btnReset.TabIndex = 2;
             this.btnReset.Text = "Đặt lại";
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnSua
             // 
@@ -183,6 +183,7 @@ namespace GUI
             this.btnSua.Size = new System.Drawing.Size(154, 35);
             this.btnSua.TabIndex = 1;
             this.btnSua.Text = "Sửa tài khoản";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click_1);
             // 
             // btnXoa
             // 
@@ -196,6 +197,7 @@ namespace GUI
             this.btnXoa.Size = new System.Drawing.Size(154, 35);
             this.btnXoa.TabIndex = 1;
             this.btnXoa.Text = "Xóa tài khoản";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click_1);
             // 
             // btnThem
             // 
@@ -209,6 +211,7 @@ namespace GUI
             this.btnThem.Size = new System.Drawing.Size(154, 35);
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm tài khoản";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
             // 
             // gcThongtinTK
             // 
@@ -226,7 +229,6 @@ namespace GUI
             this.gcThongtinTK.Size = new System.Drawing.Size(772, 271);
             this.gcThongtinTK.TabIndex = 3;
             this.gcThongtinTK.Text = "Thông tin tài khoản";
-            this.gcThongtinTK.Paint += new System.Windows.Forms.PaintEventHandler(this.gcThongtinTK_Paint);
             // 
             // panelControl2
             // 
@@ -256,7 +258,6 @@ namespace GUI
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(588, 236);
             this.panelControl2.TabIndex = 21;
-            this.panelControl2.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl2_Paint);
             // 
             // teChuyenKhoa
             // 
@@ -382,13 +383,13 @@ namespace GUI
             this.teMaThanhVien.Properties.Leave += new System.EventHandler(this.teMaThanhVien_Properties_Leave);
             this.teMaThanhVien.Size = new System.Drawing.Size(245, 24);
             this.teMaThanhVien.TabIndex = 32;
+            this.teMaThanhVien.Leave += new System.EventHandler(this.teMaThanhVien_Leave);
             // 
             // teHoTen
             // 
             this.teHoTen.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.teHoTen.Location = new System.Drawing.Point(56, 32);
             this.teHoTen.Name = "teHoTen";
-            this.teHoTen.Properties.Leave += new System.EventHandler(this.teHoTen_Properties_Leave);
             this.teHoTen.Size = new System.Drawing.Size(245, 24);
             this.teHoTen.TabIndex = 31;
             // 
