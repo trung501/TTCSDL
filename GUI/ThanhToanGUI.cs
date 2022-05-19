@@ -120,6 +120,7 @@ namespace GUI
             tbPhaiTra.Text = "";
             tbKhachDua.Text = "";
             tbTraLai.Text = "";
+            gridNGH.DataSource = busGH.GetAllNGH();
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
@@ -134,11 +135,14 @@ namespace GUI
                 if (tbMaGH.Text == "")
                 {
                     tbMaGH.Text = busGH.NextMaGH();
-                }
-                if (!busGH.IsMaGHExists(tbMaGH.Text))
-                {
                     busGH.InsertNGH(new DTO_GiamHo(tbMaGH.Text, tbTenNGH.Text, tbDiaChiNGH.Text, tbSdtNGH.Text));
                 }
+                else if (!busGH.IsMaGHExists(tbMaGH.Text))
+                {
+                    MessageBoxEx.Show("Mã giám hộ không tồn tại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
 
                 //Lấy mã Hóa đơn:
                 string NextMaHD = busHD.NextMaHD();
@@ -147,6 +151,7 @@ namespace GUI
 
                 busGH.AddMaGHtoKH(tbMaGH.Text);
                 MessageBoxEx.Show("Thanh toán thành công");
+                gridNGH.DataSource = busGH.GetAllNGH();
 
                 //Xuất Hóa đơn ra file:
                 HoaDonCreator HoaDonCreator = new HoaDonCreator(NextMaHD);

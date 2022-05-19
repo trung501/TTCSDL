@@ -14,37 +14,7 @@ namespace DAO
     {
         #region DoanhThu
 
-        /// <summary>
-        /// Get NgayThu + TongTien tat ca hoa don
-        /// </summary>
-        /// <returns></returns>
-        public DataTable GetAllHoaDon()
-        {
-            DataTable dt = new DataTable();
-            SqlDataReader rd;
-            try
-            {
-                _conn.Open();
-
-                SqlCommand cmd = new SqlCommand("sp_GetHoaDonINTIME_TK", _conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                rd = cmd.ExecuteReader();
-                dt.Load(rd);
-                
-            }
-            catch (Exception)
-            {
-
-                
-            }
-            finally
-            {
-                _conn.Close();
-            }
-            
-            return dt;
-        }
-
+       
         /// <summary>
         /// Get NgayThu + TongTien cua cac hoa don trong 1 khoang tgian.
         /// </summary>
