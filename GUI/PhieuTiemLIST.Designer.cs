@@ -55,7 +55,7 @@
             this.gridPT.Location = new System.Drawing.Point(2, 33);
             this.gridPT.MainView = this.gridView1;
             this.gridPT.Name = "gridPT";
-            this.gridPT.Size = new System.Drawing.Size(1086, 249);
+            this.gridPT.Size = new System.Drawing.Size(1152, 400);
             this.gridPT.TabIndex = 0;
             this.gridPT.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -78,7 +78,7 @@
             this.groupControl1.Controls.Add(this.gridPT);
             this.groupControl1.Location = new System.Drawing.Point(4, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1090, 284);
+            this.groupControl1.Size = new System.Drawing.Size(1156, 435);
             this.groupControl1.TabIndex = 4;
             this.groupControl1.Text = "Danh sách phiếu tiêm";
             // 
@@ -87,9 +87,9 @@
             this.groupControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl2.Controls.Add(this.gridVC);
-            this.groupControl2.Location = new System.Drawing.Point(5, 293);
+            this.groupControl2.Location = new System.Drawing.Point(5, 442);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1090, 325);
+            this.groupControl2.Size = new System.Drawing.Size(1153, 230);
             this.groupControl2.TabIndex = 5;
             this.groupControl2.Text = "Danh sách vaccine đã sử dụng";
             // 
@@ -99,7 +99,7 @@
             this.gridVC.Location = new System.Drawing.Point(2, 33);
             this.gridVC.MainView = this.gridView2;
             this.gridVC.Name = "gridVC";
-            this.gridVC.Size = new System.Drawing.Size(1086, 290);
+            this.gridVC.Size = new System.Drawing.Size(1149, 195);
             this.gridVC.TabIndex = 0;
             this.gridVC.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -114,7 +114,7 @@
             // btnExit
             // 
             this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnExit.Location = new System.Drawing.Point(30, 644);
+            this.btnExit.Location = new System.Drawing.Point(22, 688);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(94, 29);
             this.btnExit.TabIndex = 6;
@@ -126,7 +126,7 @@
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Question;
             this.btnSave.Appearance.Options.UseBackColor = true;
-            this.btnSave.Location = new System.Drawing.Point(819, 644);
+            this.btnSave.Location = new System.Drawing.Point(941, 688);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(94, 29);
             this.btnSave.TabIndex = 6;
@@ -138,7 +138,7 @@
             this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnReset.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
             this.btnReset.Appearance.Options.UseBackColor = true;
-            this.btnReset.Location = new System.Drawing.Point(686, 644);
+            this.btnReset.Location = new System.Drawing.Point(840, 688);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(94, 29);
             this.btnReset.TabIndex = 6;
@@ -148,7 +148,7 @@
             // btnHelp
             // 
             this.btnHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHelp.Location = new System.Drawing.Point(635, 644);
+            this.btnHelp.Location = new System.Drawing.Point(802, 688);
             this.btnHelp.Name = "btnHelp";
             this.btnHelp.Size = new System.Drawing.Size(29, 29);
             this.btnHelp.TabIndex = 7;
@@ -160,7 +160,7 @@
             this.btnXuat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnXuat.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
             this.btnXuat.Appearance.Options.UseBackColor = true;
-            this.btnXuat.Location = new System.Drawing.Point(951, 644);
+            this.btnXuat.Location = new System.Drawing.Point(1044, 688);
             this.btnXuat.Name = "btnXuat";
             this.btnXuat.Size = new System.Drawing.Size(94, 29);
             this.btnXuat.TabIndex = 6;
@@ -171,7 +171,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(880, 563);
+            this.ClientSize = new System.Drawing.Size(1165, 739);
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.btnXuat);
             this.Controls.Add(this.btnReset);
