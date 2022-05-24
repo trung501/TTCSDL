@@ -47,6 +47,10 @@
             this.labelTooltipMaKH = new System.Windows.Forms.Label();
             this.tbMaKH = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelEmail = new DevExpress.XtraEditors.LabelControl();
+            this.tbSDT = new DevExpress.XtraEditors.TextEdit();
+            this.tbEmail = new DevExpress.XtraEditors.TextEdit();
+            this.labelSDT = new DevExpress.XtraEditors.LabelControl();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.btnReset = new DevExpress.XtraEditors.SimpleButton();
@@ -72,10 +76,6 @@
             this.gridKH = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
-            this.tbEmail = new DevExpress.XtraEditors.TextEdit();
-            this.labelEmail = new DevExpress.XtraEditors.LabelControl();
-            this.labelSDT = new DevExpress.XtraEditors.LabelControl();
-            this.tbSDT = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.cbGioiTinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNgaySinh.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNgaySinh.Properties)).BeginInit();
@@ -89,6 +89,8 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbBacSi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbMaKH.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbSDT.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbEmail.Properties)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
@@ -106,8 +108,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridKH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbEmail.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbSDT.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // cbGioiTinh
@@ -329,6 +329,40 @@
             this.labelControl2.Text = "Mã khách hàng";
             this.labelControl2.ToolTip = "Để trống nếu đăng ký mới";
             this.labelControl2.ToolTipTitle = "Lưu ý";
+            // 
+            // labelEmail
+            // 
+            this.labelEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelEmail.Location = new System.Drawing.Point(18, 139);
+            this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Size = new System.Drawing.Size(33, 18);
+            this.labelEmail.TabIndex = 22;
+            this.labelEmail.Text = "Email";
+            // 
+            // tbSDT
+            // 
+            this.tbSDT.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbSDT.Location = new System.Drawing.Point(544, 136);
+            this.tbSDT.Name = "tbSDT";
+            this.tbSDT.Size = new System.Drawing.Size(243, 24);
+            this.tbSDT.TabIndex = 3;
+            // 
+            // tbEmail
+            // 
+            this.tbEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbEmail.Location = new System.Drawing.Point(142, 136);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(270, 24);
+            this.tbEmail.TabIndex = 3;
+            // 
+            // labelSDT
+            // 
+            this.labelSDT.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelSDT.Location = new System.Drawing.Point(429, 139);
+            this.labelSDT.Name = "labelSDT";
+            this.labelSDT.Size = new System.Drawing.Size(84, 18);
+            this.labelSDT.TabIndex = 2;
+            this.labelSDT.Text = "Số điện thoại";
             // 
             // tableLayoutPanel2
             // 
@@ -605,40 +639,6 @@
             this.gridView1.OptionsFind.FindNullPrompt = "Nhập để tìm kiếm...";
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // tbEmail
-            // 
-            this.tbEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbEmail.Location = new System.Drawing.Point(142, 136);
-            this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(270, 24);
-            this.tbEmail.TabIndex = 3;
-            // 
-            // labelEmail
-            // 
-            this.labelEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelEmail.Location = new System.Drawing.Point(18, 139);
-            this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(33, 18);
-            this.labelEmail.TabIndex = 22;
-            this.labelEmail.Text = "Email";
-            // 
-            // labelSDT
-            // 
-            this.labelSDT.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelSDT.Location = new System.Drawing.Point(429, 139);
-            this.labelSDT.Name = "labelSDT";
-            this.labelSDT.Size = new System.Drawing.Size(67, 18);
-            this.labelSDT.TabIndex = 2;
-            this.labelSDT.Text = "Ngày tiêm";
-            // 
-            // tbSDT
-            // 
-            this.tbSDT.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbSDT.Location = new System.Drawing.Point(544, 136);
-            this.tbSDT.Name = "tbSDT";
-            this.tbSDT.Size = new System.Drawing.Size(243, 24);
-            this.tbSDT.TabIndex = 3;
-            // 
             // PhieuTiemGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -663,6 +663,8 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbBacSi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbMaKH.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbSDT.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbEmail.Properties)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
@@ -681,8 +683,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridKH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbEmail.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbSDT.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
