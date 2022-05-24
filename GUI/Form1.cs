@@ -127,8 +127,8 @@ namespace GUI
         private void AdminDisplay()
         {
             aceHome.Visible = true;
-            aceVaccine1.Visible = true;
-            aceVaccine2.Visible = false;
+            aceVaccine1.Visible = false;
+            aceVaccine2.Visible = true;
             aceLichSu.Visible = true;
             acePhieuTiem.Visible = true;
             aceThanhToan.Visible = true;

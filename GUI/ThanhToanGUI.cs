@@ -53,6 +53,7 @@ namespace GUI
             tbTenNGH.Text = gridView2.GetRowCellValue(e.RowHandle, "HOTEN").ToString().Trim();
             tbDiaChiNGH.Text = gridView2.GetRowCellValue(e.RowHandle, "DIACHI").ToString().Trim();
             tbSdtNGH.Text = gridView2.GetRowCellValue(e.RowHandle, "SDT").ToString().Trim();
+            tbEmailNGH.Text= gridView2.GetRowCellValue(e.RowHandle, "EMAIL").ToString().Trim();
         }
 
         private void tbMaPT_Leave(object sender, EventArgs e)
@@ -111,6 +112,7 @@ namespace GUI
             tbTenNGH.Text = "";
             tbDiaChiNGH.Text = "";
             tbSdtNGH.Text = "";
+            tbEmailNGH.Text = "";
             tbMaPT.Text = "";
             dtpNgayTao.Text = "";
             tbTenKH.Text = "";
@@ -119,7 +121,7 @@ namespace GUI
             tbChieuKhau.Text = "";
             tbPhaiTra.Text = "";
             tbKhachDua.Text = "";
-            tbTraLai.Text = "";
+            tbTraLai.Text = "";            
             gridNGH.DataSource = busGH.GetAllNGH();
         }
 

@@ -24,26 +24,7 @@ namespace DAO
         {
             try
             {
-                //_conn.Open();
-
-                //SqlCommand cmd = new SqlCommand();
-                //cmd.CommandText = @"INSERT INTO HOADON
-                //                ( MAHOADON, CHIETKHAU, NGAYTHU, TONGTIEN, MAGH, MATHUNGAN, MAPHIEUTIEM )
-                //                VALUES
-                //                ( @MAHOADON, @CHIETKHAU, @NGAYTHU, @TONGTIEN, @MAGH, @MATHUNGAN, @MAPHIEUTIEM )";
-                //cmd.Parameters.AddWithValue("@MAHOADON", hd.MaHD);
-                //cmd.Parameters.AddWithValue("@CHIETKHAU", hd.ChietKhau);
-                //cmd.Parameters.AddWithValue("@NGAYTHU", hd.NgayThu);
-                //cmd.Parameters.AddWithValue("@TONGTIEN", hd.TongTien);
-                //cmd.Parameters.AddWithValue("@MAGH", hd.MaGH);
-                //cmd.Parameters.AddWithValue("@MATHUNGAN", hd.MaTN);
-                //cmd.Parameters.AddWithValue("@MAPHIEUTIEM", hd.MaPT);
-                //cmd.Connection = _conn;
-
-                //if (cmd.ExecuteNonQuery() > 0)
-                //    return true;
-
-
+               
                 _conn.Open();
 
                 SqlCommand cmd = new SqlCommand("sp_InsertHD", _conn);
@@ -167,6 +148,7 @@ namespace DAO
                 cmd.Parameters.AddWithValue("@NGUOIGH", hdif.NguoiGH);
                 cmd.Parameters.AddWithValue("@DIACHI", hdif.DiaChi);
                 cmd.Parameters.AddWithValue("@SDT", hdif.Sdt);
+                cmd.Parameters.AddWithValue("@EMAIL", hdif.Email);
                 if (cmd.ExecuteNonQuery() > 0)
                 {
                     return true;

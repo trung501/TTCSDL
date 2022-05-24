@@ -114,6 +114,8 @@ namespace GUI
             dtpNgaySinh.Text = gridView1.GetRowCellValue(e.RowHandle, "NGAYSINH").ToString().Split(' ')[0];
             cbGioiTinh.Text = gridView1.GetRowCellValue(e.RowHandle, "GIOITINH").ToString();
             tbTienSu.Text = gridView1.GetRowCellValue(e.RowHandle, "TIEUSU").ToString().Trim();
+            tbEmail.Text= gridView1.GetRowCellValue(e.RowHandle, "EMAIL").ToString().Trim();
+            tbSDT.Text= gridView1.GetRowCellValue(e.RowHandle, "SDT").ToString().Trim();
         }
 
         private void PhieuTiemGUI_Load(object sender, EventArgs e)
@@ -237,7 +239,7 @@ namespace GUI
         private void btnThem_Click(object sender, EventArgs e)
         {
             string MaPT = busPhieuTiem.NextMAPHIEUTIEM();
-            if (listCTT.Count > 0 && tbTenKH.Text != "" && dtpNgaySinh.Text != "" && tbTienSu.Text != "" && cbBacSi.Text != "" && cbGioiTinh.Text != "")
+            if (listCTT.Count > 0 && tbTenKH.Text != "" && dtpNgaySinh.Text != "" && tbTienSu.Text != "" && cbBacSi.Text != "" && cbGioiTinh.Text != ""&&tbSDT.Text!="")
             {
                 if (tbMaKH.Text == "")
                 {
@@ -307,6 +309,8 @@ namespace GUI
             tbMuiThu.Text = "";
             tbLieuLuong.Text = "";
             tbNhacLai.Text = "";
+            tbEmail.Text = "";
+            tbSDT.Text = "";
         }
 
         private void tbMaKH_Click(object sender, EventArgs e)

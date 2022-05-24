@@ -193,7 +193,10 @@ namespace GUI
             string ngaySinh = Convert.ToDateTime(view.GetRowCellValue(selectedRowHandles[0], "NGAYSINH").ToString()).ToString("yyyy-MM-dd");
             string gioiTinh = view.GetRowCellValue(selectedRowHandles[0], "GIOITINH").ToString();
             string tieuSu = view.GetRowCellValue(selectedRowHandles[0], "TIEUSU").ToString();
-            DTO_PhieuTiemInfo ptif = new DTO_PhieuTiemInfo(maPT, ngayTiem, tenKH, ngaySinh, gioiTinh, tieuSu);
+            string email= view.GetRowCellValue(selectedRowHandles[0], "EMAIL").ToString();
+            string sdt = view.GetRowCellValue(selectedRowHandles[0], "SDT").ToString();
+
+            DTO_PhieuTiemInfo ptif = new DTO_PhieuTiemInfo(maPT, ngayTiem, tenKH, ngaySinh, gioiTinh, tieuSu,email,sdt);
             editedPT.Add(ptif);
             EnableResetAndSaveButton();
         }

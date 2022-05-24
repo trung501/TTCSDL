@@ -43,6 +43,7 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbBacSi = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelTooltipMaKH = new System.Windows.Forms.Label();
             this.tbMaKH = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -71,7 +72,10 @@
             this.gridKH = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
-            this.cbBacSi = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.tbEmail = new DevExpress.XtraEditors.TextEdit();
+            this.labelEmail = new DevExpress.XtraEditors.LabelControl();
+            this.labelSDT = new DevExpress.XtraEditors.LabelControl();
+            this.tbSDT = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.cbGioiTinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNgaySinh.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNgaySinh.Properties)).BeginInit();
@@ -83,6 +87,7 @@
             this.groupControl1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbBacSi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbMaKH.Properties)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
@@ -101,14 +106,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridKH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbBacSi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbEmail.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbSDT.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // cbGioiTinh
             // 
             this.cbGioiTinh.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbGioiTinh.EditValue = "";
-            this.cbGioiTinh.Location = new System.Drawing.Point(326, 63);
+            this.cbGioiTinh.Location = new System.Drawing.Point(326, 60);
             this.cbGioiTinh.Name = "cbGioiTinh";
             this.cbGioiTinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -124,7 +130,7 @@
             // 
             this.dtpNgaySinh.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtpNgaySinh.EditValue = null;
-            this.dtpNgaySinh.Location = new System.Drawing.Point(142, 60);
+            this.dtpNgaySinh.Location = new System.Drawing.Point(142, 57);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -139,7 +145,7 @@
             // lbNgaySinh
             // 
             this.lbNgaySinh.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbNgaySinh.Location = new System.Drawing.Point(18, 66);
+            this.lbNgaySinh.Location = new System.Drawing.Point(18, 63);
             this.lbNgaySinh.Name = "lbNgaySinh";
             this.lbNgaySinh.Size = new System.Drawing.Size(64, 18);
             this.lbNgaySinh.TabIndex = 24;
@@ -148,7 +154,7 @@
             // tbTienSu
             // 
             this.tbTienSu.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbTienSu.Location = new System.Drawing.Point(142, 106);
+            this.tbTienSu.Location = new System.Drawing.Point(142, 97);
             this.tbTienSu.Name = "tbTienSu";
             this.tbTienSu.Size = new System.Drawing.Size(270, 24);
             this.tbTienSu.TabIndex = 3;
@@ -156,7 +162,7 @@
             // lbTienSu
             // 
             this.lbTienSu.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbTienSu.Location = new System.Drawing.Point(18, 109);
+            this.lbTienSu.Location = new System.Drawing.Point(18, 100);
             this.lbTienSu.Name = "lbTienSu";
             this.lbTienSu.Size = new System.Drawing.Size(86, 18);
             this.lbTienSu.TabIndex = 22;
@@ -165,7 +171,7 @@
             // lbGioiTinh
             // 
             this.lbGioiTinh.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbGioiTinh.Location = new System.Drawing.Point(270, 63);
+            this.lbGioiTinh.Location = new System.Drawing.Point(270, 60);
             this.lbGioiTinh.Name = "lbGioiTinh";
             this.lbGioiTinh.Size = new System.Drawing.Size(50, 18);
             this.lbGioiTinh.TabIndex = 20;
@@ -187,7 +193,7 @@
             // 
             this.dtpNgayTiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtpNgayTiem.EditValue = null;
-            this.dtpNgayTiem.Location = new System.Drawing.Point(544, 60);
+            this.dtpNgayTiem.Location = new System.Drawing.Point(544, 57);
             this.dtpNgayTiem.Name = "dtpNgayTiem";
             this.dtpNgayTiem.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -202,7 +208,7 @@
             // lbMaBS
             // 
             this.lbMaBS.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbMaBS.Location = new System.Drawing.Point(431, 106);
+            this.lbMaBS.Location = new System.Drawing.Point(431, 97);
             this.lbMaBS.Name = "lbMaBS";
             this.lbMaBS.Size = new System.Drawing.Size(44, 18);
             this.lbMaBS.TabIndex = 10;
@@ -220,7 +226,7 @@
             // lbNgayTiem
             // 
             this.lbNgayTiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbNgayTiem.Location = new System.Drawing.Point(429, 63);
+            this.lbNgayTiem.Location = new System.Drawing.Point(429, 60);
             this.lbNgayTiem.Name = "lbNgayTiem";
             this.lbNgayTiem.Size = new System.Drawing.Size(67, 18);
             this.lbNgayTiem.TabIndex = 2;
@@ -233,7 +239,7 @@
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 3, 1, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(821, 184);
+            this.groupControl1.Size = new System.Drawing.Size(821, 215);
             this.groupControl1.TabIndex = 4;
             this.groupControl1.Text = "Thông tin phiếu tiêm";
             // 
@@ -247,7 +253,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(817, 149);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(817, 180);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
@@ -260,18 +266,33 @@
             this.panel1.Controls.Add(this.cbGioiTinh);
             this.panel1.Controls.Add(this.lbMaBS);
             this.panel1.Controls.Add(this.tbTenKH);
+            this.panel1.Controls.Add(this.labelEmail);
             this.panel1.Controls.Add(this.lbTienSu);
             this.panel1.Controls.Add(this.dtpNgaySinh);
+            this.panel1.Controls.Add(this.tbSDT);
+            this.panel1.Controls.Add(this.tbEmail);
             this.panel1.Controls.Add(this.tbTienSu);
             this.panel1.Controls.Add(this.lbTenKH);
+            this.panel1.Controls.Add(this.labelSDT);
             this.panel1.Controls.Add(this.lbNgayTiem);
             this.panel1.Controls.Add(this.lbNgaySinh);
             this.panel1.Controls.Add(this.lbGioiTinh);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(811, 143);
+            this.panel1.Size = new System.Drawing.Size(811, 174);
             this.panel1.TabIndex = 6;
+            // 
+            // cbBacSi
+            // 
+            this.cbBacSi.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cbBacSi.Location = new System.Drawing.Point(544, 94);
+            this.cbBacSi.Name = "cbBacSi";
+            this.cbBacSi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbBacSi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cbBacSi.Size = new System.Drawing.Size(243, 24);
+            this.cbBacSi.TabIndex = 35;
             // 
             // labelTooltipMaKH
             // 
@@ -279,7 +300,7 @@
             this.labelTooltipMaKH.AutoSize = true;
             this.labelTooltipMaKH.Font = new System.Drawing.Font("Tahoma", 7F);
             this.labelTooltipMaKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.labelTooltipMaKH.Location = new System.Drawing.Point(541, 41);
+            this.labelTooltipMaKH.Location = new System.Drawing.Point(541, 38);
             this.labelTooltipMaKH.Name = "labelTooltipMaKH";
             this.labelTooltipMaKH.Size = new System.Drawing.Size(194, 14);
             this.labelTooltipMaKH.TabIndex = 27;
@@ -322,7 +343,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1055, 190);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1055, 221);
             this.tableLayoutPanel2.TabIndex = 6;
             // 
             // groupControl2
@@ -333,7 +354,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(828, 3);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(224, 184);
+            this.groupControl2.Size = new System.Drawing.Size(224, 215);
             this.groupControl2.TabIndex = 5;
             this.groupControl2.Text = "Thao tác";
             this.groupControl2.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl2_Paint);
@@ -343,7 +364,7 @@
             this.btnReset.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnReset.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
             this.btnReset.Appearance.Options.UseBackColor = true;
-            this.btnReset.Location = new System.Drawing.Point(37, 136);
+            this.btnReset.Location = new System.Drawing.Point(37, 156);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(154, 35);
             this.btnReset.TabIndex = 2;
@@ -355,7 +376,7 @@
             this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnThem.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
             this.btnThem.Appearance.Options.UseBackColor = true;
-            this.btnThem.Location = new System.Drawing.Point(37, 48);
+            this.btnThem.Location = new System.Drawing.Point(37, 53);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(154, 35);
             this.btnThem.TabIndex = 0;
@@ -367,7 +388,7 @@
             this.btnList.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnList.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Question;
             this.btnList.Appearance.Options.UseBackColor = true;
-            this.btnList.Location = new System.Drawing.Point(37, 92);
+            this.btnList.Location = new System.Drawing.Point(37, 103);
             this.btnList.Name = "btnList";
             this.btnList.Size = new System.Drawing.Size(154, 35);
             this.btnList.TabIndex = 1;
@@ -520,9 +541,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl4.Controls.Add(this.gridVaccine);
             this.groupControl4.Controls.Add(this.tableLayoutPanel3);
-            this.groupControl4.Location = new System.Drawing.Point(3, 193);
+            this.groupControl4.Location = new System.Drawing.Point(3, 227);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(1049, 274);
+            this.groupControl4.Size = new System.Drawing.Size(1049, 239);
             this.groupControl4.TabIndex = 8;
             this.groupControl4.Text = "Danh sách vaccine sử dụng";
             // 
@@ -533,7 +554,7 @@
             this.gridVaccine.Location = new System.Drawing.Point(8, 77);
             this.gridVaccine.MainView = this.gridView2;
             this.gridVaccine.Name = "gridVaccine";
-            this.gridVaccine.Size = new System.Drawing.Size(1041, 188);
+            this.gridVaccine.Size = new System.Drawing.Size(1041, 153);
             this.gridVaccine.TabIndex = 1;
             this.gridVaccine.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -566,10 +587,10 @@
             this.gridKH.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridKH.Location = new System.Drawing.Point(3, 465);
+            this.gridKH.Location = new System.Drawing.Point(3, 472);
             this.gridKH.MainView = this.gridView1;
             this.gridKH.Name = "gridKH";
-            this.gridKH.Size = new System.Drawing.Size(1049, 294);
+            this.gridKH.Size = new System.Drawing.Size(1049, 287);
             this.gridKH.TabIndex = 9;
             this.gridKH.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -584,16 +605,39 @@
             this.gridView1.OptionsFind.FindNullPrompt = "Nhập để tìm kiếm...";
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // cbBacSi
+            // tbEmail
             // 
-            this.cbBacSi.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cbBacSi.Location = new System.Drawing.Point(544, 103);
-            this.cbBacSi.Name = "cbBacSi";
-            this.cbBacSi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbBacSi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbBacSi.Size = new System.Drawing.Size(243, 24);
-            this.cbBacSi.TabIndex = 35;
+            this.tbEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbEmail.Location = new System.Drawing.Point(142, 136);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(270, 24);
+            this.tbEmail.TabIndex = 3;
+            // 
+            // labelEmail
+            // 
+            this.labelEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelEmail.Location = new System.Drawing.Point(18, 139);
+            this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Size = new System.Drawing.Size(33, 18);
+            this.labelEmail.TabIndex = 22;
+            this.labelEmail.Text = "Email";
+            // 
+            // labelSDT
+            // 
+            this.labelSDT.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelSDT.Location = new System.Drawing.Point(429, 139);
+            this.labelSDT.Name = "labelSDT";
+            this.labelSDT.Size = new System.Drawing.Size(67, 18);
+            this.labelSDT.TabIndex = 2;
+            this.labelSDT.Text = "Ngày tiêm";
+            // 
+            // tbSDT
+            // 
+            this.tbSDT.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbSDT.Location = new System.Drawing.Point(544, 136);
+            this.tbSDT.Name = "tbSDT";
+            this.tbSDT.Size = new System.Drawing.Size(243, 24);
+            this.tbSDT.TabIndex = 3;
             // 
             // PhieuTiemGUI
             // 
@@ -617,6 +661,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbBacSi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbMaKH.Properties)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
@@ -636,7 +681,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridKH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbBacSi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbEmail.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbSDT.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -685,5 +731,9 @@
         private System.Windows.Forms.Label label2;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
         private DevExpress.XtraEditors.ComboBoxEdit cbBacSi;
+        private DevExpress.XtraEditors.LabelControl labelEmail;
+        private DevExpress.XtraEditors.TextEdit tbSDT;
+        private DevExpress.XtraEditors.TextEdit tbEmail;
+        private DevExpress.XtraEditors.LabelControl labelSDT;
     }
 }

@@ -172,6 +172,7 @@ namespace GUI
                     editedHD[i].NguoiGH = view.GetRowCellValue(selectedRowHandles[0], "NGUOIGH").ToString();
                     editedHD[i].DiaChi = view.GetRowCellValue(selectedRowHandles[0], "DIACHI").ToString();
                     editedHD[i].Sdt = view.GetRowCellValue(selectedRowHandles[0], "SDT").ToString();
+                    editedHD[i].Email = view.GetRowCellValue(selectedRowHandles[0], "EMAIL").ToString();
                     return;
                 }
             }
@@ -180,7 +181,8 @@ namespace GUI
             string nguoiGH = view.GetRowCellValue(selectedRowHandles[0], "NGUOIGH").ToString();
             string diaCHi = view.GetRowCellValue(selectedRowHandles[0], "DIACHI").ToString();
             string sdt = view.GetRowCellValue(selectedRowHandles[0], "SDT").ToString();
-            DTO_HoaDonInfo hdif = new DTO_HoaDonInfo(maHD, ngayThu, nguoiGH, diaCHi, sdt);
+            string email = view.GetRowCellValue(selectedRowHandles[0], "EMAIL").ToString();
+            DTO_HoaDonInfo hdif = new DTO_HoaDonInfo(maHD, ngayThu, nguoiGH, diaCHi, sdt,email);
 
             editedHD.Add(hdif);
 

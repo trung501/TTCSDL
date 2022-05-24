@@ -50,22 +50,7 @@ namespace DAO
         {
             try
             {
-                //_conn.Open();
-
-                //string SQL = "INSERT INTO PHIEUTIEM " +
-                //    "(MAPHIEUTIEM, MAKH, MABS) " +
-                //    "VALUES " +
-                //    "(@MAPHIEUTIEM, @MAKH, @MABS)";
-
-                //SqlCommand cmd = new SqlCommand(SQL, _conn);
-
-                //cmd.Parameters.AddWithValue("@MAPHIEUTIEM", pt.MAPHIEUTIEM);
-                //cmd.Parameters.AddWithValue("@MAKH", pt.MAKH);
-                //cmd.Parameters.AddWithValue("@MABS", pt.MABS);
-
-                //if (cmd.ExecuteNonQuery() > 0)
-                //    return true;
-
+              
 
                 _conn.Open();
 
@@ -92,45 +77,7 @@ namespace DAO
             return false;
         }
 
-        //public List<DTO_Vaccine> GetVCFromPHIEUTIEM(string maPT)
-        //{ 
-            //List<DTO_Vaccine> list = new List<DTO_Vaccine>();
-            //try
-            //{
-            //    _conn.Open();
-            //    SqlCommand cmd = new SqlCommand("sp_GetVCFromPhieuTiem", _conn);
-            //    cmd.CommandType = CommandType.StoredProcedure;
-
-            //    cmd.Parameters.AddWithValue("@MAPHIEUTIEM", maPT);
-
-            //    SqlDataReader dataReader = cmd.ExecuteReader();
-            //    while (dataReader.Read())
-            //    {
-            //        string maVC = dataReader[0].ToString();
-            //        string tenVC = dataReader[1].ToString();
-            //        string nhaSX = dataReader[2].ToString();
-            //        string ngaySX = ((DateTime)dataReader[3]).ToString("dd/MM/yyyy");
-            //        string hanSD = ((DateTime)dataReader[4]).ToString("dd/MM/yyyy");
-            //        string soLo = dataReader[5].ToString();
-            //        int soLuongSan = int.Parse(dataReader[6].ToString());
-            //        int donGia = int.Parse(dataReader[7].ToString());
-            //        string loaiVC = dataReader[8].ToString();
-
-            //        DTO_Vaccine vaccine = new DTO_Vaccine(maVC, tenVC, nhaSX, ngaySX, hanSD, soLo, soLuongSan, donGia, loaiVC);
-            //        list.Add(vaccine);
-            //    }
-            //}
-            //catch (Exception)
-            //{
-            //    throw;
-            //}
-            //finally
-            //{
-            //    _conn.Close();
-            //}
-            //return list;
-        //}
-
+      
         public DataTable GetVCFromPHIEUTIEM(string maPT)
         {
             SqlDataReader rd;
@@ -247,7 +194,10 @@ namespace DAO
                 cmd.Parameters.AddWithValue("@TENKH", ptif.TenKH);
                 cmd.Parameters.AddWithValue("@NGAYSINH", ptif.NgaySinh);
                 cmd.Parameters.AddWithValue("@GIOITINH", ptif.GioiTinh);
-                cmd.Parameters.AddWithValue("@TIEUSU", ptif.TieuSu); 
+                cmd.Parameters.AddWithValue("@TIEUSU", ptif.TieuSu);
+                cmd.Parameters.AddWithValue("@EMAIL", ptif.Email);
+                cmd.Parameters.AddWithValue("@SDT", ptif.Sdt);
+
                 if (cmd.ExecuteNonQuery() > 0)
                 {
                     return true;

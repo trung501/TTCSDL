@@ -30,7 +30,9 @@ namespace GUI
         }
         BUS_NhapKho busNK = new BUS_NhapKho();
         BUS_LoaiVaccine busLVC = new BUS_LoaiVaccine();
-        private string maTK;
+        private string maQT;
+        private string maQK;
+
         public NhapKhoGUI(string maTK)
         {
             InitializeComponent();
@@ -39,7 +41,15 @@ namespace GUI
             gridView1.OptionsBehavior.Editable = false;
             gridView1.RowClick += gridView1_RowClick;
             gridView1.FocusedRowChanged += gridView1_FocusedRowChanged;
-            this.maTK = maTK;
+            this.maQT = "";
+            this.maQK = "";
+            if (maTK.StartsWith("QT")){
+                this.maQT = maTK;
+            }
+            else if (maTK.StartsWith("QK"))
+            {
+                this.maQK = maTK;
+            }
         }
 
         
@@ -158,11 +168,12 @@ namespace GUI
 
         private void btnChange_Click(object sender, EventArgs e)
         {
-            if (maTK.StartsWith("QK")){ 
+            if (this.maQT != "" || this.maQK != "")
+            { 
                 if (busNK.IsVCInStock(tbMaVC.Text))
                 {
                     string maLVC = cbLoaiVC.Text.Split(' ')[0];
-                    if (busNK.ChinhSuaVaccine(new DTO_QuanLyVaccine(tbMaVC.Text, tbTenVC.Text, tbNhaSanXuat.Text, dtpNgaySanXuat.DateTime.ToString("yyyy-MM-dd"), dtpHanSuDung.DateTime.ToString("yyyy-MM-dd"), tbSoLo.Text, int.Parse(tbSoLuong.Text), int.Parse(tbDonGia.Text), maLVC, this.maTK)))
+                    if (busNK.ChinhSuaVaccine(new DTO_QuanLyVaccine(tbMaVC.Text, tbTenVC.Text, tbNhaSanXuat.Text, dtpNgaySanXuat.DateTime.ToString("yyyy-MM-dd"), dtpHanSuDung.DateTime.ToString("yyyy-MM-dd"), tbSoLo.Text, int.Parse(tbSoLuong.Text), int.Parse(tbDonGia.Text), maLVC, this.maQK,this.maQT)))
                     {
                         MessageBoxEx.Show("Chỉnh sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         RefreshGrid();
@@ -179,13 +190,13 @@ namespace GUI
             }
             else
             {
-                MessageBoxEx.Show("Bạn phải là quản lý vaccine mới có thể làm được thao tác này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBoxEx.Show("Bạn phải có quyền quản lý vaccine mới thực hiện được thao tác này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (maTK.StartsWith("QK"))
+            if (this.maQT!=""||this.maQK!= "")
             {
                 if (tbMaVC.Text != "")
                 {
@@ -196,7 +207,7 @@ namespace GUI
                 if (tbTenVC.Text != "" && tbNhaSanXuat.Text != "" && tbNhaSanXuat.Text != "" && dtpNgaySanXuat.Text != "" && dtpHanSuDung.Text != "" && tbSoLo.Text != "" && tbSoLuong.Text != "" && tbDonGia.Text != "" && cbLoaiVC.Text != "")
                 {
                     string maLVC = cbLoaiVC.Text.Split(' ')[0];
-                    if (busNK.InsertVaccine(new DTO_QuanLyVaccine(maVC, tbTenVC.Text, tbNhaSanXuat.Text, dtpNgaySanXuat.DateTime.ToString("yyyy-MM-dd"), dtpHanSuDung.DateTime.ToString("yyyy-MM-dd"), tbSoLo.Text, int.Parse(tbSoLuong.Text), int.Parse(tbDonGia.Text), maLVC, this.maTK)))
+                    if (busNK.InsertVaccine(new DTO_QuanLyVaccine(maVC, tbTenVC.Text, tbNhaSanXuat.Text, dtpNgaySanXuat.DateTime.ToString("yyyy-MM-dd"), dtpHanSuDung.DateTime.ToString("yyyy-MM-dd"), tbSoLo.Text, int.Parse(tbSoLuong.Text), int.Parse(tbDonGia.Text), maLVC, this.maQK,this.maQT)))
                     {
                         MessageBoxEx.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         RefreshGrid();
@@ -214,7 +225,7 @@ namespace GUI
             }
             else
             {
-                MessageBoxEx.Show("Bạn phải là quản lý vaccine mới có thể làm được thao tác này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBoxEx.Show("Bạn phải có quyền quản lý vaccine mới thực hiện được thao tác này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

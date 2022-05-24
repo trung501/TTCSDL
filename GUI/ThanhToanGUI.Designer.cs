@@ -73,6 +73,8 @@
             this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
             this.tbMaGH = new DevExpress.XtraEditors.TextEdit();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tbEmailNGH = new DevExpress.XtraEditors.TextEdit();
+            this.labelEmail = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
@@ -101,6 +103,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbMaGH.Properties)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbEmailNGH.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -456,7 +459,7 @@
             // tbTenNGH
             // 
             this.tbTenNGH.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbTenNGH.Location = new System.Drawing.Point(119, 97);
+            this.tbTenNGH.Location = new System.Drawing.Point(119, 93);
             this.tbTenNGH.Name = "tbTenNGH";
             this.tbTenNGH.Size = new System.Drawing.Size(358, 24);
             this.tbTenNGH.TabIndex = 2;
@@ -464,7 +467,7 @@
             // labelControl4
             // 
             this.labelControl4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl4.Location = new System.Drawing.Point(19, 146);
+            this.labelControl4.Location = new System.Drawing.Point(19, 138);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(42, 18);
             this.labelControl4.TabIndex = 8;
@@ -473,7 +476,7 @@
             // labelControl3
             // 
             this.labelControl3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl3.Location = new System.Drawing.Point(19, 100);
+            this.labelControl3.Location = new System.Drawing.Point(19, 99);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(65, 18);
             this.labelControl3.TabIndex = 7;
@@ -482,7 +485,7 @@
             // tbSdtNGH
             // 
             this.tbSdtNGH.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbSdtNGH.Location = new System.Drawing.Point(119, 192);
+            this.tbSdtNGH.Location = new System.Drawing.Point(119, 171);
             this.tbSdtNGH.Name = "tbSdtNGH";
             this.tbSdtNGH.Size = new System.Drawing.Size(358, 24);
             this.tbSdtNGH.TabIndex = 4;
@@ -490,7 +493,7 @@
             // tbDiaChiNGH
             // 
             this.tbDiaChiNGH.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbDiaChiNGH.Location = new System.Drawing.Point(119, 143);
+            this.tbDiaChiNGH.Location = new System.Drawing.Point(119, 132);
             this.tbDiaChiNGH.Name = "tbDiaChiNGH";
             this.tbDiaChiNGH.Size = new System.Drawing.Size(358, 24);
             this.tbDiaChiNGH.TabIndex = 3;
@@ -498,7 +501,7 @@
             // labelControl5
             // 
             this.labelControl5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl5.Location = new System.Drawing.Point(19, 195);
+            this.labelControl5.Location = new System.Drawing.Point(19, 175);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(84, 18);
             this.labelControl5.TabIndex = 9;
@@ -510,8 +513,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl3.Controls.Add(this.lbNewNGH);
             this.groupControl3.Controls.Add(this.gridNGH);
+            this.groupControl3.Controls.Add(this.labelEmail);
             this.groupControl3.Controls.Add(this.labelControl5);
             this.groupControl3.Controls.Add(this.tbDiaChiNGH);
+            this.groupControl3.Controls.Add(this.tbEmailNGH);
             this.groupControl3.Controls.Add(this.tbSdtNGH);
             this.groupControl3.Controls.Add(this.labelControl19);
             this.groupControl3.Controls.Add(this.labelControl3);
@@ -532,7 +537,7 @@
             this.lbNewNGH.AutoSize = true;
             this.lbNewNGH.Font = new System.Drawing.Font("Tahoma", 7F);
             this.lbNewNGH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lbNewNGH.Location = new System.Drawing.Point(116, 75);
+            this.lbNewNGH.Location = new System.Drawing.Point(116, 74);
             this.lbNewNGH.Name = "lbNewNGH";
             this.lbNewNGH.Size = new System.Drawing.Size(209, 14);
             this.lbNewNGH.TabIndex = 28;
@@ -566,7 +571,7 @@
             // labelControl19
             // 
             this.labelControl19.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl19.Location = new System.Drawing.Point(19, 54);
+            this.labelControl19.Location = new System.Drawing.Point(19, 57);
             this.labelControl19.Name = "labelControl19";
             this.labelControl19.Size = new System.Drawing.Size(77, 18);
             this.labelControl19.TabIndex = 7;
@@ -600,6 +605,23 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1001, 765);
             this.tableLayoutPanel1.TabIndex = 6;
+            // 
+            // tbEmailNGH
+            // 
+            this.tbEmailNGH.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbEmailNGH.Location = new System.Drawing.Point(119, 206);
+            this.tbEmailNGH.Name = "tbEmailNGH";
+            this.tbEmailNGH.Size = new System.Drawing.Size(358, 24);
+            this.tbEmailNGH.TabIndex = 4;
+            // 
+            // labelEmail
+            // 
+            this.labelEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelEmail.Location = new System.Drawing.Point(19, 209);
+            this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Size = new System.Drawing.Size(33, 18);
+            this.labelEmail.TabIndex = 9;
+            this.labelEmail.Text = "Email";
             // 
             // ThanhToanGUI
             // 
@@ -640,6 +662,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbMaGH.Properties)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tbEmailNGH.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -690,5 +713,7 @@
         private DevExpress.XtraEditors.GroupControl groupControl5;
         private DevExpress.XtraEditors.SimpleButton btnCheckStatus;
         private System.Windows.Forms.Label lbNewNGH;
+        private DevExpress.XtraEditors.LabelControl labelEmail;
+        private DevExpress.XtraEditors.TextEdit tbEmailNGH;
     }
 }

@@ -44,6 +44,8 @@ namespace DAO
                 cmd.Parameters.AddWithValue("@DONGIA", vc.DONGIA);
                 cmd.Parameters.AddWithValue("@MALOAIVC", vc.MALVC);
                 cmd.Parameters.AddWithValue("@MAQUANKHO", vc.MAQUANKHO);
+                cmd.Parameters.AddWithValue("@MAQUANTRI", vc.MAQUANTRI);
+
                 if (cmd.ExecuteNonQuery() > 0)
                 {
                     return true;
@@ -78,6 +80,8 @@ namespace DAO
                 cmd.Parameters.AddWithValue("@DONGIA", vc.DONGIA);
                 cmd.Parameters.AddWithValue("@MALOAIVC", vc.MALVC);
                 cmd.Parameters.AddWithValue("@MAQUANKHO", vc.MAQUANKHO);
+                cmd.Parameters.AddWithValue("@MAQUANTRI", vc.MAQUANTRI);
+
                 if (cmd.ExecuteNonQuery() > 0)
                 {
                     return true;
