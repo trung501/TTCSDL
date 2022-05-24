@@ -34,7 +34,7 @@ namespace GUI
         BUS_Vaccine busVC = new BUS_Vaccine();
         BUS_KhachHang busKH = new BUS_KhachHang();
         BUS_ChiTietTiem busCTT = new BUS_ChiTietTiem();
-
+        BUS_BacSi busBacSi = new BUS_BacSi();
         List<DTO_ChiTietTiem> listCTT = new List<DTO_ChiTietTiem>();
 
 
@@ -47,17 +47,28 @@ namespace GUI
             gridView2.RowClick += GridView2_RowClick;
             gridView1.RowClick += GridView1_RowClick;
 
-
+            RefreshCombobox();
 
             GridLocalizer.Active = new MyGridLocalizer();
 
             InitAutoCompeteTextBox();
         }
 
+        public void RefreshCombobox()
+        {
+            cbBacSi.Properties.Items.Clear();
+            DataTable dt = busBacSi.getAllBacSi();
+            foreach (DataRow row in dt.Rows)
+            {
+                cbBacSi.Properties.Items.Add(row["BacSi"]);
+            }
+        }
+
         public void RefreshGrid()
         {
             gridKH.DataSource = busKH.getAllKH();
             gridView1.Columns["MAKH"].SortOrder = DevExpress.Data.ColumnSortOrder.Descending;
+
         }
 
         private void InitAutoCompeteTextBox()
@@ -226,8 +237,7 @@ namespace GUI
         private void btnThem_Click(object sender, EventArgs e)
         {
             string MaPT = busPhieuTiem.NextMAPHIEUTIEM();
-
-            if (listCTT.Count > 0 && tbTenKH.Text != "" && dtpNgaySinh.Text != "" && tbTienSu.Text != "" && tbMaBS.Text != "" && cbGioiTinh.Text != "")
+            if (listCTT.Count > 0 && tbTenKH.Text != "" && dtpNgaySinh.Text != "" && tbTienSu.Text != "" && cbBacSi.Text != "" && cbGioiTinh.Text != "")
             {
                 if (tbMaKH.Text == "")
                 {
@@ -241,7 +251,7 @@ namespace GUI
 
                 gridKH.DataSource = busKH.getAllKH();
 
-                if (busPhieuTiem.InsertPhieuTiem(new DTO_PhieuTiem(MaPT, dtpNgayTiem.DateTime.ToString("yyyy-MM-dd"), tbMaKH.Text, tbMaBS.Text)))
+                if (busPhieuTiem.InsertPhieuTiem(new DTO_PhieuTiem(MaPT, dtpNgayTiem.DateTime.ToString("yyyy-MM-dd"), tbMaKH.Text, cbBacSi.Text.Split(' ')[0])))
                 {
                     for (int i = 0; i < listCTT.Count; i++)
                     {
@@ -277,7 +287,7 @@ namespace GUI
 
         private void tbMaBS_Leave(object sender, EventArgs e)
         {
-            tbMaBS.Text = tbMaBS.Text.ToUpper();
+            
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -285,12 +295,13 @@ namespace GUI
             gridKH.DataSource = busKH.getAllKH();
             gridVaccine.DataSource = null;
             listCTT.Clear();
+            RefreshCombobox();
             tbTenKH.Text = "";
             tbTienSu.Text = "";
             dtpNgaySinh.Text = "";
             dtpNgayTiem.Text = DateTime.Now.ToString("MM/dd/yyyy");
             cbGioiTinh.Text = "";
-            tbMaBS.Text = "";
+            cbBacSi.Text = "";
             tbMaKH.Text = "";
             tbMaVC.Text = "";
             tbMuiThu.Text = "";

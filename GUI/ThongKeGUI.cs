@@ -88,7 +88,7 @@ namespace GUI
             chartControlLoaiVC.Series["BDLoaiVC"].Points.Clear();
             foreach (DataRow row in dt.Rows)
             {
-                string TenVC = row["Loai"].ToString();
+                string TenVC = row["LOAIVACCINE"].ToString();
                 TenVC = TenVC.Trim();
                 int SoLuong = int.Parse(row["SoLuong"].ToString());
                 chartControlLoaiVC.Series["BDLoaiVC"].Points.Add(new DevExpress.XtraCharts.SeriesPoint(TenVC, SoLuong));

@@ -12,6 +12,21 @@ namespace DAO
 {
     public class DAO_BacSi: DBProvider
     {
+        public DataTable getAllBacSi()
+        {
+
+            SqlDataReader rd;
+            DataTable dt = new DataTable();
+
+            _conn.Open();
+            SqlCommand cmd = new SqlCommand("sp_GetAllBacSi", _conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            rd = cmd.ExecuteReader();
+            dt.Load(rd);
+            _conn.Close();
+
+            return dt;
+        }
         public DataRow GetBacSyInfo(string MABS)
         {
             DataTable dt = new DataTable();

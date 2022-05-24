@@ -12,7 +12,7 @@ namespace BUS
     public class BUS_NhapKho
     {
         DAO_Vaccine daoVC = new DAO_Vaccine();
-
+        DAO_QuanLyVaccine daoQLVC = new DAO_QuanLyVaccine();
 
         public DataTable getAllVaccine()
         {
@@ -63,15 +63,16 @@ namespace BUS
         {
             return daoVC.GetSoLuongConLai(maVC);
         }
-        public bool ChinhSuaVaccine(DTO_Vaccine vc)
+        public bool ChinhSuaVaccine(DTO_QuanLyVaccine vc)
         {
-            return daoVC.ChinhSuaVaccine(vc);
+            return daoQLVC.ChinhSuaVaccine(vc);
         }
-        public bool InsertVaccine(DTO_Vaccine vc)
+        public bool InsertVaccine(DTO_QuanLyVaccine vc)
         {
-            return daoVC.InsertVaccine(vc);
+            return daoQLVC.InsertVaccine(vc);
         }
-        public string NextMAVACCINE() {
+        public string NextMAVACCINE()
+        {
             string MaVC = daoVC.GetLastestMAVACCINE().Trim();
             if (MaVC == null)
             {
@@ -85,6 +86,10 @@ namespace BUS
             MaVC += (ptIndex).ToString();
             return MaVC;
         }
+        public string getMaLVCFromMaVC(string maVC)
+        {
+            return daoVC.getMaLVCFromMaVC(maVC);
+        }
     }
 
-}
+    }

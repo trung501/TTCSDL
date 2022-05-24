@@ -14,7 +14,6 @@ namespace DAO
         public DataTable getAllVaccine()
         {
 
-
             SqlDataReader rd;
             DataTable dt = new DataTable();
 
@@ -27,7 +26,35 @@ namespace DAO
 
             return dt;
         }
-        
+
+        public string getMaLVCFromMaVC(string maVC)
+        {
+            SqlDataReader rd;
+            DataTable dt = new DataTable();
+
+            _conn.Open();
+            SqlCommand cmd = new SqlCommand("sp_GetMaLVCFromMaVC", _conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@MAVACCINE", maVC);
+            rd = cmd.ExecuteReader();
+            dt.Load(rd);
+            _conn.Close();            
+
+            try
+            {               
+                if (dt.Rows.Count > 0)
+                {
+                    return dt.Rows[0][0].ToString().Trim();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return null;
+        }
+
+
         public List<DTO_Vaccine> SearchByMaVC(string value)
         {
 
@@ -53,8 +80,7 @@ namespace DAO
                     string soLo = dataReader[5].ToString();
                     int soLuongSan = int.Parse(dataReader[6].ToString());
                     int donGia = int.Parse(dataReader[7].ToString());
-                    string loaiVC = dataReader[8].ToString();
-
+                    string loaiVC = dataReader[8].ToString();                   
                     DTO_Vaccine vaccine = new DTO_Vaccine(maVC, tenVC, nhaSX, ngaySX, hanSD, soLo, soLuongSan, donGia, loaiVC);
                     list.Add(vaccine);
                 }
@@ -333,74 +359,7 @@ namespace DAO
                 throw;
             }
             return 0;
-        }
-        public bool InsertVaccine(DTO_Vaccine vc)
-        {
-            try
-            {
-                _conn.Open();
-
-                SqlCommand cmd = new SqlCommand("sp_InsertVaccine", _conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@MAVACCINE", vc.MAVACCINE);
-                cmd.Parameters.AddWithValue("@TENVACCINE", vc.TENVACCINE);
-                cmd.Parameters.AddWithValue("@NHASX", vc.NHASX);
-                cmd.Parameters.AddWithValue("@NGAYSX", vc.NGAYSX);
-                cmd.Parameters.AddWithValue("@HANSD", vc.HANSD);
-                cmd.Parameters.AddWithValue("@SOLO", vc.SOLO);
-                cmd.Parameters.AddWithValue("@SOLUONGCOSAN", vc.SOLUONGCOSAN);
-                cmd.Parameters.AddWithValue("@DONGIA", vc.DONGIA);
-                cmd.Parameters.AddWithValue("@LOAIVACCINE", vc.LOAIVACCINE);
-                if (cmd.ExecuteNonQuery() > 0)
-                {
-                    return true;
-                }
-                return false;
-            }
-            catch (Exception)
-            {
-            }
-            finally
-            {
-                _conn.Close();
-            }
-
-            return false;
-        }
-        public bool ChinhSuaVaccine(DTO_Vaccine vc)
-        {
-            try
-            {
-                _conn.Open();
-
-                SqlCommand cmd = new SqlCommand("sp_ChinhSuaVaccine", _conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@MAVACCINE", vc.MAVACCINE);
-                cmd.Parameters.AddWithValue("@TENVACCINE", vc.TENVACCINE);
-                cmd.Parameters.AddWithValue("@NHASX", vc.NHASX);
-                cmd.Parameters.AddWithValue("@NGAYSX", vc.NGAYSX);
-                cmd.Parameters.AddWithValue("@HANSD", vc.HANSD);
-                cmd.Parameters.AddWithValue("@SOLO", vc.SOLO);
-                cmd.Parameters.AddWithValue("@SOLUONGCOSAN", vc.SOLUONGCOSAN);
-                cmd.Parameters.AddWithValue("@DONGIA", vc.DONGIA);
-                cmd.Parameters.AddWithValue("@LOAIVC", vc.LOAIVACCINE);
-                if (cmd.ExecuteNonQuery() > 0)
-                {
-                    return true;
-                }
-                return false;
-            }
-            catch (Exception)
-            {
-            }
-            finally
-            {
-                _conn.Close();
-            }
-
-            return false;
-
-        }
+        }        
         public string GetLastestMAVACCINE()
         {
             string query = "SELECT TOP(1) MAVACCINE FROM VACCINE ORDER BY MAVACCINE DESC";

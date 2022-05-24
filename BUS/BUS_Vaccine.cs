@@ -62,6 +62,9 @@ namespace BUS
         {
             return dao.GetSoLuongConLai(maVC);
         }
-
+        public string getMaLVCFromMaVC(string maVC)
+        {
+            return dao.getMaLVCFromMaVC(maVC);
+        }
     }
 }

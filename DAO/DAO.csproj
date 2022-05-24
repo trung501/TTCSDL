@@ -54,6 +54,7 @@
     <Compile Include="DAO_LoaiVaccine.cs" />
     <Compile Include="DAO_PhieuTiem.cs" />
     <Compile Include="DAO_QuanKho.cs" />
+    <Compile Include="DAO_QuanLyVaccine.cs" />
     <Compile Include="DAO_QuanTri.cs" />
     <Compile Include="DAO_RPHoaDon.cs" />
     <Compile Include="DAO_PhieuTiemRP.cs" />

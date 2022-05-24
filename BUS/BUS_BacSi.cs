@@ -27,5 +27,10 @@ namespace BUS
             MABS += (ptIndex).ToString();
             return MABS;
         }
+        public DataTable getAllBacSi()
+        {
+            return dao.getAllBacSi();
     }
+    }
+   
 }

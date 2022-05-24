@@ -22,7 +22,9 @@ namespace GUI
         BUS_LoaiVaccine busLVC = new BUS_LoaiVaccine();
         public void RefreshGrid()
         {
-            gridListVC.DataSource = busLVC.getAllLoaiVC();
+            DataTable dtLVC = busLVC.getAllLoaiVC();
+            dtLVC.Columns.Remove("InfoLVC");
+            gridListVC.DataSource = dtLVC;
            
         }
         private void ListLVC_Leave(object sender, EventArgs e)

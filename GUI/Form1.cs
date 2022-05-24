@@ -47,7 +47,7 @@ namespace GUI
             container.Controls.Add(vcGUI);
             vcGUI.Dock = DockStyle.Fill;
 
-            nkGUI = new NhapKhoGUI();
+            nkGUI = new NhapKhoGUI(maTK);
             container.Controls.Add(nkGUI);
             nkGUI.Dock = DockStyle.Fill;
 
@@ -127,8 +127,8 @@ namespace GUI
         private void AdminDisplay()
         {
             aceHome.Visible = true;
-            aceVaccine1.Visible = false;
-            aceVaccine2.Visible = true;
+            aceVaccine1.Visible = true;
+            aceVaccine2.Visible = false;
             aceLichSu.Visible = true;
             acePhieuTiem.Visible = true;
             aceThanhToan.Visible = true;

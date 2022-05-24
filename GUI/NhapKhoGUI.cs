@@ -23,14 +23,15 @@ namespace GUI
             {
                 if (_instance == null)
                 {
-                    _instance = new NhapKhoGUI();
+                    _instance = new NhapKhoGUI("");
                 }
                 return _instance;
             }
         }
         BUS_NhapKho busNK = new BUS_NhapKho();
         BUS_LoaiVaccine busLVC = new BUS_LoaiVaccine();
-        public NhapKhoGUI()
+        private string maTK;
+        public NhapKhoGUI(string maTK)
         {
             InitializeComponent();
             dtpNgaySanXuat.Text= DateTime.Now.ToString("MM/dd/yyyy");
@@ -38,6 +39,7 @@ namespace GUI
             gridView1.OptionsBehavior.Editable = false;
             gridView1.RowClick += gridView1_RowClick;
             gridView1.FocusedRowChanged += gridView1_FocusedRowChanged;
+            this.maTK = maTK;
         }
 
         
@@ -48,7 +50,7 @@ namespace GUI
             DataTable dt = busLVC.getAllLoaiVC();
             foreach (DataRow row in dt.Rows)
             {
-                cbLoaiVC.Properties.Items.Add(row["LOAIVACCINE"]);            
+                cbLoaiVC.Properties.Items.Add(row["InfoLVC"]);            
             }
 
             gridVaccine.DataSource = busNK.getAllVaccine();
@@ -117,7 +119,7 @@ namespace GUI
             dtpHanSuDung.Text= gridView1.GetRowCellValue(e.RowHandle, "HANSD").ToString().Split(' ')[0];
             tbSoLo.Text= gridView1.GetRowCellValue(e.RowHandle, "SOLO").ToString().Trim();
             tbDonGia.Text= gridView1.GetRowCellValue(e.RowHandle, "DONGIA").ToString().Trim();
-            cbLoaiVC.Text = gridView1.GetRowCellValue(e.RowHandle, "LOAIVACCINE").ToString().Trim();
+            cbLoaiVC.Text = busNK.getMaLVCFromMaVC(tbMaVC.Text) +" - "+  gridView1.GetRowCellValue(e.RowHandle, "LOAIVACCINE").ToString().Trim();
             tbSoLuong.Text= gridView1.GetRowCellValue(e.RowHandle, "SOLUONGCOSAN").ToString().Trim();
         }
 
@@ -127,7 +129,7 @@ namespace GUI
             DataTable dt = busLVC.getAllLoaiVC();
             foreach (DataRow row in dt.Rows)
             {
-                cbLoaiVC.Properties.Items.Add(row["LOAIVACCINE"]);
+                cbLoaiVC.Properties.Items.Add(row["InfoLVC"]);
             }
             cbLoaiVC.Text = "";
             gridVaccine.DataSource = busNK.getAllVaccine();
@@ -156,49 +158,64 @@ namespace GUI
 
         private void btnChange_Click(object sender, EventArgs e)
         {
-            if (busNK.IsVCInStock(tbMaVC.Text))
-            {
-                if(busNK.ChinhSuaVaccine(new DTO_Vaccine(tbMaVC.Text, tbTenVC.Text, tbNhaSanXuat.Text, dtpNgaySanXuat.DateTime.ToString("yyyy-MM-dd"), dtpHanSuDung.DateTime.ToString("yyyy-MM-dd"), tbSoLo.Text, int.Parse(tbSoLuong.Text), int.Parse(tbDonGia.Text), cbLoaiVC.Text)))
+            if (maTK.StartsWith("QK")){ 
+                if (busNK.IsVCInStock(tbMaVC.Text))
                 {
-                    MessageBoxEx.Show("Chỉnh sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    RefreshGrid();
-                }
-                else {
-                 MessageBoxEx.Show("Thay đổi không thành công. Vui lòng thử lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                    string maLVC = cbLoaiVC.Text.Split(' ')[0];
+                    if (busNK.ChinhSuaVaccine(new DTO_QuanLyVaccine(tbMaVC.Text, tbTenVC.Text, tbNhaSanXuat.Text, dtpNgaySanXuat.DateTime.ToString("yyyy-MM-dd"), dtpHanSuDung.DateTime.ToString("yyyy-MM-dd"), tbSoLo.Text, int.Parse(tbSoLuong.Text), int.Parse(tbDonGia.Text), maLVC, this.maTK)))
+                    {
+                        MessageBoxEx.Show("Chỉnh sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        RefreshGrid();
+                    }
+                    else {
+                        MessageBoxEx.Show("Thay đổi không thành công. Vui lòng thử lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
 
+                }
+                else
+                {
+                    MessageBoxEx.Show("Mã vaccine không tồn tại. Vui lòng nhập lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                } 
             }
             else
             {
-                 MessageBoxEx.Show("Mã vaccine không tồn tại. Vui lòng nhập lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBoxEx.Show("Bạn phải là quản lý vaccine mới có thể làm được thao tác này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (tbMaVC.Text!="")
+            if (maTK.StartsWith("QK"))
             {
-                MessageBoxEx.Show("Để thêm mới vaccine, vui lòng để trống mã vaccine.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            string maVC = busNK.NextMAVACCINE();
-            if (tbTenVC.Text!=""&& tbNhaSanXuat.Text != ""&& tbNhaSanXuat.Text!=""&& dtpNgaySanXuat.Text!=""&& dtpHanSuDung.Text!="" && tbSoLo.Text!=""&& tbSoLuong.Text!=""&& tbDonGia.Text!=""&& cbLoaiVC.Text != "")
-            {
-                if(busNK.InsertVaccine(new DTO_Vaccine(maVC, tbTenVC.Text, tbNhaSanXuat.Text, dtpNgaySanXuat.DateTime.ToString("yyyy-MM-dd"), dtpHanSuDung.DateTime.ToString("yyyy-MM-dd"), tbSoLo.Text, int.Parse(tbSoLuong.Text), int.Parse(tbDonGia.Text), cbLoaiVC.Text)))
+                if (tbMaVC.Text != "")
                 {
-                    MessageBoxEx.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    RefreshGrid(); 
+                    MessageBoxEx.Show("Để thêm mới vaccine, vui lòng để trống mã vaccine.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
                 }
-                else { 
-                MessageBoxEx.Show("Thêm không thành công. Vui lòng thử lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string maVC = busNK.NextMAVACCINE();
+                if (tbTenVC.Text != "" && tbNhaSanXuat.Text != "" && tbNhaSanXuat.Text != "" && dtpNgaySanXuat.Text != "" && dtpHanSuDung.Text != "" && tbSoLo.Text != "" && tbSoLuong.Text != "" && tbDonGia.Text != "" && cbLoaiVC.Text != "")
+                {
+                    string maLVC = cbLoaiVC.Text.Split(' ')[0];
+                    if (busNK.InsertVaccine(new DTO_QuanLyVaccine(maVC, tbTenVC.Text, tbNhaSanXuat.Text, dtpNgaySanXuat.DateTime.ToString("yyyy-MM-dd"), dtpHanSuDung.DateTime.ToString("yyyy-MM-dd"), tbSoLo.Text, int.Parse(tbSoLuong.Text), int.Parse(tbDonGia.Text), maLVC, this.maTK)))
+                    {
+                        MessageBoxEx.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        RefreshGrid();
+                    }
+                    else
+                    {
+                        MessageBoxEx.Show("Thêm không thành công. Vui lòng thử lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBoxEx.Show("Vui lòng nhập toàn bộ thông tin vaccine trước khi thêm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
                 }
             }
             else
             {
-                MessageBoxEx.Show("Vui lòng nhập toàn bộ thông tin vaccine trước khi thêm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                MessageBoxEx.Show("Bạn phải là quản lý vaccine mới có thể làm được thao tác này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
         }
 
         private void cbLoaiVC_SelectedIndexChanged(object sender, EventArgs e)
