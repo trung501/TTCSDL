@@ -59,7 +59,7 @@ namespace GUI
             //Nhap dtLoaiVC:
             foreach (DataRow row in dtLoaiVC.Rows)
             {
-                string MaLoaiVC = row["Loai"].ToString();
+                string MaLoaiVC = row["Loaivaccine"].ToString();
                 string SoLuong = row["SoLuong"].ToString();
                 string TenLoaiVC = busRP.GetTenLoaiVCTheoMaLoaiVC(MaLoaiVC);
 
