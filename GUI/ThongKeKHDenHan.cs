@@ -42,17 +42,25 @@ namespace GUI
             string NgayDau = dateEditDau.DateTime.ToString("yyyy-MM-dd");
             string NgayCuoi = dateEditCuoi.DateTime.ToString("yyyy-MM-dd");
             gridKH.DataSource = busThongKe.GetKhachHangDenHanINTIME(NgayDau, NgayCuoi);
-
         }
 
         private void dateEditDau_EditValueChanged(object sender, EventArgs e)
         {
             Refresh();
+            
         }
 
         private void dateEditCuoi_EditValueChanged(object sender, EventArgs e)
         {
             Refresh();
+        }
+
+        private void btnXuat_Click(object sender, EventArgs e)
+        {
+            string NgayDau = dateEditDau.DateTime.ToString("yyyy-MM-dd");
+            string NgayCuoi = dateEditCuoi.DateTime.ToString("yyyy-MM-dd");
+            ThongKeKHDenHan_Provider KHDenHanRP = new ThongKeKHDenHan_Provider(NgayDau,NgayCuoi);
+            KHDenHanRP.ShowReport();
         }
     }
 }

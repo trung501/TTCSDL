@@ -154,6 +154,14 @@
     <Compile Include="PhieuTiemRP_Provider.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThongKeKHDenHan_DataSet.cs">
+      <DependentUpon>ThongKeKHDenHan_DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ThongKeKHDenHan_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThongKeKHDenHan_DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TaiKhoanGUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -185,6 +193,13 @@
     <Compile Include="ThongKeKHDenHan.Designer.cs">
       <DependentUpon>ThongKeKHDenHan.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThongKeKHDenHanRP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ThongKeKHDenHanRP.Designer.cs">
+      <DependentUpon>ThongKeKHDenHanRP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongKeKHDenHan_Provider.cs" />
     <Compile Include="ThongKeRP.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -261,6 +276,9 @@
     <EmbeddedResource Include="ThongKeKHDenHan.resx">
       <DependentUpon>ThongKeKHDenHan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ThongKeKHDenHanRP.resx">
+      <DependentUpon>ThongKeKHDenHanRP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ThongKeRP.resx">
       <DependentUpon>ThongKeRP.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,6 +317,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="ThongKeKHDenHan_DataSet.xsc">
+      <DependentUpon>ThongKeKHDenHan_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ThongKeKHDenHan_DataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ThongKeKHDenHan_DataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ThongKeKHDenHan_DataSet.xss">
+      <DependentUpon>ThongKeKHDenHan_DataSet.xsd</DependentUpon>
+    </None>
     <None Include="ThongKe_DataSet.xsc">
       <DependentUpon>ThongKe_DataSet.xsd</DependentUpon>
     </None>

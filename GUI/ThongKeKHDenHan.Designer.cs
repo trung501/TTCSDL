@@ -31,7 +31,6 @@ namespace GUI
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnEmailSelect = new DevExpress.XtraEditors.SimpleButton();
-            this.sendAllEmail = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnXuat = new DevExpress.XtraEditors.SimpleButton();
             this.dateEditCuoi = new DevExpress.XtraEditors.DateEdit();
@@ -55,16 +54,15 @@ namespace GUI
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.btnEmailSelect);
-            this.panelControl1.Controls.Add(this.sendAllEmail);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Controls.Add(this.btnXuat);
             this.panelControl1.Controls.Add(this.dateEditCuoi);
             this.panelControl1.Controls.Add(this.dateEditDau);
             this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl1.Location = new System.Drawing.Point(0, 700);
+            this.panelControl1.Location = new System.Drawing.Point(0, 715);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1062, 62);
+            this.panelControl1.Size = new System.Drawing.Size(1062, 47);
             this.panelControl1.TabIndex = 0;
             // 
             // btnEmailSelect
@@ -72,48 +70,38 @@ namespace GUI
             this.btnEmailSelect.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnEmailSelect.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Success;
             this.btnEmailSelect.Appearance.Options.UseBackColor = true;
-            this.btnEmailSelect.Location = new System.Drawing.Point(594, 14);
+            this.btnEmailSelect.Location = new System.Drawing.Point(769, 6);
             this.btnEmailSelect.Name = "btnEmailSelect";
-            this.btnEmailSelect.Size = new System.Drawing.Size(132, 35);
+            this.btnEmailSelect.Size = new System.Drawing.Size(117, 28);
             this.btnEmailSelect.TabIndex = 1;
-            this.btnEmailSelect.Text = "Gửi Email đã chọn";
-            // 
-            // sendAllEmail
-            // 
-            this.sendAllEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.sendAllEmail.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Question;
-            this.sendAllEmail.Appearance.Options.UseBackColor = true;
-            this.sendAllEmail.Location = new System.Drawing.Point(746, 14);
-            this.sendAllEmail.Name = "sendAllEmail";
-            this.sendAllEmail.Size = new System.Drawing.Size(132, 35);
-            this.sendAllEmail.TabIndex = 1;
-            this.sendAllEmail.Text = "Gửi Email tất cả";
+            this.btnEmailSelect.Text = "Gửi Email";
             // 
             // labelControl1
             // 
             this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl1.Location = new System.Drawing.Point(30, 21);
+            this.labelControl1.Location = new System.Drawing.Point(30, 13);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(111, 18);
+            this.labelControl1.Size = new System.Drawing.Size(78, 18);
             this.labelControl1.TabIndex = 5;
-            this.labelControl1.Text = "Thời gian tiêm từ";
+            this.labelControl1.Text = "Hạn tiêm từ";
             // 
             // btnXuat
             // 
             this.btnXuat.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnXuat.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
             this.btnXuat.Appearance.Options.UseBackColor = true;
-            this.btnXuat.Location = new System.Drawing.Point(899, 14);
+            this.btnXuat.Location = new System.Drawing.Point(899, 6);
             this.btnXuat.Name = "btnXuat";
-            this.btnXuat.Size = new System.Drawing.Size(132, 35);
+            this.btnXuat.Size = new System.Drawing.Size(125, 28);
             this.btnXuat.TabIndex = 1;
             this.btnXuat.Text = "Xuất danh sách";
+            this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
             // 
             // dateEditCuoi
             // 
             this.dateEditCuoi.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateEditCuoi.EditValue = null;
-            this.dateEditCuoi.Location = new System.Drawing.Point(356, 18);
+            this.dateEditCuoi.Location = new System.Drawing.Point(323, 10);
             this.dateEditCuoi.Name = "dateEditCuoi";
             this.dateEditCuoi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -129,7 +117,7 @@ namespace GUI
             // 
             this.dateEditDau.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateEditDau.EditValue = null;
-            this.dateEditDau.Location = new System.Drawing.Point(147, 18);
+            this.dateEditDau.Location = new System.Drawing.Point(114, 10);
             this.dateEditDau.Name = "dateEditDau";
             this.dateEditDau.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -144,7 +132,7 @@ namespace GUI
             // labelControl2
             // 
             this.labelControl2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl2.Location = new System.Drawing.Point(325, 21);
+            this.labelControl2.Location = new System.Drawing.Point(292, 13);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(25, 18);
             this.labelControl2.TabIndex = 6;
@@ -157,7 +145,7 @@ namespace GUI
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 3, 1, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1062, 700);
+            this.groupControl1.Size = new System.Drawing.Size(1062, 715);
             this.groupControl1.TabIndex = 5;
             this.groupControl1.Text = "Thống kê khách hàng đến thời gian tiêm";
             // 
@@ -169,7 +157,7 @@ namespace GUI
             this.gridKH.Location = new System.Drawing.Point(5, 36);
             this.gridKH.MainView = this.gridView1;
             this.gridKH.Name = "gridKH";
-            this.gridKH.Size = new System.Drawing.Size(1052, 658);
+            this.gridKH.Size = new System.Drawing.Size(1052, 673);
             this.gridKH.TabIndex = 11;
             this.gridKH.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -213,7 +201,6 @@ namespace GUI
 
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.SimpleButton sendAllEmail;
         private DevExpress.XtraEditors.SimpleButton btnXuat;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         public DevExpress.XtraEditors.DateEdit dateEditCuoi;

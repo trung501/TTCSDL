@@ -45,7 +45,7 @@ namespace GUI
             foreach(DataRow row in dtHD.Rows)
             {
                 string Ngay = row["Ngay"].ToString();
-                Ngay = Ngay.Substring(0, 10);
+                Ngay = Ngay.Split(' ')[0];
                 string DoanhThu = row["Tien"].ToString();
 
                 ds.DoanhThu.Rows.Add(new Object[]
