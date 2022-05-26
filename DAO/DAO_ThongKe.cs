@@ -242,5 +242,34 @@ namespace DAO
 
             return dt;
         }
+        public DataTable GetKhachHangDenHanINTIME(string NgayDau, string NgayCuoi)
+        {
+            DataTable dt = new DataTable();
+            SqlDataReader rd;
+            try
+            {
+                _conn.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_GetKhachHangDenHanINTIME", _conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@NgayDau", NgayDau);
+                cmd.Parameters.AddWithValue("@NgayCuoi", NgayCuoi);
+                rd = cmd.ExecuteReader();
+                dt.Load(rd);
+
+            }
+            catch (Exception)
+            {
+
+
+            }
+            finally
+            {
+                _conn.Close();
+            }
+
+            return dt;
+        }
     }
 }

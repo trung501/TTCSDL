@@ -179,6 +179,12 @@
     <Compile Include="ThongKeGUI.Designer.cs">
       <DependentUpon>ThongKeGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThongKeKHDenHan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThongKeKHDenHan.Designer.cs">
+      <DependentUpon>ThongKeKHDenHan.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThongKeRP.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -251,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ThongKeGUI.resx">
       <DependentUpon>ThongKeGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongKeKHDenHan.resx">
+      <DependentUpon>ThongKeKHDenHan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThongKeRP.resx">
       <DependentUpon>ThongKeRP.cs</DependentUpon>

@@ -215,7 +215,7 @@
             series2.View = doughnutSeriesView1;
             this.chartControlLoaiVC.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series2};
-            this.chartControlLoaiVC.Size = new System.Drawing.Size(497, 370);
+            this.chartControlLoaiVC.Size = new System.Drawing.Size(497, 379);
             this.chartControlLoaiVC.TabIndex = 0;
             // 
             // chartControlMostVC
@@ -237,7 +237,7 @@
             this.chartControlMostVC.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series3};
             this.chartControlMostVC.SeriesTemplate.SeriesPointsSorting = DevExpress.XtraCharts.SortingMode.Ascending;
-            this.chartControlMostVC.Size = new System.Drawing.Size(557, 342);
+            this.chartControlMostVC.Size = new System.Drawing.Size(557, 351);
             this.chartControlMostVC.TabIndex = 8;
             chartTitle2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             chartTitle2.Text = "Top Vaccine dùng nhiều";
@@ -247,7 +247,7 @@
             // labelControl4
             // 
             this.labelControl4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.labelControl4.Location = new System.Drawing.Point(524, 741);
+            this.labelControl4.Location = new System.Drawing.Point(524, 750);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(81, 18);
             this.labelControl4.TabIndex = 9;
@@ -256,7 +256,7 @@
             // labelControl5
             // 
             this.labelControl5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.labelControl5.Location = new System.Drawing.Point(742, 741);
+            this.labelControl5.Location = new System.Drawing.Point(742, 750);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(25, 18);
             this.labelControl5.TabIndex = 10;
@@ -266,7 +266,7 @@
             // 
             this.dateEditVCDau.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.dateEditVCDau.EditValue = null;
-            this.dateEditVCDau.Location = new System.Drawing.Point(611, 738);
+            this.dateEditVCDau.Location = new System.Drawing.Point(611, 747);
             this.dateEditVCDau.Name = "dateEditVCDau";
             this.dateEditVCDau.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -281,7 +281,7 @@
             // 
             this.dateEditVCCuoi.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.dateEditVCCuoi.EditValue = null;
-            this.dateEditVCCuoi.Location = new System.Drawing.Point(773, 738);
+            this.dateEditVCCuoi.Location = new System.Drawing.Point(773, 747);
             this.dateEditVCCuoi.Name = "dateEditVCCuoi";
             this.dateEditVCCuoi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -322,7 +322,7 @@
             // labelControl6
             // 
             this.labelControl6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.labelControl6.Location = new System.Drawing.Point(904, 741);
+            this.labelControl6.Location = new System.Drawing.Point(904, 750);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(48, 18);
             this.labelControl6.TabIndex = 15;
@@ -331,7 +331,7 @@
             // cbBoxEditSoMostVC
             // 
             this.cbBoxEditSoMostVC.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.cbBoxEditSoMostVC.Location = new System.Drawing.Point(958, 738);
+            this.cbBoxEditSoMostVC.Location = new System.Drawing.Point(958, 747);
             this.cbBoxEditSoMostVC.Name = "cbBoxEditSoMostVC";
             this.cbBoxEditSoMostVC.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -385,7 +385,7 @@
             this.Controls.Add(this.dateEditDau);
             this.Controls.Add(this.labelControl2);
             this.Name = "ThongKeGUI";
-            this.Size = new System.Drawing.Size(1055, 765);
+            this.Size = new System.Drawing.Size(1055, 774);
             ((System.ComponentModel.ISupportInitialize)(this.dateEditCuoi.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditCuoi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditDau.Properties.CalendarTimeProperties)).EndInit();

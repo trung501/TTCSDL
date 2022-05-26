@@ -49,7 +49,7 @@ namespace GUI
             dateEditVCCuoi.EditValue = DateTime.Now.ToString("yyyy-MM-dd");
             dateEditVCDau.EditValue = DateTime.Now.AddDays(-60).ToString("yyyy-MM-dd");
             cbBoxEditSoMostVC.SelectedIndex = 3;
-            LoadDataToChartMostVC(); 
+            LoadDataToChartMostVC();
 
         }
 
@@ -266,5 +266,6 @@ namespace GUI
             TKCreator.ShowThongKeRP();
 
         }
+        
     }
 }

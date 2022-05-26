@@ -134,7 +134,13 @@ namespace GUI
                 {
                     if (Convert.ToDouble(tbLieuLuong.Text) <= busVC.GetSoLuongConLai(tbMaVC.Text))
                     {
-                        DTO_ChiTietTiem ctt = new DTO_ChiTietTiem(busPhieuTiem.NextMAPHIEUTIEM(), tbMaVC.Text, busVC.getVCPrice(tbMaVC.Text), int.Parse(tbMuiThu.Text), dtpNgayTiem.DateTime.AddMonths(Convert.ToInt32(tbNhacLai.Text)).ToString("yyyy-MM-dd"), Convert.ToDouble(tbLieuLuong.Text));
+                        string ngayTiemNhacLai = "9999-01-01";
+
+                        if (ceNhacLai.Checked && tbNhacLai.Text != "")
+                        {
+                            ngayTiemNhacLai = dtpNgayTiem.DateTime.AddMonths(Convert.ToInt32(tbNhacLai.Text)).ToString("yyyy-MM-dd");
+                        }
+                        DTO_ChiTietTiem ctt = new DTO_ChiTietTiem(busPhieuTiem.NextMAPHIEUTIEM(), tbMaVC.Text, busVC.getVCPrice(tbMaVC.Text), int.Parse(tbMuiThu.Text), ngayTiemNhacLai, Convert.ToDouble(tbLieuLuong.Text),ceNhacLai.Checked);
 
                         for (int i = 0; i < listCTT.Count; i++)
                         {
@@ -393,6 +399,18 @@ namespace GUI
         private void tbTenKH_EditValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cenhaclai_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ceNhacLai.Checked)
+            {
+                tbNhacLai.ReadOnly = false;
+            }
+            else
+            {
+                tbNhacLai.ReadOnly = true;
+            }
         }
     }
 }
