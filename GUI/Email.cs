@@ -18,8 +18,10 @@ namespace GUI
         private string Subject;
         private string Body ;
         SmtpClient smtpClient;
+        BUS_Vaccine busVC ;
         public Email()
         {
+            this.busVC = new BUS_Vaccine();
             this.user = "trungtamtiemchung155@gmail.com";
             this.pass = "nguyen12345";
             this.GoogleAppPassword = "avurfijmedaprpgx";
@@ -38,9 +40,10 @@ namespace GUI
             {
                 return false;
             }
-            this.Body = "Xin chào <h1>" + hoten+ "</h1><br>";
+            string vaccine = busVC.getVCName(maVC);
+            this.Body = "Xin chào <b>" + hoten+ "</b><br>";
             this.Body += "Email này được gửi từ trung tâm tiêm chủng MTAVC<br>";
-            this.Body += "Lịch tiêm nhắc lại vắc xin "+maVC+" vào ngày "+ngayDenHan+"<br>";
+            this.Body += "Lịch tiêm nhắc lại vắc xin "+vaccine+" vào ngày "+ngayDenHan+"<br>";
             this.Body += "Mong bạn thu xếp thời gian để tới trung tâm. Xin cảm ơn.";
             var mailMessage = new MailMessage
             {
