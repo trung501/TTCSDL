@@ -29,21 +29,21 @@
           private void InitializeComponent()
           {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.StackedAreaSeriesView stackedAreaSeriesView1 = new DevExpress.XtraCharts.StackedAreaSeriesView();
-            DevExpress.XtraCharts.ChartTitle chartTitle1 = new DevExpress.XtraCharts.ChartTitle();
-            DevExpress.XtraCharts.XYDiagram xyDiagram2 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView1 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
-            DevExpress.XtraCharts.ChartTitle chartTitle2 = new DevExpress.XtraCharts.ChartTitle();
-            DevExpress.XtraCharts.Series series3 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.DoughnutSeriesLabel doughnutSeriesLabel1 = new DevExpress.XtraCharts.DoughnutSeriesLabel();
-            DevExpress.XtraCharts.DoughnutSeriesView doughnutSeriesView1 = new DevExpress.XtraCharts.DoughnutSeriesView();
-            DevExpress.XtraCharts.SeriesTitle seriesTitle1 = new DevExpress.XtraCharts.SeriesTitle();
-            DevExpress.XtraCharts.XYDiagram xyDiagram3 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series4 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.ChartTitle chartTitle3 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.XYDiagram xyDiagram4 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series5 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.StackedAreaSeriesView stackedAreaSeriesView2 = new DevExpress.XtraCharts.StackedAreaSeriesView();
+            DevExpress.XtraCharts.ChartTitle chartTitle4 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.XYDiagram xyDiagram5 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series6 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView2 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
+            DevExpress.XtraCharts.ChartTitle chartTitle5 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.Series series7 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.DoughnutSeriesLabel doughnutSeriesLabel2 = new DevExpress.XtraCharts.DoughnutSeriesLabel();
+            DevExpress.XtraCharts.DoughnutSeriesView doughnutSeriesView2 = new DevExpress.XtraCharts.DoughnutSeriesView();
+            DevExpress.XtraCharts.SeriesTitle seriesTitle2 = new DevExpress.XtraCharts.SeriesTitle();
+            DevExpress.XtraCharts.XYDiagram xyDiagram6 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series8 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.ChartTitle chartTitle6 = new DevExpress.XtraCharts.ChartTitle();
             this.dateEditCuoi = new DevExpress.XtraEditors.DateEdit();
             this.dateEditDau = new DevExpress.XtraEditors.DateEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -83,9 +83,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEditDau.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditDau.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControlDoanhThu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(stackedAreaSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(stackedAreaSeriesView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tedTongDoanhThu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlVcHH)).BeginInit();
             this.panelControlVcHH.SuspendLayout();
@@ -97,17 +97,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbSearch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControlVCSHH)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView2)).BeginInit();
             this.sidePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartControlLoaiVC)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesLabel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesLabel2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControlMostVC)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbBoxEditSoMostVC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditVCCuoi.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditVCCuoi.Properties)).BeginInit();
@@ -169,25 +169,25 @@
             // 
             this.chartControlDoanhThu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram1.AxisX.WholeRange.SideMarginsValue = 0D;
-            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
-            this.chartControlDoanhThu.Diagram = xyDiagram1;
+            xyDiagram4.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram4.AxisX.WholeRange.SideMarginsValue = 0D;
+            xyDiagram4.AxisY.VisibleInPanesSerializable = "-1";
+            this.chartControlDoanhThu.Diagram = xyDiagram4;
             this.chartControlDoanhThu.Legend.Name = "Default Legend";
             this.chartControlDoanhThu.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
             this.chartControlDoanhThu.Location = new System.Drawing.Point(0, 42);
             this.chartControlDoanhThu.Name = "chartControlDoanhThu";
-            series1.Name = "BDDoanhThu";
-            stackedAreaSeriesView1.Transparency = ((byte)(135));
-            series1.View = stackedAreaSeriesView1;
+            series5.Name = "BDDoanhThu";
+            stackedAreaSeriesView2.Transparency = ((byte)(135));
+            series5.View = stackedAreaSeriesView2;
             this.chartControlDoanhThu.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1};
+        series5};
             this.chartControlDoanhThu.Size = new System.Drawing.Size(1056, 355);
             this.chartControlDoanhThu.TabIndex = 0;
-            chartTitle1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartTitle1.Text = "Thống kê doanh thu";
+            chartTitle4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartTitle4.Text = "Thống kê doanh thu";
             this.chartControlDoanhThu.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle1});
+            chartTitle4});
             // 
             // labelControl3
             // 
@@ -271,10 +271,10 @@
             // panelControlVcHH
             // 
             this.panelControlVcHH.Controls.Add(this.btnChuyenTrang1);
+            this.panelControlVcHH.Controls.Add(this.gridVCSHH);
             this.panelControlVcHH.Controls.Add(this.lbNHH2);
             this.panelControlVcHH.Controls.Add(this.textEdit1);
             this.panelControlVcHH.Controls.Add(this.lbNHH);
-            this.panelControlVcHH.Controls.Add(this.gridVCSHH);
             this.panelControlVcHH.Controls.Add(this.groupControl1);
             this.panelControlVcHH.Controls.Add(this.chartControlVCSHH);
             this.panelControlVcHH.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -289,7 +289,7 @@
             this.btnChuyenTrang1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnChuyenTrang1.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Question;
             this.btnChuyenTrang1.Appearance.Options.UseBackColor = true;
-            this.btnChuyenTrang1.Location = new System.Drawing.Point(35, 967);
+            this.btnChuyenTrang1.Location = new System.Drawing.Point(26, 736);
             this.btnChuyenTrang1.Name = "btnChuyenTrang1";
             this.btnChuyenTrang1.Size = new System.Drawing.Size(80, 25);
             this.btnChuyenTrang1.TabIndex = 18;
@@ -334,7 +334,7 @@
             this.gridVCSHH.Location = new System.Drawing.Point(-1, 486);
             this.gridVCSHH.MainView = this.gridView1;
             this.gridVCSHH.Name = "gridVCSHH";
-            this.gridVCSHH.Size = new System.Drawing.Size(1057, 279);
+            this.gridVCSHH.Size = new System.Drawing.Size(1057, 245);
             this.gridVCSHH.TabIndex = 11;
             this.gridVCSHH.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -405,24 +405,24 @@
             // 
             this.chartControlVCSHH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            xyDiagram2.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram2.AxisY.VisibleInPanesSerializable = "-1";
-            this.chartControlVCSHH.Diagram = xyDiagram2;
+            xyDiagram5.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram5.AxisY.VisibleInPanesSerializable = "-1";
+            this.chartControlVCSHH.Diagram = xyDiagram5;
             this.chartControlVCSHH.Legend.Name = "Default Legend";
             this.chartControlVCSHH.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
             this.chartControlVCSHH.Location = new System.Drawing.Point(0, 35);
             this.chartControlVCSHH.Name = "chartControlVCSHH";
-            series2.Name = "BDVCSHH";
-            sideBySideBarSeriesView1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(80)))), ((int)(((byte)(77)))));
-            series2.View = sideBySideBarSeriesView1;
+            series6.Name = "BDVCSHH";
+            sideBySideBarSeriesView2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(80)))), ((int)(((byte)(77)))));
+            series6.View = sideBySideBarSeriesView2;
             this.chartControlVCSHH.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series2};
+        series6};
             this.chartControlVCSHH.Size = new System.Drawing.Size(1056, 380);
             this.chartControlVCSHH.TabIndex = 0;
-            chartTitle2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartTitle2.Text = "Thống kê theo loại vắc xin";
+            chartTitle5.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartTitle5.Text = "Thống kê theo loại vắc xin";
             this.chartControlVCSHH.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle2});
+            chartTitle5});
             this.chartControlVCSHH.Click += new System.EventHandler(this.chartControl1_Click);
             // 
             // sidePanel1
@@ -447,22 +447,22 @@
             this.chartControlLoaiVC.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
             this.chartControlLoaiVC.Location = new System.Drawing.Point(547, 0);
             this.chartControlLoaiVC.Name = "chartControlLoaiVC";
-            doughnutSeriesLabel1.TextPattern = "{A}:{V}";
-            series3.Label = doughnutSeriesLabel1;
-            series3.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
-            series3.Name = "BDLoaiVC";
-            series3.SeriesPointsSortingKey = DevExpress.XtraCharts.SeriesPointKey.Value_1;
-            series3.ToolTipEnabled = DevExpress.Utils.DefaultBoolean.True;
-            series3.ToolTipPointPattern = "{A}: {V}";
-            doughnutSeriesView1.HoleRadiusPercent = 40;
-            seriesTitle1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            seriesTitle1.Text = "Tỷ trọng vaccine theo từng loại";
-            seriesTitle1.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            doughnutSeriesView1.Titles.AddRange(new DevExpress.XtraCharts.SeriesTitle[] {
-            seriesTitle1});
-            series3.View = doughnutSeriesView1;
+            doughnutSeriesLabel2.TextPattern = "{A}:{V}";
+            series7.Label = doughnutSeriesLabel2;
+            series7.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
+            series7.Name = "BDLoaiVC";
+            series7.SeriesPointsSortingKey = DevExpress.XtraCharts.SeriesPointKey.Value_1;
+            series7.ToolTipEnabled = DevExpress.Utils.DefaultBoolean.True;
+            series7.ToolTipPointPattern = "{A}: {V}";
+            doughnutSeriesView2.HoleRadiusPercent = 40;
+            seriesTitle2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            seriesTitle2.Text = "Tỷ trọng vaccine theo từng loại";
+            seriesTitle2.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            doughnutSeriesView2.Titles.AddRange(new DevExpress.XtraCharts.SeriesTitle[] {
+            seriesTitle2});
+            series7.View = doughnutSeriesView2;
             this.chartControlLoaiVC.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series3};
+        series7};
             this.chartControlLoaiVC.Size = new System.Drawing.Size(508, 336);
             this.chartControlLoaiVC.TabIndex = 11;
             // 
@@ -471,26 +471,26 @@
             this.chartControlMostVC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            xyDiagram3.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram3.AxisY.VisibleInPanesSerializable = "-1";
-            xyDiagram3.Rotated = true;
-            this.chartControlMostVC.Diagram = xyDiagram3;
+            xyDiagram6.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram6.AxisY.VisibleInPanesSerializable = "-1";
+            xyDiagram6.Rotated = true;
+            this.chartControlMostVC.Diagram = xyDiagram6;
             this.chartControlMostVC.Legend.Name = "Default Legend";
             this.chartControlMostVC.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
             this.chartControlMostVC.Location = new System.Drawing.Point(0, 0);
             this.chartControlMostVC.Name = "chartControlMostVC";
-            series4.Name = "BDCmostVC";
-            series4.SeriesPointsSorting = DevExpress.XtraCharts.SortingMode.Ascending;
-            series4.SeriesPointsSortingKey = DevExpress.XtraCharts.SeriesPointKey.Value_1;
+            series8.Name = "BDCmostVC";
+            series8.SeriesPointsSorting = DevExpress.XtraCharts.SortingMode.Ascending;
+            series8.SeriesPointsSortingKey = DevExpress.XtraCharts.SeriesPointKey.Value_1;
             this.chartControlMostVC.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series4};
+        series8};
             this.chartControlMostVC.SeriesTemplate.SeriesPointsSorting = DevExpress.XtraCharts.SortingMode.Ascending;
             this.chartControlMostVC.Size = new System.Drawing.Size(547, 336);
             this.chartControlMostVC.TabIndex = 10;
-            chartTitle3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartTitle3.Text = "Top Vaccine dùng nhiều";
+            chartTitle6.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartTitle6.Text = "Top Vaccine dùng nhiều";
             this.chartControlMostVC.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle3});
+            chartTitle6});
             // 
             // cbBoxEditSoMostVC
             // 
@@ -604,9 +604,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEditCuoi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditDau.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditDau.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(stackedAreaSeriesView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(stackedAreaSeriesView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControlDoanhThu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tedTongDoanhThu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlVcHH)).EndInit();
@@ -619,17 +619,17 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbSearch.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControlVCSHH)).EndInit();
             this.sidePanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesLabel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControlLoaiVC)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControlMostVC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbBoxEditSoMostVC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditVCCuoi.Properties.CalendarTimeProperties)).EndInit();
