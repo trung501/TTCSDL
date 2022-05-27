@@ -14,7 +14,7 @@ namespace DAO
 {
     public class DBProvider
     {
-        protected SqlConnection _conn = new SqlConnection(@"Data Source=DESKTOP-BK21BLG;Initial Catalog=QuanLiTiemChung;Integrated Security=True");
+        protected SqlConnection _conn = new SqlConnection(@"Data Source=DESKTOP-I1CQ9UA;Initial Catalog=QuanLiTiemChung;Integrated Security=True");
         public bool Login(string user, string pass)
         {
             string hashedPass = HashPass(pass);
