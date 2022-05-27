@@ -74,7 +74,24 @@ namespace DAO
         {
             try
             {
-                
+                //_conn.Open();
+
+                //string SQL = @"INSERT INTO KHACHHANG 
+                //                ( MAKH, TENKH, NGAYSINH, GIOITINH, TIEUSU, MAGH )
+                //                VALUES
+                //                ( @MAKH, @TENKH, @NGAYSINH, @GIOITINH, @TIEUSU, @MAGH )";
+
+                //SqlCommand cmd = new SqlCommand(SQL, _conn);
+
+                //cmd.Parameters.AddWithValue("@MAKH", kh.MAKH);
+                //cmd.Parameters.AddWithValue("@TENKH", kh.TENKH);
+                //cmd.Parameters.AddWithValue("@NGAYSINH", kh.NGAYSINH);
+                //cmd.Parameters.AddWithValue("@GIOITINH", kh.GIOITINH);
+                //cmd.Parameters.AddWithValue("@TIEUSU", kh.TIEUSU);
+                //cmd.Parameters.AddWithValue("@MAGH", DBNull.Value);
+
+                //if (cmd.ExecuteNonQuery() > 0)
+                //    return true;
 
                 _conn.Open();
 
@@ -85,8 +102,6 @@ namespace DAO
                 cmd.Parameters.AddWithValue("@NGAYSINH", kh.NGAYSINH);
                 cmd.Parameters.AddWithValue("@GIOITINH", kh.GIOITINH);
                 cmd.Parameters.AddWithValue("@TIEUSU", kh.TIEUSU);
-                cmd.Parameters.AddWithValue("@EMAIL", kh.EMAIL);
-                cmd.Parameters.AddWithValue("@SDT", kh.SDT);
                 cmd.Parameters.AddWithValue("@MAGH", DBNull.Value);
 
                 if (cmd.ExecuteNonQuery() > 0)

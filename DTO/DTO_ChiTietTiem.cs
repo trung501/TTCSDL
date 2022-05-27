@@ -14,7 +14,6 @@ namespace DTO
         private int muiThu;
         private string ngayNhacLai;
         private double lieuLuong;
-        private bool tiemNhacLai;
 
         public string MAPHIEUTIEM { get => maPT; set => maPT = value; }
         public string MAVACCINE { get => maVC; set => maVC = value; }
@@ -22,10 +21,8 @@ namespace DTO
         public int MUITHU { get => muiThu; set => muiThu = value; }
         public string NGAYNHACLAI { get => ngayNhacLai; set => ngayNhacLai = value; }
         public double LIEULUONG { get => lieuLuong; set => lieuLuong = value; }
-        public bool TIEMNHACLAI { get => tiemNhacLai; set => tiemNhacLai = value; }
 
-
-        public DTO_ChiTietTiem(string maPT, string maVC, int giaBan, int muiThu, string ngayNhacLai, double lieuLuong,bool tiemNhacLai)
+        public DTO_ChiTietTiem(string maPT, string maVC, int giaBan, int muiThu, string ngayNhacLai, double lieuLuong)
         {
             this.maPT = maPT;
             this.maVC = maVC;
@@ -33,7 +30,6 @@ namespace DTO
             this.muiThu = muiThu;
             this.ngayNhacLai = ngayNhacLai;
             this.lieuLuong = lieuLuong;
-            this.tiemNhacLai = tiemNhacLai;
         }
     }
 }

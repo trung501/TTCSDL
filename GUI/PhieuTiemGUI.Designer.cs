@@ -66,6 +66,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.tbNhacLai = new DevExpress.XtraEditors.TextEdit();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.tbLieuLuong = new DevExpress.XtraEditors.TextEdit();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
@@ -75,7 +76,6 @@
             this.gridKH = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
-            this.ceNhacLai = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.cbGioiTinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNgaySinh.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNgaySinh.Properties)).BeginInit();
@@ -108,14 +108,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridKH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ceNhacLai.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // cbGioiTinh
             // 
             this.cbGioiTinh.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbGioiTinh.EditValue = "";
-            this.cbGioiTinh.Location = new System.Drawing.Point(326, 60);
+            this.cbGioiTinh.Location = new System.Drawing.Point(345, 57);
             this.cbGioiTinh.Name = "cbGioiTinh";
             this.cbGioiTinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -146,7 +145,7 @@
             // lbNgaySinh
             // 
             this.lbNgaySinh.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbNgaySinh.Location = new System.Drawing.Point(18, 63);
+            this.lbNgaySinh.Location = new System.Drawing.Point(18, 60);
             this.lbNgaySinh.Name = "lbNgaySinh";
             this.lbNgaySinh.Size = new System.Drawing.Size(64, 18);
             this.lbNgaySinh.TabIndex = 24;
@@ -159,6 +158,7 @@
             this.tbTienSu.Name = "tbTienSu";
             this.tbTienSu.Size = new System.Drawing.Size(270, 24);
             this.tbTienSu.TabIndex = 3;
+            this.tbTienSu.EditValueChanged += new System.EventHandler(this.tbTienSu_EditValueChanged);
             // 
             // lbTienSu
             // 
@@ -172,11 +172,12 @@
             // lbGioiTinh
             // 
             this.lbGioiTinh.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbGioiTinh.Location = new System.Drawing.Point(270, 60);
+            this.lbGioiTinh.Location = new System.Drawing.Point(280, 60);
             this.lbGioiTinh.Name = "lbGioiTinh";
             this.lbGioiTinh.Size = new System.Drawing.Size(50, 18);
             this.lbGioiTinh.TabIndex = 20;
             this.lbGioiTinh.Text = "Giới tính";
+            this.lbGioiTinh.Click += new System.EventHandler(this.lbGioiTinh_Click);
             // 
             // tbTenKH
             // 
@@ -184,7 +185,7 @@
             this.tbTenKH.EditValue = "";
             this.tbTenKH.Location = new System.Drawing.Point(142, 14);
             this.tbTenKH.Name = "tbTenKH";
-            this.tbTenKH.Size = new System.Drawing.Size(251, 24);
+            this.tbTenKH.Size = new System.Drawing.Size(270, 24);
             this.tbTenKH.TabIndex = 0;
             this.tbTenKH.EditValueChanged += new System.EventHandler(this.tbTenKH_EditValueChanged);
             this.tbTenKH.Click += new System.EventHandler(this.tbTenKH_Click);
@@ -287,7 +288,7 @@
             // cbBacSi
             // 
             this.cbBacSi.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cbBacSi.Location = new System.Drawing.Point(544, 94);
+            this.cbBacSi.Location = new System.Drawing.Point(544, 97);
             this.cbBacSi.Name = "cbBacSi";
             this.cbBacSi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -334,7 +335,7 @@
             // labelEmail
             // 
             this.labelEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelEmail.Location = new System.Drawing.Point(18, 139);
+            this.labelEmail.Location = new System.Drawing.Point(18, 137);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(33, 18);
             this.labelEmail.TabIndex = 22;
@@ -447,9 +448,9 @@
             // tbMaVC
             // 
             this.tbMaVC.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbMaVC.Location = new System.Drawing.Point(111, 3);
+            this.tbMaVC.Location = new System.Drawing.Point(122, 3);
             this.tbMaVC.Name = "tbMaVC";
-            this.tbMaVC.Size = new System.Drawing.Size(77, 24);
+            this.tbMaVC.Size = new System.Drawing.Size(93, 24);
             this.tbMaVC.TabIndex = 0;
             this.tbMaVC.EditValueChanged += new System.EventHandler(this.tbMaVC_EditValueChanged);
             this.tbMaVC.Leave += new System.EventHandler(this.tbMaVC_Leave);
@@ -457,7 +458,7 @@
             // tbMuiThu
             // 
             this.tbMuiThu.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbMuiThu.Location = new System.Drawing.Point(286, 3);
+            this.tbMuiThu.Location = new System.Drawing.Point(311, 3);
             this.tbMuiThu.Name = "tbMuiThu";
             this.tbMuiThu.Size = new System.Drawing.Size(65, 24);
             this.tbMuiThu.TabIndex = 1;
@@ -466,7 +467,7 @@
             // lbMuiThu
             // 
             this.lbMuiThu.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbMuiThu.Location = new System.Drawing.Point(228, 6);
+            this.lbMuiThu.Location = new System.Drawing.Point(253, 6);
             this.lbMuiThu.Name = "lbMuiThu";
             this.lbMuiThu.Size = new System.Drawing.Size(49, 18);
             this.lbMuiThu.TabIndex = 20;
@@ -475,7 +476,7 @@
             // lbMaVC
             // 
             this.lbMaVC.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbMaVC.Location = new System.Drawing.Point(32, 6);
+            this.lbMaVC.Location = new System.Drawing.Point(43, 6);
             this.lbMaVC.Name = "lbMaVC";
             this.lbMaVC.Size = new System.Drawing.Size(73, 18);
             this.lbMaVC.TabIndex = 22;
@@ -507,10 +508,10 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.tbNhacLai);
-            this.panel4.Controls.Add(this.ceNhacLai);
             this.panel4.Controls.Add(this.tbMuiThu);
+            this.panel4.Controls.Add(this.tbNhacLai);
             this.panel4.Controls.Add(this.label2);
+            this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.labelControl1);
             this.panel4.Controls.Add(this.tbLieuLuong);
             this.panel4.Controls.Add(this.lbMaVC);
@@ -525,10 +526,9 @@
             // tbNhacLai
             // 
             this.tbNhacLai.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbNhacLai.Location = new System.Drawing.Point(668, 3);
+            this.tbNhacLai.Location = new System.Drawing.Point(665, 3);
             this.tbNhacLai.Name = "tbNhacLai";
-            this.tbNhacLai.Properties.ReadOnly = true;
-            this.tbNhacLai.Size = new System.Drawing.Size(53, 24);
+            this.tbNhacLai.Size = new System.Drawing.Size(56, 24);
             this.tbNhacLai.TabIndex = 3;
             this.tbNhacLai.EditValueChanged += new System.EventHandler(this.tbNhacLai_EditValueChanged);
             this.tbNhacLai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNhacLai_KeyPress);
@@ -543,10 +543,20 @@
             this.label2.TabIndex = 25;
             this.label2.Text = "tháng";
             // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(576, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(86, 18);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Nhắc lại sau";
+            // 
             // labelControl1
             // 
             this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl1.Location = new System.Drawing.Point(387, 6);
+            this.labelControl1.Location = new System.Drawing.Point(407, 6);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(65, 18);
             this.labelControl1.TabIndex = 24;
@@ -555,9 +565,9 @@
             // tbLieuLuong
             // 
             this.tbLieuLuong.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbLieuLuong.Location = new System.Drawing.Point(458, 3);
+            this.tbLieuLuong.Location = new System.Drawing.Point(478, 3);
             this.tbLieuLuong.Name = "tbLieuLuong";
-            this.tbLieuLuong.Size = new System.Drawing.Size(64, 24);
+            this.tbLieuLuong.Size = new System.Drawing.Size(65, 24);
             this.tbLieuLuong.TabIndex = 2;
             this.tbLieuLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbLieuLuong_KeyPress);
             // 
@@ -631,16 +641,6 @@
             this.gridView1.OptionsFind.FindNullPrompt = "Nhập để tìm kiếm...";
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // ceNhacLai
-            // 
-            this.ceNhacLai.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ceNhacLai.Location = new System.Drawing.Point(557, 3);
-            this.ceNhacLai.Name = "ceNhacLai";
-            this.ceNhacLai.Properties.Caption = "Nhắc lại sau";
-            this.ceNhacLai.Size = new System.Drawing.Size(107, 24);
-            this.ceNhacLai.TabIndex = 26;
-            this.ceNhacLai.CheckedChanged += new System.EventHandler(this.cenhaclai_CheckedChanged);
-            // 
             // PhieuTiemGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -685,7 +685,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridKH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ceNhacLai.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -729,6 +728,7 @@
         private DevExpress.XtraEditors.TextEdit tbMaKH;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private System.Windows.Forms.Label labelTooltipMaKH;
+        private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.TextEdit tbNhacLai;
         private System.Windows.Forms.Label label2;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
@@ -737,6 +737,5 @@
         private DevExpress.XtraEditors.TextEdit tbSDT;
         private DevExpress.XtraEditors.TextEdit tbEmail;
         private DevExpress.XtraEditors.LabelControl labelSDT;
-        private DevExpress.XtraEditors.CheckEdit ceNhacLai;
     }
 }

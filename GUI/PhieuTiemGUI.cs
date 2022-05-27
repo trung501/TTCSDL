@@ -66,9 +66,7 @@ namespace GUI
 
         public void RefreshGrid()
         {
-            DataTable dtKH = busKH.getAllKH();
-            dtKH.Columns.Remove("MAGH");
-            gridKH.DataSource = dtKH;
+            gridKH.DataSource = busKH.getAllKH();
             gridView1.Columns["MAKH"].SortOrder = DevExpress.Data.ColumnSortOrder.Descending;
 
         }
@@ -134,13 +132,7 @@ namespace GUI
                 {
                     if (Convert.ToDouble(tbLieuLuong.Text) <= busVC.GetSoLuongConLai(tbMaVC.Text))
                     {
-                        string ngayTiemNhacLai = "9999-01-01";
-
-                        if (ceNhacLai.Checked && tbNhacLai.Text != "")
-                        {
-                            ngayTiemNhacLai = dtpNgayTiem.DateTime.AddMonths(Convert.ToInt32(tbNhacLai.Text)).ToString("yyyy-MM-dd");
-                        }
-                        DTO_ChiTietTiem ctt = new DTO_ChiTietTiem(busPhieuTiem.NextMAPHIEUTIEM(), tbMaVC.Text, busVC.getVCPrice(tbMaVC.Text), int.Parse(tbMuiThu.Text), ngayTiemNhacLai, Convert.ToDouble(tbLieuLuong.Text),ceNhacLai.Checked);
+                        DTO_ChiTietTiem ctt = new DTO_ChiTietTiem(busPhieuTiem.NextMAPHIEUTIEM(), tbMaVC.Text, busVC.getVCPrice(tbMaVC.Text), int.Parse(tbMuiThu.Text), dtpNgayTiem.DateTime.AddMonths(Convert.ToInt32(tbNhacLai.Text)).ToString("yyyy-MM-dd"), Convert.ToDouble(tbLieuLuong.Text));
 
                         for (int i = 0; i < listCTT.Count; i++)
                         {
@@ -252,11 +244,11 @@ namespace GUI
                 if (tbMaKH.Text == "")
                 {
                     tbMaKH.Text = busKH.NextMaKH();
-                    busKH.InsertKHWithoutNGH(new DTO_KhachHang(tbMaKH.Text, tbTenKH.Text, dtpNgaySinh.DateTime.ToString("yyyy-MM-dd"), cbGioiTinh.Text, tbTienSu.Text,tbEmail.Text,tbSDT.Text, null));
+                    busKH.InsertKHWithoutNGH(new DTO_KhachHang(tbMaKH.Text, tbTenKH.Text, dtpNgaySinh.DateTime.ToString("yyyy-MM-dd"), cbGioiTinh.Text, tbTienSu.Text, null));
                 }
                 else if (!busKH.IsMaKHExists(tbMaKH.Text))
                 {
-                    busKH.InsertKHWithoutNGH(new DTO_KhachHang(tbMaKH.Text, tbTenKH.Text, dtpNgaySinh.DateTime.ToString("yyyy-MM-dd"), cbGioiTinh.Text, tbTienSu.Text,tbEmail.Text,tbSDT.Text, null));
+                    busKH.InsertKHWithoutNGH(new DTO_KhachHang(tbMaKH.Text, tbTenKH.Text, dtpNgaySinh.DateTime.ToString("yyyy-MM-dd"), cbGioiTinh.Text, tbTienSu.Text, null));
                 }
 
                 gridKH.DataSource = busKH.getAllKH();
@@ -302,10 +294,7 @@ namespace GUI
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            DataTable dtKH = busKH.getAllKH();
-            dtKH.Columns.Remove("MAGH");
-            gridKH.DataSource = dtKH;
-
+            gridKH.DataSource = busKH.getAllKH();
             gridVaccine.DataSource = null;
             listCTT.Clear();
             RefreshCombobox();
@@ -401,16 +390,14 @@ namespace GUI
 
         }
 
-        private void cenhaclai_CheckedChanged(object sender, EventArgs e)
+        private void lbGioiTinh_Click(object sender, EventArgs e)
         {
-            if (ceNhacLai.Checked)
-            {
-                tbNhacLai.ReadOnly = false;
-            }
-            else
-            {
-                tbNhacLai.ReadOnly = true;
-            }
+
+        }
+
+        private void tbTienSu_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

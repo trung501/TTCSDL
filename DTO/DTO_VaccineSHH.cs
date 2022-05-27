@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class DTO_Vaccine
+    public class DTO_VaccineSHH
     {
         private string maVC;
         private string tenVC;
@@ -16,7 +16,8 @@ namespace DTO
         private string soLo;
         private int soLuongSan;
         private int donGia;
-        private string maloaiVC;
+        private string tenloaiVC;
+        private int songayconlai;
 
         public string MAVACCINE { get => maVC; set => maVC = value; }
         public string TENVACCINE { get => tenVC; set => tenVC = value; }
@@ -26,14 +27,15 @@ namespace DTO
         public string SOLO { get => soLo; set => soLo = value; }
         public int SOLUONGCOSAN { get => soLuongSan; set => soLuongSan = value; }
         public int DONGIA { get => donGia; set => donGia = value; }
-        public string MALVC { get => maloaiVC; set => maloaiVC = value; }
+        public string LOAIVACCINE { get => tenloaiVC; set => tenloaiVC = value; }
+        public int SONGAYCONLAI { get => songayconlai; set => songayconlai = value; }
 
-        public DTO_Vaccine()
+        public DTO_VaccineSHH()
         {
 
         }
 
-        public DTO_Vaccine(string maVC, string tenVC, string nhaSX, string ngaySX, string hanSD, string soLo, int soLuongSan, int donGia, string maloaiVC)
+        public DTO_VaccineSHH(string maVC, string tenVC, string nhaSX, string ngaySX, string hanSD, string soLo, int soLuongSan, int donGia, string tenloaiVC, int songayconlai)
         {
             this.maVC = maVC;
             this.tenVC = tenVC;
@@ -43,8 +45,9 @@ namespace DTO
             this.soLo = soLo;
             this.soLuongSan = soLuongSan;
             this.donGia = donGia;
-            this.maloaiVC = maloaiVC;
+            this.tenloaiVC = tenloaiVC;
+            this.songayconlai = songayconlai;
         }
-        
+
     }
 }

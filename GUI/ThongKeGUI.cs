@@ -30,9 +30,10 @@ namespace GUI
 
         #region Define Variable
         BUS_ThongKe busThongKe = new BUS_ThongKe();
+        BUS_Vaccine busVaccine = new BUS_Vaccine();
         public int SoLuongVaccineChartMostVC = 7;
+        int NgayTinhHan = 30;//Thông báo vắc xin sắp hết hạn khi số ngày còn lại < NgayTinhHan
         #endregion
-
         public ThongKeGUI()
         {
             InitializeComponent();
@@ -51,6 +52,20 @@ namespace GUI
             cbBoxEditSoMostVC.SelectedIndex = 3;
             LoadDataToChartMostVC();
 
+            panelControlVcHH.Visible = false;
+            textEdit1.EditValue = 30;
+            LoadDataToChartVCSHH();
+
+            gridView1.OptionsBehavior.Editable = false;
+
+        }
+        
+        public void RefreshGrid()
+        {
+            gridVCSHH.DataSource = busVaccine.getAllVaccineSHH(NgayTinhHan);
+            //gridView1.BestFitColumns();
+            gridView1.Columns["MAVACCINE"].SortOrder = DevExpress.Data.ColumnSortOrder.Ascending;
+            tbSearch.Focus();
         }
 
         #region Chart Doanh Thu
@@ -136,6 +151,39 @@ namespace GUI
 
         #endregion
 
+        #region Chart VCSHH
+
+        public void LoadDataToChartVCSHH()
+        {
+            chartControlVCSHH.Series["BDVCSHH"].Points.Clear();
+            DataTable dt = busThongKe.GetVaccineSHH(NgayTinhHan);
+            //DataTable dtVC = busVaccine.getAllVaccine();
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                DataRow row = dt.Rows[i];
+                string LoaiVC = row["LOAIVACCINE"].ToString().Trim();
+                int SoLuong = int.Parse(row["SOLUONGCOSAN"].ToString());
+                chartControlVCSHH.Series["BDVCSHH"].Points.Add(new DevExpress.XtraCharts.SeriesPoint(LoaiVC, SoLuong));
+                chartControlVCSHH.Refresh();
+                /*
+                string stringHanSD = row["HANSD"].ToString().Trim();
+                DateTime HanSD = DateTime.Parse(stringHanSD);
+                TimeSpan Time = HanSD.Subtract(DateTime.Now);
+                int SoNgayConLai = Time.Days;//Bằng hạn sử dụng trừ ngày hiện tại
+                if ((SoNgayConLai-NgayTinhHan) < 0)
+                {
+                    string LoaiVC = row["LOAIVACCINE"].ToString().Trim();
+                    int SoLuong = int.Parse(row["SOLUONGCOSAN"].ToString());
+                    chartControlVCSHH.Series["BDVCSHH"].Points.Add(new DevExpress.XtraCharts.SeriesPoint(LoaiVC, SoLuong));
+                    chartControlVCSHH.Refresh();
+                }*/
+            }
+
+            chartControlVCSHH.Refresh();
+        }
+
+        #endregion
 
         //Generate Code for Event Handle:
         private void dateEdit1_EditValueChanged(object sender, EventArgs e)
@@ -266,6 +314,81 @@ namespace GUI
             TKCreator.ShowThongKeRP();
 
         }
-        
+
+        private void btnChuyenTrang_Click(object sender, EventArgs e)
+        {
+            panelControlVcHH.Visible = true;
+        }
+
+        private void chartControlLoaiVC_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chartControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelControl2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (tbSearch.Text != "")
+            {
+                switch (radioGroup1.SelectedIndex)
+                {
+                    case 1:
+                        gridVCSHH.DataSource = busVaccine.SearchByMaVCSHH(tbSearch.Text,NgayTinhHan);
+                        break;
+                    case 2:
+                        gridVCSHH.DataSource = busVaccine.SearchByTenVCSHH(tbSearch.Text,NgayTinhHan);
+                        break;
+                    case 3:
+                        gridVCSHH.DataSource = busVaccine.SearchByLoaiVCSHH(tbSearch.Text,NgayTinhHan);
+                        break;
+                    case 4:
+                        gridVCSHH.DataSource = busVaccine.SearchByNhaSXSHH(tbSearch.Text,NgayTinhHan);
+                        break;
+                    case 0:
+                        gridVCSHH.DataSource = busVaccine.SearchAllSHH(tbSearch.Text,NgayTinhHan);
+                        break;
+                }
+            }
+            else gridVCSHH.DataSource = busVaccine.getAllVaccineSHH(NgayTinhHan);
+        }
+
+        private void textEdit1_Properties_Leave(object sender, EventArgs e)
+        {
+            NgayTinhHan = int.Parse(textEdit1.Text);
+            LoadDataToChartVCSHH();
+            RefreshGrid();
+        }
+
+        private void btnChuyenTrang1_Click(object sender, EventArgs e)
+        {
+            panelControlVcHH.Visible = false;
+        }
+
+        private void tbSearch_Properties_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSearch.PerformClick();
+            }
+        }
+
+        private void tbSearch_TextChanged(object sender, EventArgs e)
+        {
+            btnSearch.PerformClick();
+        }
+
+        private void radioGroup1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnSearch.PerformClick();
+        }
     }
 }

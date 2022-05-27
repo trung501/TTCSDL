@@ -25,8 +25,7 @@ namespace DAO
                 cmd.Parameters.AddWithValue("@MUITHU", ctt.MUITHU);
                 cmd.Parameters.AddWithValue("@NGAYNHACLAI", ctt.NGAYNHACLAI);
                 cmd.Parameters.AddWithValue("@LIEULUONG", ctt.LIEULUONG);
-                cmd.Parameters.AddWithValue("@TIEMNHACLAI", ctt.TIEMNHACLAI);
-                if (cmd.ExecuteNonQuery() > 0)
+                if(cmd.ExecuteNonQuery() > 0)
                 {
                     return true;
                 }

@@ -32,11 +32,13 @@ namespace BUS
         {
             return dao.GetMostUsedVC(NgayDau, NgayCuoi);
         }
-        public DataTable GetKhachHangDenHanINTIME(string NgayDau, string NgayCuoi)
+
+        public DataTable GetVaccineSHH(int SoNgay)
         {
-            return dao.GetKhachHangDenHanINTIME(NgayDau, NgayCuoi);
+            return dao.GetVaccineSHH(SoNgay);
         }
-            public string GetTenLoaiVCTheoMaLoaiVC(string MaLoaiVC)
+
+        public string GetTenLoaiVCTheoMaLoaiVC(string MaLoaiVC)
         {
             string TenLoaiVC = "";
 

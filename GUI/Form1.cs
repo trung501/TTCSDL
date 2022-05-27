@@ -22,19 +22,19 @@ namespace GUI
         NhapKhoGUI nkGUI;
         PhieuTiemGUI ptGUI;
         TaiKhoanGUI tkGUI;
-        private string maTK;
+
         public Form1(string maTK, string pass) //uyen
         {
             InitializeComponent();
-            this.maTK = maTK;
+            
             DataRow infoTaiKhoan = busTK.GetFullInfoTaiKhoan(maTK);
-            if (this.maTK == "G00" || infoTaiKhoan == null)
+            if (maTK == "G00" || infoTaiKhoan == null)
             {
                 taikhoan = new DTO_ThemTK("G00", null, null, "Khách hàng", null, null, null, null, null);
             }
             else
             {
-                taikhoan = new DTO_ThemTK(this.maTK, pass, infoTaiKhoan["CHUCVU"].ToString(), infoTaiKhoan["HOTEN"].ToString(), infoTaiKhoan["NGAYSINH"].ToString().Split(' ')[0], infoTaiKhoan["SDT"].ToString(), infoTaiKhoan["DIACHI"].ToString(), null, null);
+                taikhoan = new DTO_ThemTK(maTK, pass, infoTaiKhoan["CHUCVU"].ToString(), infoTaiKhoan["HOTEN"].ToString(), infoTaiKhoan["NGAYSINH"].ToString().Split(' ')[0], infoTaiKhoan["SDT"].ToString(), infoTaiKhoan["DIACHI"].ToString(), null, null);
             }
          
             barStaticItem.Caption = "Xin chào " + taikhoan.HOTEN;
@@ -65,26 +65,23 @@ namespace GUI
             container.Controls.Add(ThongKeGUI.Instance);
             ThongKeGUI.Instance.Dock = DockStyle.Fill;
 
-            container.Controls.Add(ThongKeKHDenHan.Instance);
-            ThongKeKHDenHan.Instance.Dock = DockStyle.Fill;
-
             container.Controls.Add(HomeGUI.Instance);
             HomeGUI.Instance.Dock = DockStyle.Fill;
 
 
-            if (this.maTK.StartsWith("QT"))
+            if (maTK.StartsWith("QT"))
             {
                 AdminDisplay();
             }
-            else if (this.maTK.StartsWith("TN"))
+            else if (maTK.StartsWith("TN"))
             {
                 ThuNganDisplay();
             }
-            else if (this.maTK.StartsWith("QK"))
+            else if (maTK.StartsWith("QK"))
             {
                 NhapKhoDisplay();
             }
-            else if (this.maTK.StartsWith("BS"))
+            else if (maTK.StartsWith("BS"))
             {
                 BacSiDisplay();
             }
@@ -112,7 +109,7 @@ namespace GUI
             aceLichSu.Visible = true;
             acePhieuTiem.Visible = true;
             aceThanhToan.Visible = false;
-            aceThongKe.Visible = true;
+            aceThongKe.Visible = false;
             aceTaoTaiKhoan.Visible = false;
         }
         private void KhachHangDisplay()
@@ -191,17 +188,11 @@ namespace GUI
 
         private void aceThongKe_Click(object sender, EventArgs e)
         {
-            if (this.maTK.StartsWith("BS"))
-            {
-                ThongKeKHDenHan.Instance.BringToFront();
-            }
-            else {
             ThongKeGUI.Instance.BringToFront();
-            }
         }
 
         private void aceHome_Click(object sender, EventArgs e)
-        {            
+        {
             HomeGUI.Instance.BringToFront();
         }
         private void aceVaccine2_Click(object sender, EventArgs e)

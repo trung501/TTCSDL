@@ -13,8 +13,6 @@ namespace DTO
         private string ngaySinh;
         private string gioiTinh;
         private string tieuSu;
-        private string email;
-        private string sdt;
         private string maGH;
 
         public string MAKH { get => maKH; set => maKH = value; }
@@ -22,19 +20,15 @@ namespace DTO
         public string NGAYSINH { get => ngaySinh; set => ngaySinh = value; }
         public string GIOITINH { get => gioiTinh; set => gioiTinh = value; }
         public string TIEUSU { get => tieuSu; set => tieuSu = value; }
-        public string EMAIL { get => email; set => email = value; }
-        public string SDT { get => sdt; set => sdt = value; }
         public string MAGH { get => maGH; set => maGH = value; }
 
-        public DTO_KhachHang(string maKH, string tenKH, string ngaySinh, string gioiTinh, string tieuSu,string email,string sdt, string maGH)
+        public DTO_KhachHang(string maKH, string tenKH, string ngaySinh, string gioiTinh, string tieuSu, string maGH)
         {
             this.maKH = maKH;
             this.tenKH = tenKH;
             this.ngaySinh = ngaySinh;
             this.gioiTinh = gioiTinh;
             this.tieuSu = tieuSu;
-            this.email = email;
-            this.sdt = sdt;
             this.maGH = maGH;
         }
     }

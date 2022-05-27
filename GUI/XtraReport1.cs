@@ -6,9 +6,9 @@ using System.Drawing;
 
 namespace GUI
 {
-    public partial class ThongKeKHDenHanRP : DevExpress.XtraReports.UI.XtraReport
+    public partial class XtraReport1 : DevExpress.XtraReports.UI.XtraReport
     {
-        public ThongKeKHDenHanRP()
+        public XtraReport1()
         {
             InitializeComponent();
         }
