@@ -26,7 +26,7 @@ namespace GUI
         public Form1(string maTK, string pass) //uyen
         {
             InitializeComponent();
-            this.maTK = maTK;
+            this.maTK = maTK;//hehe
             DataRow infoTaiKhoan = busTK.GetFullInfoTaiKhoan(maTK);
             if (this.maTK == "G00" || infoTaiKhoan == null)
             {
