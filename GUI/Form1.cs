@@ -195,13 +195,14 @@ namespace GUI
             {
                 ThongKeKHDenHan.Instance.BringToFront();
             }
-            else {
-            ThongKeGUI.Instance.BringToFront();
+            else
+            {
+                ThongKeGUI.Instance.BringToFront();
             }
         }
 
         private void aceHome_Click(object sender, EventArgs e)
-        {            
+        {
             HomeGUI.Instance.BringToFront();
         }
         private void aceVaccine2_Click(object sender, EventArgs e)

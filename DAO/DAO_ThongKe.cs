@@ -145,7 +145,33 @@ namespace DAO
 
         #endregion
 
+        // Get Vaccine và loại vaccine sắp hết hạn
+        public DataTable GetVaccineSHH(int SoNgay)
+        {
+            DataTable dt = new DataTable();
+            SqlDataReader rd;
+            try
+            {
+                _conn.Open();
 
+                SqlCommand cmd = new SqlCommand("sp_GetLoaiVaccineSHH", _conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@SoNgay", SoNgay);
+                rd = cmd.ExecuteReader();
+                dt.Load(rd);
+            }
+            catch (Exception)
+            {
+
+
+            }
+            finally
+            {
+                _conn.Close();
+            }
+
+            return dt;
+        }
         //Get TenLoaiVC theo MaLoaiVC:
         public DataTable getTenLoaiVC(string MaLoaiVC)
         {

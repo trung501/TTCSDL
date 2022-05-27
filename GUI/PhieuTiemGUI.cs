@@ -116,8 +116,8 @@ namespace GUI
             dtpNgaySinh.Text = gridView1.GetRowCellValue(e.RowHandle, "NGAYSINH").ToString().Split(' ')[0];
             cbGioiTinh.Text = gridView1.GetRowCellValue(e.RowHandle, "GIOITINH").ToString();
             tbTienSu.Text = gridView1.GetRowCellValue(e.RowHandle, "TIEUSU").ToString().Trim();
-            tbEmail.Text= gridView1.GetRowCellValue(e.RowHandle, "EMAIL").ToString().Trim();
-            tbSDT.Text= gridView1.GetRowCellValue(e.RowHandle, "SDT").ToString().Trim();
+            tbEmail.Text = gridView1.GetRowCellValue(e.RowHandle, "EMAIL").ToString().Trim();
+            tbSDT.Text = gridView1.GetRowCellValue(e.RowHandle, "SDT").ToString().Trim();
         }
 
         private void PhieuTiemGUI_Load(object sender, EventArgs e)
@@ -140,7 +140,7 @@ namespace GUI
                         {
                             ngayTiemNhacLai = dtpNgayTiem.DateTime.AddMonths(Convert.ToInt32(tbNhacLai.Text)).ToString("yyyy-MM-dd");
                         }
-                        DTO_ChiTietTiem ctt = new DTO_ChiTietTiem(busPhieuTiem.NextMAPHIEUTIEM(), tbMaVC.Text, busVC.getVCPrice(tbMaVC.Text), int.Parse(tbMuiThu.Text), ngayTiemNhacLai, Convert.ToDouble(tbLieuLuong.Text),ceNhacLai.Checked);
+                        DTO_ChiTietTiem ctt = new DTO_ChiTietTiem(busPhieuTiem.NextMAPHIEUTIEM(), tbMaVC.Text, busVC.getVCPrice(tbMaVC.Text), int.Parse(tbMuiThu.Text), ngayTiemNhacLai, Convert.ToDouble(tbLieuLuong.Text), ceNhacLai.Checked);
 
                         for (int i = 0; i < listCTT.Count; i++)
                         {
@@ -237,7 +237,7 @@ namespace GUI
                 dr["MUITHU"] = listCTT[i].MUITHU;
                 dr["LIEULUONG"] = listCTT[i].LIEULUONG;
                 dr["NGAYNHACLAI"] = listCTT[i].NGAYNHACLAI;
-                dt.Rows.Add(dr); 
+                dt.Rows.Add(dr);
             }
 
             gridVaccine.DataSource = dt;
@@ -247,16 +247,16 @@ namespace GUI
         private void btnThem_Click(object sender, EventArgs e)
         {
             string MaPT = busPhieuTiem.NextMAPHIEUTIEM();
-            if (listCTT.Count > 0 && tbTenKH.Text != "" && dtpNgaySinh.Text != "" && tbTienSu.Text != "" && cbBacSi.Text != "" && cbGioiTinh.Text != ""&&tbSDT.Text!="")
+            if (listCTT.Count > 0 && tbTenKH.Text != "" && dtpNgaySinh.Text != "" && tbTienSu.Text != "" && cbBacSi.Text != "" && cbGioiTinh.Text != "" && tbSDT.Text != "")
             {
                 if (tbMaKH.Text == "")
                 {
                     tbMaKH.Text = busKH.NextMaKH();
-                    busKH.InsertKHWithoutNGH(new DTO_KhachHang(tbMaKH.Text, tbTenKH.Text, dtpNgaySinh.DateTime.ToString("yyyy-MM-dd"), cbGioiTinh.Text, tbTienSu.Text,tbEmail.Text,tbSDT.Text, null));
+                    busKH.InsertKHWithoutNGH(new DTO_KhachHang(tbMaKH.Text, tbTenKH.Text, dtpNgaySinh.DateTime.ToString("yyyy-MM-dd"), cbGioiTinh.Text, tbTienSu.Text, tbEmail.Text, tbSDT.Text, null));
                 }
                 else if (!busKH.IsMaKHExists(tbMaKH.Text))
                 {
-                    busKH.InsertKHWithoutNGH(new DTO_KhachHang(tbMaKH.Text, tbTenKH.Text, dtpNgaySinh.DateTime.ToString("yyyy-MM-dd"), cbGioiTinh.Text, tbTienSu.Text,tbEmail.Text,tbSDT.Text, null));
+                    busKH.InsertKHWithoutNGH(new DTO_KhachHang(tbMaKH.Text, tbTenKH.Text, dtpNgaySinh.DateTime.ToString("yyyy-MM-dd"), cbGioiTinh.Text, tbTienSu.Text, tbEmail.Text, tbSDT.Text, null));
                 }
 
                 gridKH.DataSource = busKH.getAllKH();
@@ -271,9 +271,9 @@ namespace GUI
                     }
                     btnReset.PerformClick();
                     if (MessageBoxEx.Show("Thêm thành công. Bạn có muốn in phiếu tiêm không?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-                    {                        
+                    {
                         return;
-                    }                    
+                    }
                 }
 
                 btnReset.PerformClick();
@@ -297,7 +297,7 @@ namespace GUI
 
         private void tbMaBS_Leave(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -331,7 +331,7 @@ namespace GUI
 
         private void tbTenKH_Click(object sender, EventArgs e)
         {
-            if(tbTenKH.Text == "Họ và Tên")
+            if (tbTenKH.Text == "Họ và Tên")
             {
                 tbTenKH.Text = "";
             }

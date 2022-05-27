@@ -14,6 +14,7 @@ namespace DTO
         private string sdt;
         private string email;
 
+
         public string MaGH { get => maGH; set => maGH = value; }
         public string HoTen { get => hoTen; set => hoTen = value; }
         public string DiaChi { get => diaChi; set => diaChi = value; }
@@ -21,7 +22,7 @@ namespace DTO
         public string Email { get => email; set => email = value; }
 
 
-        public DTO_GiamHo(string maGH, string hoTen, string diaChi, string sdt,string email)
+        public DTO_GiamHo(string maGH, string hoTen, string diaChi, string sdt, string email)
         {
             this.maGH = maGH;
             this.hoTen = hoTen;

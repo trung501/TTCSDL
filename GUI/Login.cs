@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using BUS;
+
 namespace GUI
 {
-
     public partial class Login : DevExpress.XtraEditors.XtraForm
     {
         BUS_Login bus = new BUS_Login();

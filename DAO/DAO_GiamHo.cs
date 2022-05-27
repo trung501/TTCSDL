@@ -50,7 +50,22 @@ namespace DAO
         {
             try
             {
-                
+                //_conn.Open();
+
+                //string SQL = @"INSERT INTO NGUOIGIAMHO
+                //            ( MAGH, HOTEN, DIACHI, SDT )
+                //            VALUES
+                //            ( @MAGH, @HOTEN, @DIACHI, @SDT )";
+
+                //SqlCommand cmd = new SqlCommand(SQL, _conn);
+
+                //cmd.Parameters.AddWithValue("@MAGH", gh.MaGH);
+                //cmd.Parameters.AddWithValue("@HOTEN", gh.HoTen);
+                //cmd.Parameters.AddWithValue("@DIACHI", gh.DiaChi);
+                //cmd.Parameters.AddWithValue("@SDT", gh.Sdt);
+
+                //if (cmd.ExecuteNonQuery() > 0)
+                //    return true;
 
                 _conn.Open();
 
@@ -61,7 +76,6 @@ namespace DAO
                 cmd.Parameters.AddWithValue("@DIACHI", gh.DiaChi);
                 cmd.Parameters.AddWithValue("@SDT", gh.Sdt);
                 cmd.Parameters.AddWithValue("@EMAIL", gh.Email);
-
 
                 if (cmd.ExecuteNonQuery() > 0)
                     return true;
@@ -107,20 +121,7 @@ namespace DAO
         {
             try
             {
-                //_conn.Open();
-
-                //string query = @"UPDATE KHACHHANG SET MAGH = @MAGH WHERE MAKH IN (
-                //             SELECT kh.MAKH
-                //             FROM NGUOIGIAMHO gh INNER JOIN HOADON hd INNER JOIN PHIEUTIEM pt INNER JOIN KHACHHANG kh
-                //             ON kh.MAKH = pt.MAKH ON pt.MAPHIEUTIEM = hd.MAPHIEUTIEM ON hd.MAGH = gh.MAGH
-                //             WHERE gh.MAGH = @MAGH )";
-
-                //SqlCommand cmd = new SqlCommand(query, _conn);
-
-                //cmd.Parameters.AddWithValue("@MAGH", maGH);
-
-                //if (cmd.ExecuteNonQuery() > 0)
-                //    return true;
+             
 
                 _conn.Open();
 

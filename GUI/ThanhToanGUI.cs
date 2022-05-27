@@ -137,7 +137,7 @@ namespace GUI
                 if (tbMaGH.Text == "")
                 {
                     tbMaGH.Text = busGH.NextMaGH();
-                    busGH.InsertNGH(new DTO_GiamHo(tbMaGH.Text, tbTenNGH.Text, tbDiaChiNGH.Text, tbSdtNGH.Text,tbEmailNGH.Text));
+                    busGH.InsertNGH(new DTO_GiamHo(tbMaGH.Text, tbTenNGH.Text, tbDiaChiNGH.Text, tbSdtNGH.Text, tbEmailNGH.Text));
                 }
                 else if (!busGH.IsMaGHExists(tbMaGH.Text))
                 {
