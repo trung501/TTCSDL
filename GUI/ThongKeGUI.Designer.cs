@@ -280,7 +280,7 @@
             this.panelControlVcHH.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControlVcHH.Location = new System.Drawing.Point(0, 0);
             this.panelControlVcHH.Name = "panelControlVcHH";
-            this.panelControlVcHH.Size = new System.Drawing.Size(1055, 765);
+            this.panelControlVcHH.Size = new System.Drawing.Size(1319, 956);
             this.panelControlVcHH.TabIndex = 19;
             this.panelControlVcHH.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl2_Paint);
             // 
@@ -289,7 +289,7 @@
             this.btnChuyenTrang1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnChuyenTrang1.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Question;
             this.btnChuyenTrang1.Appearance.Options.UseBackColor = true;
-            this.btnChuyenTrang1.Location = new System.Drawing.Point(28, 735);
+            this.btnChuyenTrang1.Location = new System.Drawing.Point(35, 1158);
             this.btnChuyenTrang1.Name = "btnChuyenTrang1";
             this.btnChuyenTrang1.Size = new System.Drawing.Size(80, 25);
             this.btnChuyenTrang1.TabIndex = 18;
@@ -310,6 +310,8 @@
             // 
             this.textEdit1.Location = new System.Drawing.Point(247, 8);
             this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Properties.Mask.EditMask = "d";
+            this.textEdit1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textEdit1.Properties.Leave += new System.EventHandler(this.textEdit1_Properties_Leave);
             this.textEdit1.Size = new System.Drawing.Size(63, 24);
             this.textEdit1.TabIndex = 13;
@@ -332,7 +334,7 @@
             this.gridVCSHH.Location = new System.Drawing.Point(0, 403);
             this.gridVCSHH.MainView = this.gridView1;
             this.gridVCSHH.Name = "gridVCSHH";
-            this.gridVCSHH.Size = new System.Drawing.Size(1055, 327);
+            this.gridVCSHH.Size = new System.Drawing.Size(1649, 648);
             this.gridVCSHH.TabIndex = 11;
             this.gridVCSHH.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -352,7 +354,7 @@
             this.groupControl1.Controls.Add(this.tbSearch);
             this.groupControl1.Location = new System.Drawing.Point(0, 336);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1056, 69);
+            this.groupControl1.Size = new System.Drawing.Size(1650, 86);
             this.groupControl1.TabIndex = 10;
             this.groupControl1.Text = "Tra cứu thông tin vaccine sắp hết hạn";
             // 
@@ -361,7 +363,7 @@
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSearch.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
             this.btnSearch.Appearance.Options.UseBackColor = true;
-            this.btnSearch.Location = new System.Drawing.Point(896, 36);
+            this.btnSearch.Location = new System.Drawing.Point(1490, 36);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(142, 28);
             this.btnSearch.TabIndex = 6;
@@ -395,7 +397,7 @@
             this.tbSearch.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.tbSearch.Properties.Appearance.Options.UseFont = true;
             this.tbSearch.Properties.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSearch_Properties_KeyDown);
-            this.tbSearch.Size = new System.Drawing.Size(405, 28);
+            this.tbSearch.Size = new System.Drawing.Size(999, 28);
             this.tbSearch.TabIndex = 6;
             this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
             // 
@@ -415,7 +417,7 @@
             series2.View = sideBySideBarSeriesView1;
             this.chartControlVCSHH.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series2};
-            this.chartControlVCSHH.Size = new System.Drawing.Size(1056, 299);
+            this.chartControlVCSHH.Size = new System.Drawing.Size(1650, 374);
             this.chartControlVCSHH.TabIndex = 0;
             chartTitle2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             chartTitle2.Text = "Thống kê theo loại vắc xin";

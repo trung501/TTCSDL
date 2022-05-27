@@ -75,6 +75,7 @@ namespace GUI
             this.btnEmailSelect.Size = new System.Drawing.Size(117, 28);
             this.btnEmailSelect.TabIndex = 1;
             this.btnEmailSelect.Text = "Gửi Email";
+            this.btnEmailSelect.Click += new System.EventHandler(this.btnEmailSelect_Click);
             // 
             // labelControl1
             // 
