@@ -55,8 +55,10 @@ namespace GUI
             panelControlVcHH.Visible = false;
             textEdit1.EditValue = 30;
             LoadDataToChartVCSHH();
+            RefreshGrid();
 
             gridView1.OptionsBehavior.Editable = false;
+
 
         }
         
